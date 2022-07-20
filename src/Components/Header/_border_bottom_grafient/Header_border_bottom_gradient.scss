@@ -1,0 +1,10 @@
+.header_border_bottom_gradient {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+                  90deg,
+                  #813024,
+                  rgb(109, 109, 109) 75%,
+                  rgba(255, 0, 0, 0) 85%
+  );
+  border-bottom: 2px solid;
+}
