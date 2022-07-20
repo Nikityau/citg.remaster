@@ -67,8 +67,6 @@ export default class NavigationController {
         if(dir === this.DIRECTION_TEAM)
             coords.x = this._team.offsetLeft + this._home.clientWidth / 2;
 
-        console.log(coords.x)
-
         coords.y = this._home.offsetTop + this._home.clientHeight * .7;
 
         return coords;

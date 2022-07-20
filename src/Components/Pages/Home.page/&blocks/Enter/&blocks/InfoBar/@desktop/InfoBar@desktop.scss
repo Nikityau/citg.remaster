@@ -1,0 +1,35 @@
+.info-bar {
+  width: 700px;
+
+  border: 2px solid #000;
+  border-radius: 13px;
+
+  background: rgba(26, 31, 37, 0.62);
+
+  box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.1);
+
+  .info-bar__container {
+    max-width: 500px;
+
+    .info-bar__upper-info, .info-bar__below-info {
+      padding: 20px 10px;
+
+      p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0.045em;
+
+        color: #D5D4E6;
+      }
+    }
+
+    .info-bar__below-info {
+      p {
+        font-weight: 400;
+      }
+    }
+  }
+}

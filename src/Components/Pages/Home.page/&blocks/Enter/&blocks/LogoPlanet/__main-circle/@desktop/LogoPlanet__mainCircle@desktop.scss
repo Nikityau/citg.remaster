@@ -1,0 +1,33 @@
+.logo-planet__main-circle {
+  width: 410px;
+  height: 410px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: radial-gradient(91.42% 91.42% at 76.81% 18.8%, #3E3C3C 0%, #0A0A0A 100%);
+
+  box-shadow: inset 8px 7px 29px -22px rgba(136, 86, 242, 0.11);
+  filter: drop-shadow(28px 31px 60px rgba(0, 0, 0, 0.15));
+
+  overflow: hidden;
+
+  .logo-planet__main-circle-img {
+    width: 70%;
+    height: 70%;
+
+    background: linear-gradient(180deg, rgba(47, 46, 46, 0.63) 0%, rgba(61, 63, 68, 0.63) 100%);
+    box-shadow: inset 116px 10px 111px rgba(0, 0, 0, 0.25);
+
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

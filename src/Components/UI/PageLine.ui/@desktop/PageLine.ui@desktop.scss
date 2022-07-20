@@ -1,0 +1,25 @@
+.page-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .page-line__line {
+    width: 270px;
+    height: 16px;
+
+    background: linear-gradient(90deg, #FC6727 -1.85%, #F3682C 106.83%);
+  }
+
+  .page-line__num {
+    span {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 1.7rem;
+      line-height: 90px;
+
+      color: #DC6041;
+
+    }
+  }
+}

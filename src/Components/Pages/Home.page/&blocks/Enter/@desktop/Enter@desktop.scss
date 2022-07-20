@@ -1,0 +1,28 @@
+.enter {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  z-index: 1;
+
+  .enter-container {
+    height: 100%;
+
+    .enter__page-number, .enter__page-info-bar {
+      position: absolute;
+      left: 0;
+      bottom: 5%;
+    }
+    .enter__page-info-bar {
+      left: unset;
+      right: -7%;
+    }
+  }
+
+  .enter__logo-planet {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

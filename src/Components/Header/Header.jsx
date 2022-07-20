@@ -17,8 +17,8 @@ const Header = ({ classNames }) => {
                 <div className={'header__logo'}>
                     <MiniLogoUi/>
                 </div>
-                <div className={'header__navigation'}>
-                    <Navigation classNames={['header_navigation_left_offset']}/>
+                <div className={'header__navigation header_navigation_left_offset'}>
+                    <Navigation classNames={['']}/>
                 </div>
                 <div className={'header__email'}>
                     <EmailUi/>
