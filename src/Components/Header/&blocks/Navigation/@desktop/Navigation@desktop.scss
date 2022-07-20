@@ -1,0 +1,12 @@
+.navigation {
+  position: relative;
+
+  height: 100%;
+
+  .navigation__links {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+}

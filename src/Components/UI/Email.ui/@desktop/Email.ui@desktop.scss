@@ -1,0 +1,25 @@
+.email-ui {
+  height: 100%;
+  width: 100%;
+
+  .email-ui__link {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .email-ui__text {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 17px;
+
+      color: #FFFFFF;
+    }
+  }
+}

@@ -1,5 +1,11 @@
 body {
   background: #181C21;
+
+  font-size: clamp(5px, 5px + 0.2vw, 32px);
+}
+
+a {
+  text-decoration: none;
 }
 
 .app-container {

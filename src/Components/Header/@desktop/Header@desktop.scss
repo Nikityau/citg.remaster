@@ -7,13 +7,14 @@
     height: 100%;
 
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    .header__logo {
-
+    .header__logo, .header__navigation, .header__email {
+      height: 100%;
     }
 
     .header__navigation {
-
     }
 
     .header__email {

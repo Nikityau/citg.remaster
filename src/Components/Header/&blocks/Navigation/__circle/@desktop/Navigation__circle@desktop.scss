@@ -1,0 +1,15 @@
+.navigation__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #FFFFFF;
+
+  transition: transform .3s ease-in-out;
+  transform: translate(45px, 50px);
+}

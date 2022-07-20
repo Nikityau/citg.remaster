@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom'
+import LoaderPage from "components/Pages/Loader.page/Loader.page";
 
 const Home = React.lazy(() => import('../Pages/Home.page/Home.page'))
 const Projects = React.lazy(() => import('../Pages/Projects.page/Projects.page'))
@@ -9,7 +10,7 @@ const Member = React.lazy(() => import('../Pages/Member.page/Member.page'))
 
 const AppRouter = () => {
     return (
-        <>
+        <Suspense fallback={<LoaderPage/>}>
             <Routes>
                 <Route index path={'/'} element={<Home/>}/>
                 <Route exact path={'/projects'} element={<Projects/>}/>
@@ -17,7 +18,7 @@ const AppRouter = () => {
                 <Route exact path={'/team'} element={<Team/>}/>
                 <Route exact path={'/team/:memberId'} element={<Member/>}/>
             </Routes>
-        </>
+        </Suspense>
     );
 };
 

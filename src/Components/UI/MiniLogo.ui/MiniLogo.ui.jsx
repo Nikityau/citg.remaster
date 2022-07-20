@@ -4,9 +4,9 @@ import './MiniLogo.ui.scss'
 
 import logo_img from 'src/assets/icons/favicon/logo.svg'
 
-const MiniLogoUi = () => {
+const MiniLogoUi = ({ classNames }) => {
     return (
-        <div className={'mini-logo-ui'}>
+        <div className={['mini-logo-ui', classNames && classNames?.join(' ')].join(' ')}>
             <div className={'mini-logo-ui__img-container'}>
                 <img className={'mini-logo-ui__img'} src={logo_img} alt={'logo'}/>
             </div>
