@@ -1,0 +1,31 @@
+.study-case {
+  .study-case__number {
+    span {
+      font-family: 'Karla', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 16px;
+
+      color: #DC6041;
+    }
+  }
+  .study-case__case, .study-case__areas {
+      h4, span {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 47px;
+
+        color: #FFFFFF;
+      }
+  }
+  .study-case__areas {
+    span {
+      font-weight: 600;
+      font-size: .9rem;
+      line-height: 25px;
+    }
+  }
+}

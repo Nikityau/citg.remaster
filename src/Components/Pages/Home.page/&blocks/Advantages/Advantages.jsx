@@ -15,7 +15,7 @@ import './_background_gradient_red/Advantages_background_gradient_red.scss'
 
 const Advantages = () => {
     return (
-        <div className={'advantages advantages_background_gradient_red'}>
+        <div id={'advantages-anchor'} className={'advantages advantages_background_gradient_red'}>
             <div className={'advantages__container app-container'}>
                 <div className={'advantages__text-side'}>
                     <Advantages__text/>

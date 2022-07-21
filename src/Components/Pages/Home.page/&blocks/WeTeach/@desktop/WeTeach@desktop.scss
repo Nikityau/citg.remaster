@@ -1,0 +1,46 @@
+.we-teach {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  .we-teach__container {
+    width: 100%;
+
+    padding-top: 200px;
+
+    .we-teach__examples-box {
+      position: relative;
+
+      max-width: 70%;
+      overflow: hidden;
+
+      padding: 40px 100px 80px;
+
+      .we-teach__title {
+        h3 {
+          font-family: 'Inter',sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 2.2rem;
+          line-height: 140%;
+
+          letter-spacing: -0.3px;
+
+          color: #F4682C;
+
+        }
+      }
+      .we-teach__examples {
+        max-height: 350px;
+
+        padding-top: 20px;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+  }
+}
