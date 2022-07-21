@@ -1,0 +1,50 @@
+.advantages__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .advantages__text-title {
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 3rem;
+      line-height: 65px;
+      text-transform: capitalize;
+
+      color: #F4672B;
+    }
+  }
+  .advantages__text-subtitle {
+    h5 {
+      font-family: 'Cabin', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 24px;
+      letter-spacing: -0.3px;
+
+      color: #FFFFFF;
+    }
+  }
+  .advantages__text-other {
+    max-width: 350px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      /* or 25px */
+
+      letter-spacing: -0.3px;
+
+      color: #FFFFFF;
+    }
+  }
+}

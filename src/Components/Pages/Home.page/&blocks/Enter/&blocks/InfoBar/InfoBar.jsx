@@ -1,10 +1,11 @@
 import React from 'react';
 
 import './InfoBar.scss'
+import './_border_gradient/InfoBar_border_gradient.scss'
 
 const InfoBar = ({classNames}) => {
     return (
-        <div className={['info-bar', classNames && classNames?.join(' ')].join(' ')}>
+        <div className={['info-bar', 'info-bar_border_gradient', classNames && classNames?.join(' ')].join(' ')}>
             <div className={'info-bar__container'}>
                 <div className={'info-bar__upper-info'}>
                     <p>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweb_citg=self.webpackChunkweb_citg||[]).push([[61],{61:(e,t,c)=>{c.r(t),c.d(t,{default:()=>a});var n,u=c(294);const a=function(){return n||(n=u.createElement("div",null,"Team.page"))}}}]);
