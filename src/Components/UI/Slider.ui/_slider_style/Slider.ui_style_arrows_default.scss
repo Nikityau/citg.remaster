@@ -1,0 +1,27 @@
+.slider-ui_style_arrows_default {
+  .splide {
+
+    .splide__arrows {
+
+      .splide__arrow--prev, .splide__arrow--next {
+        width: auto;
+        height: auto;
+
+        background: transparent;
+
+        font-size: 3rem;
+      }
+
+      .splide__arrow--prev {
+        left: -1.7rem;
+
+        img {
+          transform: rotate(180deg);
+        }
+      }
+      .splide__arrow--next {
+        right: -1.7rem;
+      }
+    }
+  }
+}

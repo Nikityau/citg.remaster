@@ -1,0 +1,30 @@
+.awards {
+  padding: 40px 0 100px;
+
+  width: 100%;
+
+  .awards__container {
+    .awards__title {
+      text-align: right;
+
+      h3 {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.3rem;
+        line-height: 28px;
+
+        color: #F8682A;
+      }
+    }
+
+    .awards__awards-box {
+      width: auto;
+      height: 350px;
+
+      margin-top: 50px;
+
+      padding: 0 40px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import Enter from "./&blocks/Enter/Enter";
 import Advantages from "components/Pages/Home.page/&blocks/Advantages/Advantages";
 import WeTeach from "components/Pages/Home.page/&blocks/WeTeach/WeTeach";
 import Projects from "components/Pages/Home.page/&blocks/Projects/Projects";
+import Awards from "components/Pages/Home.page/&blocks/Awards/Awards";
 
 import './Home.page.scss'
 
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Advantages/>
             <WeTeach/>
             <Projects/>
+            <Awards/>
         </div>
     );
 };

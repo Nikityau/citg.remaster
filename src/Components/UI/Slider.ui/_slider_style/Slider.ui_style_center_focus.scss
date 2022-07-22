@@ -1,0 +1,20 @@
+.slider-ui_style_center_focus {
+  .splide {
+
+    .splide__track {
+      .splide__list {
+        .splide__slide {
+          transition: transform .3s linear;
+
+          transform: scale(.95);
+          filter: grayscale(30);
+        }
+
+        .is-active {
+          transform: scale(1);
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+}

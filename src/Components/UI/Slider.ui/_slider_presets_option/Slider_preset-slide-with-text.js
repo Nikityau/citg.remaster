@@ -1,4 +1,4 @@
-export const PRESET_SLIDE_WITH_TEXT = {
+export const PRESET_SLIDER_WITH_TEXT = {
     type: 'loop',
     autoplay: true,
     pagination: false,
