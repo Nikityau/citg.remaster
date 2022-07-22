@@ -11,6 +11,7 @@ import '../../assets/fonts/fonts.scss'
 import './App.scss'
 
 const App = () => {
+
     return (
         <BrowserRouter>
             <Header />

@@ -5,6 +5,8 @@ import Navigation__link from "components/Header/&blocks/Navigation/__link/Naviga
 
 import NavigationController from "components/Header/&blocks/Navigation/controller/Navigation.controller";
 
+import {HOME_LINK, PROJECTS_LINK, TEAM_LINK} from "components/AppRouter/AppRouter.links";
+
 import './Navigation.scss'
 
 const HeaderNavigation = ({ classNames }) => {
@@ -23,9 +25,9 @@ const HeaderNavigation = ({ classNames }) => {
     return (
         <div className={['navigation', classNames && classNames?.join(' ')].join(' ')}>
             <nav className={'navigation__links'}>
-                <Navigation__link dataAttr={homeAttr} link={'/'} textLink={'Главная'}/>
-                <Navigation__link dataAttr={projectsAttr} link={'/projects'} textLink={'Проекты'}/>
-                <Navigation__link dataAttr={teamAttr} link={'/team'} textLink={'Команда'}/>
+                <Navigation__link dataAttr={homeAttr} link={HOME_LINK} textLink={'Главная'}/>
+                <Navigation__link dataAttr={projectsAttr} link={PROJECTS_LINK} textLink={'Проекты'}/>
+                <Navigation__link dataAttr={teamAttr} link={TEAM_LINK} textLink={'Команда'}/>
             </nav>
             <Navigation__circle dataAttr={'circle'} moveDirCb={navController?.moveDir || function () {}}/>
         </div>

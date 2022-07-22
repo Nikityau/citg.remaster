@@ -4,7 +4,8 @@ import StudyCase from "./&blocks/StudyCase/StudyCase";
 
 import BackgroundPartyUi from "ui/BackgroundParty.ui/BackgroundParty.ui";
 
-import {weTeach_study_cases} from "./_study_cases/WeTeach_study_cases";
+import { weTeach_study_casesPreset } from "components/Pages/Home.page/&blocks/WeTeach/_study_cases.preset/WeTeach_study_cases.preset";
+
 
 import './WeTeach.scss'
 
@@ -19,7 +20,7 @@ const WeTeach = () => {
                     </div>
                     <div className={'we-teach__examples'}>
                         {
-                            weTeach_study_cases?.map((studyCase, index) =>
+                            weTeach_study_casesPreset?.map((studyCase, index) =>
                                 <StudyCase
                                     key={studyCase.id}
                                     number={studyCase.number}

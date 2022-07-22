@@ -1,0 +1,33 @@
+.projects {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  z-index: 1;
+
+  .projects__container {
+
+    .projects__title-container {
+      width: 100%;
+
+      display: flex;
+      justify-content: end;
+    }
+
+    .projects__projects-box {
+      width: auto;
+
+      padding: 60px 142px;
+
+    }
+
+    .projects__projects-container {
+      width: 100%;
+
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  }
+}

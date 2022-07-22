@@ -1,0 +1,19 @@
+.projects_back_red_gradient {
+  &:after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 50%;
+    height: 50%;
+
+    background: linear-gradient(300.09deg, #71192A 53.97%, rgba(113, 25, 42, 0) 122.69%);
+    mix-blend-mode: lighten;
+    filter: blur(300px);
+    transform: translate(-50%, 0);
+
+    z-index: -1;
+  }
+}

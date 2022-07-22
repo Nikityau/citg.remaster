@@ -1,0 +1,27 @@
+.projects__title {
+  text-align: end;
+
+  .projects__title-main {
+    h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size:  2rem;
+      line-height: 28px;
+
+      color: #F8682A;
+    }
+  }
+
+  .projects__subtitle {
+    h5 {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 1.1rem;
+      line-height: 28px;
+
+      color: #FFFFFF;
+    }
+  }
+}

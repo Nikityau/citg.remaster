@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid'
 
 export const PLUG = 'P.L.U.G'
 
-export const weTeach_study_cases = [
+export const weTeach_study_casesPreset = [
     {
         id:nanoid(),
         number: 'I',

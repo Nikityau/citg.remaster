@@ -13,7 +13,9 @@ module.exports = {
             components: path.resolve(__dirname, 'src', 'Components'),
             ui: path.resolve(__dirname, 'src', 'Components', 'UI'),
             assets: path.resolve(__dirname, 'src', 'assets'),
-            slider_ui: path.resolve(__dirname, 'src', 'Components', 'UI', 'Slider.ui')
+            slider_ui: path.resolve(__dirname, 'src', 'Components', 'UI', 'Slider.ui'),
+            utils: path.resolve(__dirname, 'src', 'Utils'),
+            utils_components: path.resolve(__dirname, 'src', 'Components', 'Utils.Components')
         }
     },
     output: {

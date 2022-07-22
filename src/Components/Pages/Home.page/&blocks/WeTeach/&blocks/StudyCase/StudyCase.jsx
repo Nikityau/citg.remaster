@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {PLUG} from "components/Pages/Home.page/&blocks/WeTeach/_study_cases/WeTeach_study_cases";
+import {PLUG} from "components/Pages/Home.page/&blocks/WeTeach/_study_cases.preset/WeTeach_study_cases.preset";
 
 import './StudeCase.scss'
 import './_hide_plug/StudyCase_hide_plug.scss'

@@ -3,6 +3,9 @@ import { Routes, Route } from 'react-router-dom'
 
 import LoaderPage from "components/Pages/Loader.page/Loader.page";
 
+import { HOME_LINK, TEAM_MEMBER_LINK, TEAM_LINK,PROJECTS_LINK,CURRENT_PROJECT_LINK }
+    from './AppRouter.links'
+
 const Home = React.lazy(() => import('../Pages/Home.page/Home.page'))
 const Projects = React.lazy(() => import('../Pages/Projects.page/Projects.page'))
 const Project = React.lazy(() => import('../Pages/Project.page/Project.page'))
@@ -13,11 +16,11 @@ const AppRouter = () => {
     return (
         <Suspense fallback={<LoaderPage/>}>
             <Routes>
-                <Route index path={'/'} element={<Home/>}/>
-                <Route exact path={'/projects'} element={<Projects/>}/>
-                <Route exact path={'/projects/:projectId'} element={<Project/>}/>
-                <Route exact path={'/team'} element={<Team/>}/>
-                <Route exact path={'/team/:memberId'} element={<Member/>}/>
+                <Route index path={HOME_LINK} element={<Home/>}/>
+                <Route exact path={PROJECTS_LINK} element={<Projects/>}/>
+                <Route exact path={CURRENT_PROJECT_LINK} element={<Project/>}/>
+                <Route exact path={TEAM_LINK} element={<Team/>}/>
+                <Route exact path={TEAM_MEMBER_LINK} element={<Member/>}/>
             </Routes>
         </Suspense>
     );
