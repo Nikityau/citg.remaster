@@ -1,0 +1,25 @@
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  background: #20252C;
+
+  .footer__container {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0 30px;
+
+    .footer__law-part {
+      height: auto;
+    }
+    .footer__info-part {
+      display: flex;
+
+      gap: 30px;
+    }
+  }
+}

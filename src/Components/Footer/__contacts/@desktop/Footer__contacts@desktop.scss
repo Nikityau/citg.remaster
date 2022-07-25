@@ -1,0 +1,62 @@
+.footer__contacts {
+  height: 100%;
+
+  text-align: right;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .footer__contacts-title {
+    h4 {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 19px;
+      letter-spacing: 0.045em;
+
+      color: #FFFFFF;
+    }
+  }
+
+  .footer__wrapper {
+    .footer__contacts-antique-phone {
+      span {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .footer__contacts-modern-phone {
+      display: flex;
+      flex-direction: column;
+
+      span {
+
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 26px;
+
+        color: #FFFFFF;
+      }
+      span[data-soc-nets="telegram&whatsapp"] {
+        font-size: .8rem;
+
+        color: #F24E1E;
+      }
+
+    }
+  }
+
+  .footer__contacts-email {
+
+  }
+}
