@@ -1,0 +1,47 @@
+.about-us__button {
+
+  background: transparent;
+
+  outline: none;
+
+  border: 1px solid #FFFFFF;
+  border-radius: 15px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  a {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 20px;
+
+  }
+
+  .about-us__button-text {
+    span {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.3rem;
+      line-height: 29px;
+
+      letter-spacing: 0.045em;
+
+      color: #FFFFFF;
+    }
+  }
+
+  .about-us__button-img {
+    width: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}

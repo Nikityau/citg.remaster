@@ -1,0 +1,22 @@
+.about-us_back_orange_gradient {
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 60%;
+
+    background: linear-gradient(300.09deg, #712E19 42.53%, rgba(113, 25, 42, 0) 111.26%);
+
+    mix-blend-mode: lighten;
+
+    filter: blur(100px);
+
+    transform: translate(-40%, 50%);
+
+    z-index: -1;
+  }
+}
