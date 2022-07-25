@@ -1,0 +1,13 @@
+.projects-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 0 80px;
+
+  .projects-page__container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+}

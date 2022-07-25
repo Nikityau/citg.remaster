@@ -1,0 +1,21 @@
+.projects-in-dev {
+
+  .projects-in-dev__container {
+    .projects-in-dev__title {
+
+    }
+
+    .projects-in-dev__projects-container {
+      margin-top: 20px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .projects-in-dev__project {
+        width: calc(50% - 10px);
+        height: 270px;
+      }
+    }
+  }
+}

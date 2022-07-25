@@ -1,9 +1,17 @@
 import React from 'react';
 import {Splide, SplideTrack} from '@splidejs/react-splide'
+import { Grid } from '@splidejs/splide-extension-grid';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
-import { SLIDER_DEFAULT_SLIDE, SLIDER_SLIDE_LINK, SLIDER_SLIDE_WITH_TEXT } from './_slider_presets_option/Slider_presets'
+import {
+    SLIDER_DEFAULT_SLIDE,
+    SLIDER_GRID_3_2,
+    SLIDER_SLIDE_LINK,
+    SLIDER_SLIDE_WITH_TEXT
+} from './_slider_presets_option/Slider_presets'
 import { PRESET_SLIDER_WITH_TEXT } from './_slider_presets_option/Slider_preset-slide-with-text'
 import {PRESET_SLIDER_DEFAULT} from "slider_ui/_slider_presets_option/Slider_preset-default-slide";
+import {SLIDER_PRESET_GRID_3_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-3-2";
 
 import './Slider.ui.scss'
 import '@splidejs/splide/css';
@@ -23,6 +31,8 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return PRESET_SLIDER_DEFAULT
             case SLIDER_SLIDE_LINK:
                 return ''
+            case SLIDER_GRID_3_2:
+                return SLIDER_PRESET_GRID_3_2
             case SLIDER_SLIDE_WITH_TEXT:
                 return PRESET_SLIDER_WITH_TEXT
             default:
@@ -39,6 +49,12 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                     'slider-ui_style_arrows_default',
                     'slider-ui_style_center_focus'
                 ]
+            case SLIDER_GRID_3_2:
+                return [
+                    'slider-ui_slider_style-default',
+                    'slider-ui_style_pagination_default',
+                    'slider-ui_style_arrows_default',
+                ]
             default:
                 return ['']
         }
@@ -50,6 +66,10 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
             sliderClasses()?.join(' ')
         ].join(' ')}>
             <Splide
+                extensions={{
+                    Grid,
+                    AutoScroll
+                }}
                 hasTrack={false}
                 options={sliderOptions()}
             >

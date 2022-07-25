@@ -1,0 +1,21 @@
+.contests-projects {
+  width: 100%;
+
+  .contests-projects__container {
+    .contests-projects__title {
+    }
+
+    .contest-projects__projects-container {
+      margin-top: 20px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .contest-projects__project {
+        width: 523px;
+        height: 270px;
+      }
+    }
+  }
+}
