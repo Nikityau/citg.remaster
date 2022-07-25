@@ -39,7 +39,6 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return PRESET_SLIDER_DEFAULT
         }
     }
-
     const sliderClasses = () => {
         switch (sliderOptionsPreset) {
             case SLIDER_DEFAULT_SLIDE:
@@ -59,6 +58,16 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return ['']
         }
     }
+    const sliderExtensions = () => {
+        switch (sliderOptionsPreset) {
+            case SLIDER_SLIDE_WITH_TEXT:
+                return { Grid, AutoScroll }
+            case SLIDER_GRID_3_2:
+                return { Grid }
+            default:
+                return { }
+        }
+    }
 
     return (
         <div className={['slider-ui',
@@ -66,10 +75,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
             sliderClasses()?.join(' ')
         ].join(' ')}>
             <Splide
-                extensions={{
-                    Grid,
-                    AutoScroll
-                }}
+                extensions={sliderExtensions()}
                 hasTrack={false}
                 options={sliderOptions()}
             >

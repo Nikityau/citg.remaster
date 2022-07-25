@@ -7,6 +7,7 @@ import ProjectsInDev from "components/Pages/Projects.page/&blocks/ProjectsInDev/
 import { projectsPage_projectsPreset } from './_projects.preset/Projects.page_projects.preset'
 
 import './Projects.page.scss'
+import './_border_radius/Projects.page_borderRadius.scss'
 
 const ProjectsPage = () => {
 

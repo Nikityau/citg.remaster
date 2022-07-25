@@ -10,9 +10,9 @@ import './_circle_color/BacgroundPart.ui_circle_color_red_purple.scss'
 import './_circle_color/BacgroundPart.ui_circle_color_purple_orange.scss'
 import './_circle_color/BacgroundPart.ui_circle_color_lgreen_blue.scss'
 
-const BackgroundPartyUi = () => {
+const BackgroundPartyUi = ({ classNames }) => {
     return (
-        <div className={'background-party'}>
+        <div className={['background-party', classNames && classNames?.join(' ')].join(' ')}>
             <div className={'background-party__container'}>
                 <div className={'background-party__circle background-party_circle_size_b background-party_circle_color_red_purple'}/>
                 <div className={'background-party__circle background-party_circle_size_s background-party_circle_color_purple_orange'}/>
