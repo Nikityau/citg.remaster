@@ -1,0 +1,28 @@
+.team-member-card__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #F8682A;
+
+  border: none;
+
+  padding: 12px 40px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  transition: opacity .3s ease-in-out;
+
+  span {
+    text-transform: uppercase;
+
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .8rem;
+    line-height: 14px;
+
+    color: #FFFFFF;
+
+  }
+}

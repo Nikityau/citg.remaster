@@ -1,0 +1,36 @@
+import React from "react";
+import {Link} from "react-router-dom";
+
+import TeamMemberCard__Button from "./__button/TeamMemberCard__button";
+
+import {transformDryIdLink} from "utils/transformDryIdLink";
+import {TEAM_MEMBER_LINK} from "components/AppRouter/AppRouter.links";
+
+import './TeamMemberCard.scss'
+import './_hover/TeamMermberCard_opacity_hover.scss'
+import './_hover/TeamMemberCard_back_white_hover.scss'
+import './_hover/TeamMemberCard_text_color_black_hover.scss'
+
+
+const TeamMemberCard = ({ photo,fullName,skills, id }) => {
+    return (
+        <div className={'team-member-card team-member-card_back_white_hover'}>
+            <Link to={transformDryIdLink(TEAM_MEMBER_LINK, id)}>
+                <div className={'team-member-card__photo'}>
+                    <img src={photo} alt={'member-img'}/>
+                </div>
+                <div className={'team-member-card__info'}>
+                    <div className={'team-member-card__full-name team-member-card_text_color_black_hover'}>
+                        <p> { fullName } </p>
+                    </div>
+                    <div className={'team-member-card__skills'}>
+                        <p> { skills?.join(', ') } </p>
+                    </div>
+                </div>
+                <TeamMemberCard__Button classNames={['team-member-card_opacity_hover']}/>
+            </Link>
+        </div>
+    )
+}
+
+export default TeamMemberCard;

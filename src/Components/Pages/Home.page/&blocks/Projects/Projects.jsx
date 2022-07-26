@@ -2,12 +2,11 @@ import React from 'react';
 
 import Projects__title from "components/Pages/Home.page/&blocks/Projects/__title/Projects__title";
 
-import ButtonLink from "components/Pages/Home.page/&blocks/Projects/&blocks/ButtonLink/ButtonLink";
 import ProjectPhotoLink from "components/Pages/Home.page/&blocks/Projects/&blocks/ProjectPhotoLink/ProjectPhotoLink";
 
 import PageLineUi from "ui/PageLine.ui/PageLine.ui";
 
-import { projects_photo_linkPreset } from './_projects_photo_link.preset/Projects_photo_link.preset'
+import {projects_photo_linkPreset} from './_projects_photo_link.preset/Projects_photo_link.preset'
 
 import './Projects.scss'
 
@@ -17,6 +16,8 @@ import './_pos/Projects_pos_center_block.scss'
 
 import './_back_purple_gradient/Projects_back_purple_gradient.scss'
 import './_back_red_gradient/Projects_back_red_gradient.scss'
+import ButtonLinkUi from "ui/ButtonLink.ui/ButtonLink.ui";
+import {PROJECTS_LINK} from "components/AppRouter/AppRouter.links";
 
 const Projects = () => {
     return (
@@ -42,7 +43,11 @@ const Projects = () => {
                             )
                         }
                     </div>
-                    <ButtonLink classNames={['projects_pos_top_small_offset']}/>
+                    <ButtonLinkUi
+                        link={PROJECTS_LINK}
+                        text={'load more'}
+                        classNames={['projects_pos_top_small_offset']}
+                    />
                 </div>
             </div>
         </div>

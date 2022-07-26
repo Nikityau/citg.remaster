@@ -1,0 +1,12 @@
+.team-member-card_text_color_black_hover {
+}
+
+.team-member-card {
+  &:hover {
+    .team-member-card_text_color_black_hover {
+      p {
+        color: #000;
+      }
+    }
+  }
+}

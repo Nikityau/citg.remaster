@@ -1,0 +1,11 @@
+.team-member-card_opacity_hover {
+  opacity: 0;
+}
+
+.team-member-card {
+  &:hover {
+    .team-member-card_opacity_hover {
+      opacity: 1;
+    }
+  }
+}

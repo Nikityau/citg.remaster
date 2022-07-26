@@ -1,0 +1,59 @@
+.team-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 140px 0 100px;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  .team-page__container {
+
+    .team-page__page-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .team-page__title {
+        h2 {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 4rem;
+
+          color: #FFFFFF;
+        }
+      }
+
+      .team-page__subtitle {
+        max-width: 50%;
+
+        text-align: center;
+
+        p {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 17px;
+          letter-spacing: 0.045em;
+
+          color: #D5D4E6;
+        }
+      }
+    }
+
+    .team-page__team-members {
+      margin-top: 50px;
+
+      width: 100%;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+}
