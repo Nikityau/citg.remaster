@@ -1,0 +1,18 @@
+.project-page_back_gradient_pink {
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100%;
+
+    z-index: 1;
+
+    background: linear-gradient(270deg, #BF3FA1 -1.17%, rgba(71, 0, 54, 0) 76.25%);
+
+    mix-blend-mode: overlay;
+  }
+}

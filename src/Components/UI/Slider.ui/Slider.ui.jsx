@@ -4,7 +4,7 @@ import { Grid } from '@splidejs/splide-extension-grid';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 import {
-    SLIDER_DEFAULT_SLIDE,
+    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE,
     SLIDER_GRID_3_2,
     SLIDER_SLIDE_LINK,
     SLIDER_SLIDE_WITH_TEXT
@@ -27,6 +27,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
 
     const sliderOptions = () => {
         switch (sliderOptionsPreset) {
+            case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE:
             case SLIDER_DEFAULT_SLIDE:
                 return PRESET_SLIDER_DEFAULT
             case SLIDER_SLIDE_LINK:
@@ -47,6 +48,12 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                     'slider-ui_style_pagination_default',
                     'slider-ui_style_arrows_default',
                     'slider-ui_style_center_focus'
+                ]
+            case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE:
+                return [
+                    'slider-ui_slider_style-default',
+                    'slider-ui_style_pagination_default',
+                    'slider-ui_style_arrows_default',
                 ]
             case SLIDER_GRID_3_2:
                 return [

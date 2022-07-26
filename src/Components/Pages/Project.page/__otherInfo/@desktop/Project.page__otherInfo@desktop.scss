@@ -1,0 +1,15 @@
+.project-page__other-info {
+  padding: 50px 0;
+
+  position: relative;
+
+  width: 100%;
+
+  z-index: 1;
+
+  .project-page__other-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,94 @@
+.project-page__mini-project-info {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+
+  width: 50%;
+
+  padding: 10px;
+
+  transform: translate(-50%, 50%);
+
+  background: #191E23;
+
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.25);
+
+  border-radius: 10px;
+
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+
+  .project-page__mini-preview-img {
+    width: 30%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: inherit;
+  }
+
+  .project-page__mini-addon-info {
+    width: 45%;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-bottom: 50px;
+
+    .project-page__mini-title {
+      h2 {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 3.4rem;
+        line-height: 77px;
+        letter-spacing: 0.045em;
+
+        color: #FFFFFF;
+      }
+    }
+    .project-page__mini-description {
+      p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1rem;
+
+        color: #FFFFFF;
+      }
+    }
+    .project-page__mini-system-requirements {
+      p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: .91rem;
+        line-height: 17px;
+
+        color: #217AFF;
+      }
+    }
+    .project-page__mini-button {
+      a {
+        span {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 19px;
+
+          text-decoration-line: underline;
+
+          color: #FFFFFF;
+
+        }
+      }
+    }
+  }
+}

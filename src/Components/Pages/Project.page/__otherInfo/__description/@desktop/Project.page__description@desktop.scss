@@ -1,0 +1,30 @@
+.project-page__other-description-part {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .project-page__other-description-title {
+    h3 {
+      font-family: 'Inter',sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 29px;
+
+      color: #FFFFFF;
+    }
+  }
+  .project-page__other-description {
+    max-width: 70%;
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 19px;
+
+      color: #FFFFFF;
+    }
+  }
+}
