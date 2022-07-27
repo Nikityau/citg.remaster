@@ -1,5 +1,63 @@
 .project-page__useful-data {
   width: 100%;
 
+  margin-top: 70px;
 
+  display: flex;
+  justify-content: space-between;
+
+  .project-page__supported-devices, .project-page__app-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .project-page__supported-devices-title, .project-page__app-links-title {
+      h4 {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 28px;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .project-page__devices {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .project-page__app-links {
+    align-items: end;
+
+    .project-page__app-links-title {
+    }
+
+    .project-page__app-links-container {
+      display: inline-flex;
+      //justify-content: center;
+      gap: 70px;
+
+      padding: 10px 20px;
+
+      background: #0F1217;
+
+      border-radius: 10px;
+
+      .project-page__app-link {
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
 }

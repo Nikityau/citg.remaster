@@ -59,8 +59,18 @@ export const projectPage_projectPreset = {
     links_on_projects: [
         {
             id: nanoid(),
-            link: '',
-            image_link: ''
-        }
+            link: 'https://googplay.com',
+            image_link: playmarket_icon
+        },
+        {
+            id: nanoid(),
+            link: 'https://www.apple.com',
+            image_link: appstore_icon
+        },
+        {
+            id: nanoid(),
+            link: 'https://github.com',
+            image_link: github_icon
+        },
     ]
 }

@@ -1,0 +1,23 @@
+.project-page_back_gradient_purple {
+  &:after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 80%;
+    height: 90%;
+
+    z-index: -1;
+
+    background: linear-gradient(27.03deg, rgba(51, 49, 125, 0.5) 3.52%,
+            rgba(71, 0, 54, 0) 81.06%);
+
+    mix-blend-mode: normal;
+
+    filter: blur(104px);
+
+    transform: translate(-10%, 10%);
+  }
+}
