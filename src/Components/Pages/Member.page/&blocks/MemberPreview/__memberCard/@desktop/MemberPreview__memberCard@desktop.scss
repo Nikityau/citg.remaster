@@ -1,0 +1,145 @@
+.member-preview__member-card {
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  padding: 70px 80px 20px;
+
+  border-radius: 13px;
+
+  z-index: 1;
+
+  &:hover {
+    .member-preview__summary {
+
+
+      .member-preview__summary-text {
+        width: 120px;
+        padding: 15px 5px;
+      }
+    }
+  }
+
+  .member-preview__summary {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 1;
+
+    .member-preview__summary-text {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 0;
+      padding: 15px 0;
+
+      background: #6C2AF8;
+
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      border-radius: 4px;
+
+      transition: all .3s ease-in-out;
+      overflow: hidden;
+
+      span {
+        font-family: 'Karla', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 14px;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .member-preview__summary-img-download {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 10px 5px;
+
+      img {
+        width: 25px;
+      }
+    }
+  }
+
+  .member-preview__member-card-photo {
+    width: 170px;
+    height: 170px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    img {
+      width: 110%;
+      height: 110%;
+    }
+  }
+
+  .member-preview__member-card-info {
+    text-align: center;
+
+    .member-preview__member-card-full-name {
+      span {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 27px;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .member-preview__member-card-skills {
+      max-width: 200px;
+
+      span {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: .8rem;
+        line-height: 17px;
+
+        color: #DED9D9;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  .member-preview__member-card-soc-nets {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .member-preview__member-card-soc-net {
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 35px;
+        }
+      }
+    }
+  }
+}
