@@ -4,10 +4,10 @@ import MemberPreview__MemberCard
     from "components/Pages/Member.page/&blocks/MemberPreview/__memberCard/MemberPreview__memberCard";
 import MemberPreview__MemberSkills
     from "components/Pages/Member.page/&blocks/MemberPreview/__memberSkills/MemberPreview__memberSkills";
-
-import './MemberPreview.scss'
 import MemberPreview__MemberCertificates
     from "components/Pages/Member.page/&blocks/MemberPreview/__memberCertificates/MemberPreview__memberCertificates";
+
+import './MemberPreview.scss'
 
 const MemberPreview = ({ member }) => {
     return (
