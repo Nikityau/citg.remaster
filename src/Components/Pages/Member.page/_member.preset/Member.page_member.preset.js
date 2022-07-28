@@ -299,52 +299,6 @@ export const memberPage_memberPreset = {
         },
         {
             id: nanoid(),
-            project_name: 'samurai',
-            project_description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-            main_img: samurai_img,
-            project_refs: [
-                {
-                    id: nanoid(),
-                    imgSrc: ref_1,
-                },
-                {
-                    id: nanoid(),
-                    imgSrc: ref_2,
-                },
-                {
-                    id: nanoid(),
-                    imgSrc: ref_3,
-                },
-                {
-                    id: nanoid(),
-                    imgSrc: ref_4,
-                },
-                {
-                    id: nanoid(),
-                    imgSrc: ref_5,
-                },
-            ],
-            software_used: [
-                {
-                    id: nanoid(),
-                    software_name: 'figma',
-                    software_icon: figma_img
-                },
-                {
-                    id: nanoid(),
-                    software_name: 'photoshop',
-                    software_icon: ps_img
-                },
-                {
-                    id: nanoid(),
-                    software_name: 'illustrator',
-                    software_icon: ai_img
-                },
-            ]
-
-        },
-        {
-            id: nanoid(),
             project_name: 'jinx',
             project_description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
             main_img: jinx_img,

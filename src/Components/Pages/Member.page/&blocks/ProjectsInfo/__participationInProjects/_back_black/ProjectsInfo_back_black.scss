@@ -1,0 +1,14 @@
+.projects-info_back_black {
+  width: auto;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  padding: 8px;
+
+  mix-blend-mode: normal;
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  border-radius: 20px;
+}

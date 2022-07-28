@@ -1,0 +1,78 @@
+.projects-info__my-works {
+  .projects-info__my-works-title {
+    h3 {
+      font-family: 'Roboto',sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 30px;
+
+      color: #FFFFFF;
+    }
+  }
+  .projects-info__my-works-container {
+    width: 100%;
+
+    padding-top: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-auto-rows: 50px;
+    gap: 20px;
+
+    .projects-info__my-works-default-template {
+      position: relative;
+
+      border-radius: 10px;
+      overflow: hidden;
+
+      width: 100%;
+      height: 100%;
+
+      background-size: contain;
+      background: rgba(255, 255, 255, 0.02) no-repeat center;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .projects-info__my-works-template-1 {
+      grid-column-end: span 2;
+      grid-row-end: span 8;
+    }
+    .projects-info__my-works-template-2 {
+      grid-column-end: span 4;
+      grid-row-end: span 10;
+    }
+    .projects-info__my-works-template-3 {
+      grid-column-end: span 2;
+      grid-row-end: span 10;
+    }
+    .projects-info__my-works-template-4 {
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+    }
+    .projects-info__my-works-template-5 {
+      grid-column-end: span 2;
+      grid-row-end: span 6;
+    }
+    .projects-info__my-works-template-6 {
+      grid-column-end: span 6;
+      grid-row-end: span 7;
+    }
+    .projects-info__my-works-template-7 {
+      grid-column-end: span 2;
+      grid-row-end: span 7;
+    }
+    .projects-info__my-works-template-8 {
+      grid-column-end: span 6;
+      grid-row-end: span 6;
+    }
+    .projects-info__my-works-template-9 {
+      grid-column-end: span 8;
+      grid-row-end: span 4;
+    }
+  }
+}

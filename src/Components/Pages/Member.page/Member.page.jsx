@@ -19,7 +19,7 @@ const MemberPage = () => {
         <div className={'member-page'}>
             <MemberPage__Mountain/>
             <MemberPreview member={member}/>
-            <ProjectsInfo/>
+            <ProjectsInfo member={member}/>
         </div>
     );
 };
