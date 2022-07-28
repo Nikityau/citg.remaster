@@ -34,9 +34,15 @@ export const memberPage_memberPreset = {
     id: nanoid(),
     photo: bredihin,
     full_name: 'Бредихин Андрей',
-    skills: [
-        'illustrator',
-        'UI/UX-designer'
+    hard_skills: [
+        {
+            id: nanoid(),
+            skill_name: 'illustrator',
+        },
+        {
+            id: nanoid(),
+            skill_name: 'UI/UX-designer'
+        },
     ],
     software_used: [
         {

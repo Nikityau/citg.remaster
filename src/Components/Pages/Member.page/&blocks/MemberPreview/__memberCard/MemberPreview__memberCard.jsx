@@ -41,7 +41,7 @@ const MemberPreview__MemberCard = (
                     <span> { fullName } </span>
                 </div>
                 <div className={'member-preview__member-card-skills'}>
-                    <span> { skills?.join(', ') } </span>
+                    <span> { skills?.reduce((prev, curr) => prev.skill_name + ', ' + curr.skill_name ) } </span>
                 </div>
             </div>
             <div className={'member-preview__member-card-soc-nets'}>
