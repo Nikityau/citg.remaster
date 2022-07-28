@@ -18,28 +18,31 @@ const ProjectsInfo__participationInProjects = ({ projects }) => {
                 <h3> Участие в проектах </h3>
             </div>
             <div className={'projects-info__participation-in-projects-container'}>
-                <SliderUi
-                    classNames={['projects-info_back_black']}
-                    sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
-                >
-                    {
-                        projects.map(project =>
-                            <SliderUi__defaultSlide
-                                key={project.id}
-                            >
-                                <div className={'projects-info__project'}
-                                    style={{
-                                        backgroundImage: `url(${project.project_img})`
-                                    }}
+                {
+                    projects && projects?.length !== 0 &&
+                    <SliderUi
+                        classNames={['projects-info_back_black']}
+                        sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
+                    >
+                        {
+                            projects?.map(project =>
+                                <SliderUi__defaultSlide
+                                    key={project.id}
                                 >
-                                    <Link to={transformDryIdLink(CURRENT_PROJECT_LINK, project.id)}>
+                                    <div className={'projects-info__project'}
+                                         style={{
+                                             backgroundImage: `url(${project?.project_img})`
+                                         }}
+                                    >
+                                        <Link to={transformDryIdLink(CURRENT_PROJECT_LINK, project?.id)}>
 
-                                    </Link>
-                                </div>
-                            </SliderUi__defaultSlide>
-                        )
-                    }
-                </SliderUi>
+                                        </Link>
+                                    </div>
+                                </SliderUi__defaultSlide>
+                            )
+                        }
+                    </SliderUi>
+                }
             </div>
         </div>
     );

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from 'axios'
 import {BrowserRouter} from "react-router-dom";
+
+import mirage from "src/Mirage/mirage";
 
 import AppRouter from "../AppRouter/AppRouter";
 
@@ -11,7 +14,6 @@ import '../../assets/fonts/fonts.scss'
 import './App.scss'
 
 const App = () => {
-
     return (
         <BrowserRouter>
             <Header />

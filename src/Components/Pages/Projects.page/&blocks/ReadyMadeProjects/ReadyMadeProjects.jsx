@@ -23,17 +23,20 @@ const ReadyMadeProjects = ({ readyMadeProjects }) => {
             </div>
             <div className={'ready-made-projects__projects-container'}>
                 <BackgroundPartyUi classNames={['projects-page_border_radius']}/>
-                <SliderUi
-                    sliderOptionsPreset={ SLIDER_GRID_3_2 }
-                >
-                    {
-                        readyMadeProjects?.map(project =>
-                            <SliderUi__defaultSlide key={project.id}>
-                                <ProjectsPage__Project imgSrc={project.imgSrc} id={project.id}/>
-                            </SliderUi__defaultSlide>
-                        )
-                    }
-                </SliderUi>
+                {
+                    readyMadeProjects && readyMadeProjects?.length !== 0 &&
+                    <SliderUi
+                        sliderOptionsPreset={ SLIDER_GRID_3_2 }
+                    >
+                        {
+                            readyMadeProjects?.map(project =>
+                                <SliderUi__defaultSlide key={project?.id || ''}>
+                                    <ProjectsPage__Project imgSrc={project?.imgSrc || project?.preview_img || ''} id={project?.id || ''}/>
+                                </SliderUi__defaultSlide>
+                            )
+                        }
+                    </SliderUi>
+                }
             </div>
         </div>
     );

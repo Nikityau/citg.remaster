@@ -19,12 +19,11 @@ const ProjectPage__Preview = ({project}) => {
                 'project-page_back_gradient_blue'
             ].join(' ')}
             style={{
-                backgroundImage: `url(${project.background_img})`,
+                backgroundImage: `url(${project?.project_addition_preview_img})`,
                 color: '#fff',
             }}
         >
             <ProjectPage_Back_Blur/>
-
             <ProjectPage__MiniProjectInfo project={ project }/>
         </div>
     );

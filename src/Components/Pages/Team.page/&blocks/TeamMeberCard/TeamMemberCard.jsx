@@ -24,7 +24,7 @@ const TeamMemberCard = ({ photo,fullName,skills, id }) => {
                         <p> { fullName } </p>
                     </div>
                     <div className={'team-member-card__skills'}>
-                        <p> { skills?.join(', ') } </p>
+                        <p> { skills?.reduce((prev,curr) => prev?.skill_name + ', ' + curr?.skill_name) } </p>
                     </div>
                 </div>
                 <TeamMemberCard__Button classNames={['team-member-card_opacity_hover']}/>

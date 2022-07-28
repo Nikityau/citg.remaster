@@ -21,26 +21,31 @@ const ProjectsInfo__MyWorks = ({myWorks}) => {
 
     return (
         <div className={'projects-info__my-works'}>
-            <div className={'projects-info__my-works-title'}>
-                <h3> Мои работы </h3>
-            </div>
-            <div className={'projects-info__my-works-container'}>
-                {
-                    myWorks.map((work, index) =>
-                        <div
-                            key={work.id}
-                            className={[
-                                'projects-info__my-works-default-template',
-                                getTemplateNumber(index + 1)
-                            ].join(' ')}
-                            style={{
-                                backgroundImage: `url(${work.main_img})`
-                            }}
-                        >
-                        </div>
-                    )
-                }
-            </div>
+            {
+                myWorks &&
+                <>
+                    <div className={'projects-info__my-works-title'}>
+                        <h3> Мои работы </h3>
+                    </div>
+                    <div className={'projects-info__my-works-container'}>
+                        {
+                            myWorks?.map((work, index) =>
+                                <div
+                                    key={work?.id}
+                                    className={[
+                                        'projects-info__my-works-default-template',
+                                        getTemplateNumber(index + 1)
+                                    ].join(' ')}
+                                    style={{
+                                        backgroundImage: `url(${work?.main_img})`
+                                    }}
+                                >
+                                </div>
+                            )
+                        }
+                    </div>
+                </>
+            }
         </div>
     );
 };

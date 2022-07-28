@@ -10,7 +10,7 @@ const ProjectPage__Description = ({ project }) => {
             </div>
             <div className={'project-page__other-description'}>
                 <p>
-                    { project.description }
+                    { project?.description }
                 </p>
             </div>
         </div>

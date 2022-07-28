@@ -11,20 +11,20 @@ const MemberPreview__MemberSkills = ({ hard_skills, software }) => {
             <div className={'member-preview__member-skills-container'}>
                 <div className={'member-preview__member-software-list'}>
                     {
-                        software.map(soft =>
+                        software?.map(soft =>
                             <div className={'member-preview__member-software'}
-                                key={soft.id}
+                                key={soft?.id}
                             >
-                                <img src={soft.software_icon} alt={'icon'}/>
+                                <img src={soft?.software_icon} alt={'icon'}/>
                             </div>
                         )
                     }
                 </div>
                 <div className={'member-preview__member-hard-skills-list'}>
                     {
-                        hard_skills.map(hard =>
-                            <div key={hard.id} className={'member-preview__member-hard-skill'}>
-                                <span> { hard.skill_name } </span>
+                        hard_skills?.map(hard =>
+                            <div key={hard?.id} className={'member-preview__member-hard-skill'}>
+                                <span> { hard?.skill_name } </span>
                             </div>
                         )
                     }

@@ -20,12 +20,12 @@ const ProjectsInDev = ({ projectsInDev }) => {
                     {
                         projectsInDev?.map(project =>
                             <ProjectsPage__ProjectInDev
-                                key={project.id}
-                                id={project.id}
+                                key={project?.id || ''}
+                                id={project?.id || ''}
                                 classNames={['projects-in-dev__project']}
-                                title={project.title}
-                                description={project.description}
-                                imgSrc={project.imgSrc}
+                                title={project?.name || ''}
+                                description={project?.description || ''}
+                                imgSrc={project?.imgSrc || project?.preview_img || ''}
                             />
                         )
                     }

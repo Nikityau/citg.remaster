@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-import {
-    teamPage_team_membersPreset
-} from "components/Pages/Team.page/_team_members.preset/Team.page_team_members.preset";
 import TeamMemberCard from "components/Pages/Team.page/&blocks/TeamMeberCard/TeamMemberCard";
+
+import CITG_APIController from "src/API/CITG_API.controller";
 
 import './Team.page.scss'
 import './_back/Team.page_back_gradient_purple.scss'
 import './_back/Team.page_back_gradient_orange.scss'
 
+
 const TeamPage = () => {
+
+    const [team, setTeam] = useState([])
+
+    useEffect(() => {
+        (async () => {
+            const response = await CITG_APIController.getTeam()
+            setTeam(response)
+        })()
+    }, [])
+
     return (
         <div className={'team-page team-page_back_gradient_purple team-page_back_gradient_orange'}>
             <div className={'team-page__container app-container'}>
@@ -26,13 +36,13 @@ const TeamPage = () => {
                 </div>
                 <div className={'team-page__team-members'}>
                     {
-                        teamPage_team_membersPreset.map(member =>
+                        team?.map(member =>
                             <TeamMemberCard
-                                key={member.id}
-                                id={member.id}
-                                fullName={member.fullName}
-                                skills={member.skills}
-                                photo={member.photo}
+                                key={member?.id || ''}
+                                id={member?.id || ''}
+                                fullName={member?.full_name || ''}
+                                skills={member?.hard_skills || ''}
+                                photo={member?.photo || ''}
                             />
                         )
                     }

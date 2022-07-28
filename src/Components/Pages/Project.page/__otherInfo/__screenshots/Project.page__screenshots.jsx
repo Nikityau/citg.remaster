@@ -13,20 +13,23 @@ const ProjectPage__Screenshots = ({ project }) => {
                 <h3> Снимки экрана </h3>
             </div>
             <div className={'project-page__other-screenshots-slider'}>
-                <SliderUi
-                    sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
-                >
-                    {
-                        project.project_images.map(img =>
-                            <SliderUi__defaultSlide key={img.id}>
-                                <div className={'project-page__other-img'}
-                                     style={{ backgroundImage:`url(${img.imgSrc})` }}
-                                >
-                                </div>
-                            </SliderUi__defaultSlide>
-                        )
-                    }
-                </SliderUi>
+                {
+                    project && project.screenshots && project?.screenshots?.length !== 0 &&
+                    <SliderUi
+                        sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
+                    >
+                        {
+                            project?.screenshots?.map(img =>
+                                <SliderUi__defaultSlide key={img?.id}>
+                                    <div className={'project-page__other-img'}
+                                         style={{ backgroundImage:`url(${img?.image})` }}
+                                    >
+                                    </div>
+                                </SliderUi__defaultSlide>
+                            )
+                        }
+                    </SliderUi>
+                }
             </div>
         </div>
     );

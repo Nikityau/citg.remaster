@@ -7,17 +7,17 @@ const ProjectPage__MiniProjectInfo = ({ project }) => {
         <div className={'project-page__mini-project-info'}>
             <div className={'project-page__mini-preview-img'}
                 style={{
-                    backgroundImage: `url(${project.preview_img})`
+                    backgroundImage: `url(${project?.preview_img})`
                 }}
             >
             </div>
             <div className={'project-page__mini-addon-info'}>
                 <div className={'project-page__mini-title'}>
-                    <h2> { project.project_name } </h2>
+                    <h2> { project?.name } </h2>
                 </div>
                 <div className={'project-page__mini-description'}>
                     <p>
-                        { project.description.substring(0, 250) }...
+                        { project?.description?.substring(0, 250) }...
                     </p>
                 </div>
                 <div className={'project-page__mini-system-requirements'}>

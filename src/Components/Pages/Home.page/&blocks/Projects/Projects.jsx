@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Projects__title from "components/Pages/Home.page/&blocks/Projects/__title/Projects__title";
 
 import ProjectPhotoLink from "components/Pages/Home.page/&blocks/Projects/&blocks/ProjectPhotoLink/ProjectPhotoLink";
 
 import PageLineUi from "ui/PageLine.ui/PageLine.ui";
+import ButtonLinkUi from "ui/ButtonLink.ui/ButtonLink.ui";
+import {PROJECTS_LINK} from "components/AppRouter/AppRouter.links";
 
-import {projects_photo_linkPreset} from './_projects_photo_link.preset/Projects_photo_link.preset'
+import CITG_API from "src/API/CITG_API.controller";
 
 import './Projects.scss'
 
@@ -16,10 +18,18 @@ import './_pos/Projects_pos_center_block.scss'
 
 import './_back_purple_gradient/Projects_back_purple_gradient.scss'
 import './_back_red_gradient/Projects_back_red_gradient.scss'
-import ButtonLinkUi from "ui/ButtonLink.ui/ButtonLink.ui";
-import {PROJECTS_LINK} from "components/AppRouter/AppRouter.links";
 
 const Projects = () => {
+
+    const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        (async () => {
+            const data = await CITG_API.getProjects()
+            setProjects(data)
+        })()
+    }, [])
+
     return (
         <div className={'projects ' +
             'projects_back_red_gradient ' +
@@ -34,11 +44,11 @@ const Projects = () => {
                 <div className={'projects__projects-box'}>
                     <div className={'projects__projects-container'}>
                         {
-                            projects_photo_linkPreset.map(prj =>
+                            projects?.map(project =>
                                 <ProjectPhotoLink
-                                    key={prj.id}
-                                    imgSrc={prj.imgSrc}
-                                    projectId={prj.id}
+                                    key={project.id}
+                                    imgSrc={project.preview_img}
+                                    projectId={project.id}
                                 />
                             )
                         }

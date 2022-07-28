@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member.page__mountain";
@@ -6,20 +6,27 @@ import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member
 import MemberPreview from "components/Pages/Member.page/&blocks/MemberPreview/MemberPreview";
 import ProjectsInfo from "components/Pages/Member.page/&blocks/ProjectsInfo/ProjectsInfo";
 
-import { memberPage_memberPreset } from './_member.preset/Member.page_member.preset'
+import CITG_APIController from "src/API/CITG_API.controller";
 
 import './Member.page.scss'
 
 const MemberPage = () => {
     const { memberId } = useParams()
 
-    const [member, setMember] = useState(memberPage_memberPreset)
+    const [memberAPI, setMemberAPI] = useState([])
+
+    useEffect(() => {
+        (async () => {
+            const response = await CITG_APIController.getTeamMemberById(memberId)
+            setMemberAPI(response)
+        })()
+    }, [])
 
     return (
         <div className={'member-page'}>
             <MemberPage__Mountain/>
-            <MemberPreview member={member}/>
-            <ProjectsInfo member={member}/>
+            <MemberPreview member={memberAPI}/>
+            <ProjectsInfo member={memberAPI}/>
         </div>
     );
 };

@@ -20,9 +20,9 @@ const ContestProjects = ({ contestProjects }) => {
                         contestProjects?.map(project =>
                             <ProjectsPage__Project
                                 classNames={['contest-projects__project']}
-                                key={project.id}
-                                id={project.id}
-                                imgSrc={project.imgSrc}
+                                key={project?.id || ''}
+                                id={project?.id || ''}
+                                imgSrc={project?.imgSrc || project.preview_img || ''}
                             />
                         )
                     }

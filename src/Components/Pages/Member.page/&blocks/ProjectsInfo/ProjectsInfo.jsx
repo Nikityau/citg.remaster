@@ -18,10 +18,10 @@ const ProjectsInfo = ({member}) => {
                     'projects-info_back_gradient_red'
                 ].join(' ')}>
                 <ProjectsInfo__participationInProjects
-                    projects={member.participated_in_projects}
+                    projects={member?.participated_in_projects}
                 />
                 <ProjectsInfo__myWorks
-                    myWorks={member.my_works}
+                    myWorks={member?.member_works}
                 />
             </div>
         </div>

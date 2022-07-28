@@ -15,20 +15,20 @@ const MemberPreview = ({ member }) => {
             <div className={'member-preview__container app-container'}>
                 <div className={'member-preview__info-card'}>
                     <MemberPreview__MemberCard
-                        photo={member.photo}
-                        skills={member.hard_skills}
-                        fullName={member.full_name}
-                        soc_nets={member.soc_nets_links}
-                        summaryLink={member.summary_link}
+                        photo={member?.photo}
+                        skills={member?.hard_skills}
+                        fullName={member?.full_name}
+                        soc_nets={member?.soc_nets_links}
+                        summaryLink={member?.summary_link}
                     />
                 </div>
                 <div className={'member-preview__skills-n-awards'}>
                     <MemberPreview__MemberSkills
-                        software={member.software_used}
-                        hard_skills={member.hard_skills}
+                        software={member?.software_used}
+                        hard_skills={member?.hard_skills}
                     />
                     <MemberPreview__MemberCertificates
-                        certificates={member.certificates}
+                        certificates={member?.certificates}
                     />
                 </div>
             </div>

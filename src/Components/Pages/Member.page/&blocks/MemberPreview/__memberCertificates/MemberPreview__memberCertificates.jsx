@@ -17,22 +17,25 @@ const MemberPreview__MemberCertificates = ({ certificates }) => {
                 <h3> Достижения и награды </h3>
             </div>
             <div className={'member-preview__certificates-container'}>
-                <SliderUi classNames={['member-preview__member-certificates_back_black']}
-                    sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
-                >
-                    {
-                        certificates.map(certificate =>
-                            <SliderUi__defaultSlide key={certificate.id}>
-                                <div className={'member-preview__certificate'}
-                                    style={{
-                                        backgroundImage: `url(${certificate.certificate})`
-                                    }}
-                                >
-                                </div>
-                            </SliderUi__defaultSlide>
-                        )
-                    }
-                </SliderUi>
+                {
+                    certificates && certificates?.length !== 0 &&
+                    <SliderUi classNames={['member-preview__member-certificates_back_black']}
+                              sliderOptionsPreset={SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE}
+                    >
+                        {
+                            certificates?.map(certificate =>
+                                <SliderUi__defaultSlide key={certificate?.id}>
+                                    <div className={'member-preview__certificate'}
+                                         style={{
+                                             backgroundImage: `url(${certificate?.certificate})`
+                                         }}
+                                    >
+                                    </div>
+                                </SliderUi__defaultSlide>
+                            )
+                        }
+                    </SliderUi>
+                }
             </div>
         </div>
     );

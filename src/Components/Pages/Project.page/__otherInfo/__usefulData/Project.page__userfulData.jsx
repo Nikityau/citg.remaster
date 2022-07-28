@@ -12,12 +12,12 @@ const ProjectPage__UsefulData = ({ project }) => {
                 </div>
                 <div className={'project-page__devices'}>
                     {
-                        project.supported_devices.map(device =>
+                        project?.supported_devices?.map(device =>
                           <SupportedDevice
-                            key={device.id}
-                            deviceImg={device.device_icon}
-                            deviceName={device.device_name}
-                            deviceVersion={device.device_version}
+                            key={device?.id}
+                            deviceImg={device?.device_icon}
+                            deviceName={device?.device_name}
+                            deviceVersion={device?.device_version}
                           />
                         )
                     }
@@ -29,12 +29,12 @@ const ProjectPage__UsefulData = ({ project }) => {
                 </div>
                 <div className={'project-page__app-links-container'}>
                     {
-                        project.links_on_projects.map(link =>
+                        project?.links_on_project?.map(link =>
                             <div className={'project-page__app-link'}
-                                key={link.id}
+                                key={link?.id}
                             >
-                                <a href={link.link}>
-                                    <img src={link.image_link} alt={'icon'}/>
+                                <a href={link?.link}>
+                                    <img src={link?.link_image} alt={'icon'}/>
                                 </a>
                             </div>
                         )

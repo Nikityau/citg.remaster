@@ -41,16 +41,16 @@ const MemberPreview__MemberCard = (
                     <span> { fullName } </span>
                 </div>
                 <div className={'member-preview__member-card-skills'}>
-                    <span> { skills?.reduce((prev, curr) => prev.skill_name + ', ' + curr.skill_name ) } </span>
+                    <span> { skills?.reduce((prev, curr) => prev?.skill_name + ', ' + curr?.skill_name ) } </span>
                 </div>
             </div>
             <div className={'member-preview__member-card-soc-nets'}>
                 {
-                    soc_nets.map(soc =>
+                    soc_nets?.map(soc =>
                         <div className={'member-preview__member-card-soc-net'}
-                             key={soc.id}>
-                            <a href={soc.soc_net_link}>
-                                <img src={soc.soc_net_icon} alt={'soc-net-icon'}/>
+                             key={soc?.id}>
+                            <a href={soc?.soc_net_link}>
+                                <img src={soc?.soc_net_icon} alt={'soc-net-icon'}/>
                             </a>
                         </div>
                     )
