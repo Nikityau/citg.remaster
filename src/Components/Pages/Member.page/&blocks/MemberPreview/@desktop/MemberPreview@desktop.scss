@@ -11,7 +11,13 @@
 
     }
     .member-preview__skills-n-awards {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
+      padding-bottom: 15px;
+
+      width: 100%;
     }
   }
 }

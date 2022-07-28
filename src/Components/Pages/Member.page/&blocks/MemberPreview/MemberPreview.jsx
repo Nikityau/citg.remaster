@@ -6,6 +6,8 @@ import MemberPreview__MemberSkills
     from "components/Pages/Member.page/&blocks/MemberPreview/__memberSkills/MemberPreview__memberSkills";
 
 import './MemberPreview.scss'
+import MemberPreview__MemberCertificates
+    from "components/Pages/Member.page/&blocks/MemberPreview/__memberCertificates/MemberPreview__memberCertificates";
 
 const MemberPreview = ({ member }) => {
     return (
@@ -24,6 +26,9 @@ const MemberPreview = ({ member }) => {
                     <MemberPreview__MemberSkills
                         software={member.software_used}
                         hard_skills={member.hard_skills}
+                    />
+                    <MemberPreview__MemberCertificates
+                        certificates={member.certificates}
                     />
                 </div>
             </div>
