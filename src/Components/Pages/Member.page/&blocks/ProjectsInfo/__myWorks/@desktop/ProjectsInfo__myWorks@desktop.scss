@@ -32,6 +32,8 @@
       background-size: cover !important;
       background: rgba(255, 255, 255, 0.02) no-repeat center;
 
+      transition: all .3s ease-in-out;
+
       a {
         display: block;
         width: 100%;

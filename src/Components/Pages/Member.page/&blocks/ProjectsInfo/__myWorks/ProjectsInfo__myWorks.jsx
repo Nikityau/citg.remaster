@@ -1,8 +1,13 @@
 import React from 'react';
+import {Link, useParams} from "react-router-dom";
 
 import './ProjectsInfo__myWorks.scss'
+import {TEAM_MEMBER_LINK, TEAM_MEMBER_WORK_LINK} from "components/AppRouter/AppRouter.links";
+import {transformDryIdLink} from "utils/transformDryIdLink";
 
 const ProjectsInfo__MyWorks = ({myWorks}) => {
+
+    const { memberId } = useParams()
 
     const getTemplateNumber = (index) => {
         if (index % 10 === 1 || index % 10 === 0) return 'projects-info__my-works-template-1'
@@ -40,6 +45,9 @@ const ProjectsInfo__MyWorks = ({myWorks}) => {
                                         backgroundImage: `url(${work?.main_img})`
                                     }}
                                 >
+                                    <Link to={transformDryIdLink(TEAM_MEMBER_WORK_LINK, [memberId, work?.id])}>
+
+                                    </Link>
                                 </div>
                             )
                         }

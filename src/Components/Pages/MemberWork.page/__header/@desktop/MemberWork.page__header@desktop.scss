@@ -1,0 +1,61 @@
+.member-work-page__header {
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+
+  overflow: hidden;
+
+  .member-work-page__header-container {
+    padding: 15px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .member-work-page__header-member-photo {
+      width: 90px;
+      height: 90px;
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .member-work-page__header-member-info {
+      .member-work-page__header-full-name,
+      .member-work-page__header-hard-skills {
+        span {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.45rem;
+          line-height: 27px;
+
+          color: #FFFFFF;
+        }
+      }
+      .member-work-page__header-hard-skills {
+        text-align: center;
+
+        span {
+          font-size: .9rem;
+          line-height: 17px;
+
+          text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+}
