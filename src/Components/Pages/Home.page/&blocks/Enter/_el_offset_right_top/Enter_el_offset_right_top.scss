@@ -1,3 +1,19 @@
 .enter_el_offset_right {
   transform: translate(-350px, 200px);
 }
+
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .enter_el_offset_right {
+    transform: translate(-250px, 150px);
+  }
+}
+
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .enter_el_offset_right {
+    right: unset;
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, 300px);
+  }
+}

@@ -1,0 +1,40 @@
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .enter {
+
+
+    .enter-container {
+
+
+      .enter__page-number, .enter__page-info-bar {
+
+      }
+      .enter__page-info-bar {
+       right: -15%;
+      }
+    }
+
+    .enter__logo-planet {
+
+    }
+  }
+}
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .enter {
+
+
+    .enter-container {
+
+
+      .enter__page-number, .enter__page-info-bar {
+
+      }
+      .enter__page-info-bar {
+        right: -40%;
+      }
+    }
+
+    .enter__logo-planet {
+
+    }
+  }
+}

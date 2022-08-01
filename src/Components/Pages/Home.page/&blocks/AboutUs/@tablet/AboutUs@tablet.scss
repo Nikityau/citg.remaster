@@ -1,0 +1,49 @@
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .about-us {
+
+    .about-us__container {
+
+      .about-us__description-side {
+
+        .about-us__description-container {
+
+          .about-us__button-container {
+
+          }
+        }
+      }
+      .about-us__photo-side {
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .about-us {
+
+    .about-us__container {
+      width: auto;
+
+      flex-direction: column-reverse;
+      gap: 30px;
+
+      .about-us__description-side {
+        width: 100%;
+
+        .about-us__description-container {
+          width: 100%;
+
+          gap: 20px;
+
+          .about-us__button-container {
+
+          }
+        }
+      }
+      .about-us__photo-side {
+        width: 100%;
+      }
+    }
+  }
+}

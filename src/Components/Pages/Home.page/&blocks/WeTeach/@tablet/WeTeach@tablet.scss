@@ -1,0 +1,46 @@
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .we-teach {
+    height: auto;
+
+    .we-teach__container {
+      padding: 80px 0;
+
+      .we-teach__examples-box {
+        max-width: unset;
+        width: auto;
+
+        padding: 40px 50px;
+
+        .we-teach__title {
+          h3 {
+
+          }
+        }
+        .we-teach__examples {
+
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .we-teach {
+    height: auto;
+
+    .we-teach__container {
+      padding: 80px 0;
+
+      .we-teach__examples-box {
+
+        .we-teach__title {
+          h3 {
+
+          }
+        }
+        .we-teach__examples {
+
+        }
+      }
+    }
+  }
+}

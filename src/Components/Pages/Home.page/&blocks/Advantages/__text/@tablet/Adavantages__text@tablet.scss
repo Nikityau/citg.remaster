@@ -1,0 +1,31 @@
+@media screen and (max-width: 1300px) and (orientation: portrait) {
+  .advantages__text {
+    width: auto;
+
+    padding: 0 40px;
+
+    .advantages__text-title {
+      h3 {
+
+      }
+    }
+
+    .advantages__text-subtitle {
+      h5 {
+
+      }
+    }
+
+    .advantages__text-other {
+      max-width: unset;
+      width: auto;
+
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      p {
+
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .info-bar {
+    a {
+    }
+    .info-bar__container {
+      max-width: 390px;
+
+      .info-bar__upper-info, .info-bar__below-info {
+        p {
+        }
+      }
+      .info-bar__below-info {
+        p {
+        }
+      }
+    }
+  }
+}

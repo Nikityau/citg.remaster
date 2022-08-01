@@ -1,12 +1,15 @@
 .about-us__img {
   width: 100%;
+  height: 500px;
 
   display: flex;
   justify-content: right;
 
   overflow: hidden;
 
-  img {
-    border-radius: 13px;
-  }
+  border-radius: 13px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

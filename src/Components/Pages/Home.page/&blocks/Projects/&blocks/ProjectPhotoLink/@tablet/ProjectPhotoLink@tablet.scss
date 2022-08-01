@@ -1,0 +1,20 @@
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .project-photo-link {
+    width: calc(25% - 15px);
+    height: 200px;
+
+    a {
+
+    }
+  }
+}
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .project-photo-link {
+    width: calc(50% - 20px);
+    height: 200px;
+
+    a {
+
+    }
+  }
+}

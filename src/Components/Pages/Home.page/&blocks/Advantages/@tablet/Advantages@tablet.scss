@@ -1,0 +1,64 @@
+@media screen and (max-width: 1300px){
+  .advantages {
+    height: auto;
+
+    .advantages__container {
+
+      padding: 100px 0;
+
+      .advantages__text-side {
+      }
+
+      .advantages__slider-side {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) and (orientation: landscape){
+  .advantages {
+    height: auto;
+
+    .advantages__container {
+
+      padding: 100px 0;
+
+      .advantages__text-side {
+        padding-left: 40px;
+
+        width: 30%;
+      }
+
+      .advantages__slider-side {
+        width: 70%;
+
+        transform: translateX(20%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .advantages {
+    height: auto;
+
+    .advantages__container {
+
+      padding: 100px 0;
+
+      flex-direction: column;
+      gap: 30px;
+
+      .advantages__text-side {
+
+        width: 100%;
+      }
+
+      .advantages__slider-side {
+        width: 100%;
+
+        transform: translateX(0);
+      }
+    }
+  }
+}
