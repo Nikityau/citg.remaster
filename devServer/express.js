@@ -4,7 +4,7 @@ const path = require('path')
 
 const app = express()
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5000
 
 app.get(/\.(js|css|map|ico|gif|jpeg|jpg|png|svg)$/,
     express.static(path.resolve(__dirname, '..', 'build')))
