@@ -6,12 +6,53 @@
   gap: 20px;
 
   .member-work-page__current-image {
+    position: relative;
+
     width: 100%;
     height: 600px;
 
     background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center;
+
+
+    .member-work-page__control-panel {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      transform: translate(-50%, 0);
+
+      background: rgba(37, 36, 36, 0.8);
+
+      border-radius: 13.5px;
+
+      padding: 5px 7px;
+
+      .member-work-page__left-arrow, .member-work-page__right-arrow {
+        cursor: pointer;
+
+        img {
+          width: 10px;
+        }
+      }
+
+      .member-work-page__open-up {
+        cursor: pointer;
+
+        img {
+          width: 20px;
+        }
+      }
+
+      .member-work-page__right-arrow {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   .member-work-page__images-list {
@@ -29,9 +70,11 @@
 
       cursor: pointer;
     }
+
     .member-work-page__work-ref_half_size {
       width: calc(50% - 20px / 2);
     }
+
     .member-work-page__work-ref_full_size {
       width: 100%;
       height: 400px;
