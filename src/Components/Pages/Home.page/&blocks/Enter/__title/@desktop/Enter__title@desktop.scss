@@ -6,6 +6,8 @@
   display: grid;
   gap: 25px;
 
+  z-index: 2;
+
   .enter__main-title {
     display: flex;
     flex-direction: column;

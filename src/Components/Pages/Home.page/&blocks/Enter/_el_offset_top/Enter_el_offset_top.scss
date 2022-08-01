@@ -1,3 +1,9 @@
 .enter_el_offset_top {
   transform: translateY(250px);
 }
+
+@media screen and (max-width: 1625px) {
+  .enter_el_offset_top {
+    transform: translateY(120px);
+  }
+}

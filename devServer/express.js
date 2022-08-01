@@ -7,10 +7,10 @@ const app = express()
 const port = process.env.PORT || 8080
 
 app.get(/\.(js|css|map|ico|gif|jpeg|jpg|png|svg)$/,
-    express.static(path.resolve(__dirname, '..', 'dist')))
+    express.static(path.resolve(__dirname, '..', 'build')))
 
 app.use('*', (req, res) => {
-    let indexHtml = fs.readFileSync(path.resolve(__dirname, '..' ,'dist', 'index.html'), {
+    let indexHtml = fs.readFileSync(path.resolve(__dirname, '..' ,'build', 'index.html'), {
         encoding: 'utf-8'
     })
     res.contentType('text/html')
