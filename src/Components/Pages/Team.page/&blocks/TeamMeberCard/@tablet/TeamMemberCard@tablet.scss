@@ -1,0 +1,57 @@
+@media screen and (max-width: 1300px){
+  .team-member-card {
+    width: calc(50% - 10px);
+
+    a {
+
+    }
+
+    .team-member-card__photo {
+
+
+      img {
+
+      }
+    }
+    .team-member-card__info {
+
+
+      .team-member-card__full-name {
+        p {
+
+        }
+      }
+      .team-member-card__skills {
+        p {
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .team-member-card {
+    a {
+
+    }
+
+    .team-member-card__photo {
+      img {
+
+      }
+    }
+    .team-member-card__info {
+      .team-member-card__full-name {
+        p {
+
+        }
+      }
+      .team-member-card__skills {
+        p {
+
+        }
+      }
+    }
+  }
+}

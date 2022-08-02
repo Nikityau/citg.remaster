@@ -1,0 +1,26 @@
+@media screen and (max-width: 1300px){
+  .mini-article-title-ui {
+
+    .mini-logo-ui__number {
+      h3 {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 2.5rem;
+
+        color: #DC6041;
+      }
+    }
+    .mini-article-title-ui__title {
+      h3 {
+        font-family: 'Roboto',sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.3rem;
+        line-height: 30px;
+
+        color: #FFFFFF;
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ class CITG_APIController {
     }
     async getProjectById(id) {
         const { data } = await CITG_APIService.getProjectById(id)
-        return data.project;
+        return data?.project || {};
     }
     async getTeam() {
         const { data } = await CITG_APIService.getTeam();

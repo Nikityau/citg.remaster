@@ -1,0 +1,18 @@
+@media screen and (max-width: 1300px){
+  .projects-in-dev {
+
+    .projects-in-dev__container {
+      .projects-in-dev__title {
+
+      }
+
+      .projects-in-dev__projects-container {
+        flex-direction: column;
+
+        .projects-in-dev__project {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

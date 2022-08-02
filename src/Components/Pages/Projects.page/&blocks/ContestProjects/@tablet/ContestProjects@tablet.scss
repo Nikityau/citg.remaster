@@ -1,0 +1,17 @@
+@media screen and (max-width: 1300px){
+  .contests-projects {
+
+    .contests-projects__container {
+      .contests-projects__title {
+      }
+
+      .contest-projects__projects-container {
+
+        .contest-projects__project {
+          width: calc(50% - 10px);
+          height: 270px;
+        }
+      }
+    }
+  }
+}
