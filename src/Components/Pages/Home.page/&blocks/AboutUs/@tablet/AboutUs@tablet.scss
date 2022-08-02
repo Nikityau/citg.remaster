@@ -29,8 +29,13 @@
       .about-us__description-side {
         width: 100%;
 
+        justify-content: start;
         gap: 20px;
         .about-us__description-container {
+
+          width: 100%;
+
+          gap: 20px;
 
           .about-us__button-container {
 
