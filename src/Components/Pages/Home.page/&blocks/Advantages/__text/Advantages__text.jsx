@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Adavantages__TextTablet
+    from "components/Pages/Home.page/&blocks/Advantages/__text/@tablet/Adavantages__text@tablet";
+
 import './Advantages__text.scss'
 
 const Advantages__Text = ({ classNames }) => {
     return (
         <div className={['advantages__text', classNames && classNames?.join(' ')].join(' ')}>
+            <Adavantages__TextTablet/>
             <div className={'advantages__text-title'}>
                 <h3> Преимущества </h3>
             </div>

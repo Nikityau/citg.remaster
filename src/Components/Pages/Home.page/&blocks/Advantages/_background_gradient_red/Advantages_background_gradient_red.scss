@@ -13,6 +13,27 @@
 
     filter: blur(200px);
 
-    transform: matrix(-1, 0, 0, 1, 0, 0) translate(22%, 80%);
+    transform: translate(-22%, 80%);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .advantages_background_gradient_red {
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: #71192A;
+
+      filter: blur(150px);
+
+      transform: translate(0, 0);
+    }
   }
 }

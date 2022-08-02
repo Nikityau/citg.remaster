@@ -1,0 +1,18 @@
+.about-us_back_blue_gradient {
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, #13161a 0%, rgba(0, 0, 0, 0) 427.54%);
+
+    //mix-blend-mode: overlay;
+
+    z-index: -2;
+  }
+}

@@ -4,7 +4,40 @@
 
     padding: 0 40px;
 
+    .advantages__text_tablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      .advantages__text-title_tablet {
+        padding-right: 20px;
+
+        h3 {
+          font-family: 'Inter', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 2.3rem;
+          line-height: 36px;
+
+          color: #F4672B;
+
+        }
+      }
+      .advantages__text-number_tablet {
+
+      }
+    }
+
     .advantages__text-title {
+      display: none;
+
       h3 {
 
       }

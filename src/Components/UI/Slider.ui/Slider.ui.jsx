@@ -4,7 +4,7 @@ import { Grid } from '@splidejs/splide-extension-grid';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 import {
-    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE,
+    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE, SLIDER_GRID_1_2,
     SLIDER_GRID_3_2,
     SLIDER_SLIDE_LINK,
     SLIDER_SLIDE_WITH_TEXT
@@ -12,6 +12,7 @@ import {
 import { PRESET_SLIDER_WITH_TEXT } from './_slider_presets_option/Slider_preset-slide-with-text'
 import {PRESET_SLIDER_DEFAULT} from "slider_ui/_slider_presets_option/Slider_preset-default-slide";
 import {SLIDER_PRESET_GRID_3_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-3-2";
+import {SLIDER_PRESET_GRID_1_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-1-2";
 
 import './Slider.ui.scss'
 import '@splidejs/splide/css';
@@ -22,6 +23,7 @@ import './_slider_style/Slider.ui_style_arrows_default.scss'
 import './_slider_style/Slider.ui_style_center_focus.scss'
 
 import slider__arrowIng from 'assets/images/Slider/arrow.svg'
+
 
 const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
 
@@ -34,6 +36,8 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return ''
             case SLIDER_GRID_3_2:
                 return SLIDER_PRESET_GRID_3_2
+            case SLIDER_GRID_1_2:
+                return SLIDER_PRESET_GRID_1_2
             case SLIDER_SLIDE_WITH_TEXT:
                 return PRESET_SLIDER_WITH_TEXT
             default:
@@ -56,6 +60,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                     'slider-ui_style_arrows_default',
                 ]
             case SLIDER_GRID_3_2:
+            case SLIDER_GRID_1_2:
                 return [
                     'slider-ui_slider_style-default',
                     'slider-ui_style_pagination_default',
@@ -70,6 +75,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
             case SLIDER_SLIDE_WITH_TEXT:
                 return { Grid, AutoScroll }
             case SLIDER_GRID_3_2:
+            case SLIDER_GRID_1_2:
                 return { Grid }
             default:
                 return { }

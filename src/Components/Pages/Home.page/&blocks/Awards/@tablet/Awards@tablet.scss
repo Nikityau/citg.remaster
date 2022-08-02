@@ -10,7 +10,19 @@
       }
 
       .awards__awards-box {
+        display: none;
+
         padding: 0;
+      }
+      .awards__awards-box_tablet {
+        display: block;
+
+        width: auto;
+        height: 350px;
+
+        margin-top: 50px;
+
+        padding: 0 40px;
       }
     }
   }

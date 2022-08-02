@@ -1,0 +1,23 @@
+@media screen  and (max-width: 1300px){
+  .awards_back_gradient_red {
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: #71192A;
+
+      filter: blur(200px);
+
+      transform: translate(0, 20%);
+
+      z-index: -1;
+    }
+  }
+
+}

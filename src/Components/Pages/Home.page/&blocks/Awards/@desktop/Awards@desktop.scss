@@ -1,7 +1,11 @@
 .awards {
+  position: relative;
+
   padding: 40px 0 100px;
 
   width: 100%;
+
+  z-index: 1;
 
   .awards__container {
     .awards__title {
@@ -25,6 +29,9 @@
       margin-top: 50px;
 
       padding: 0 40px;
+    }
+    .awards__awards-box_tablet {
+      display: none;
     }
   }
 }

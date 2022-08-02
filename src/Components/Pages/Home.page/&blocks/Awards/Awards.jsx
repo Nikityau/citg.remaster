@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 import Award from "components/Pages/Home.page/&blocks/Awards/&blocks/Award/Award";
 
+import AwardsTablet from "components/Pages/Home.page/&blocks/Awards/@tablet/Awards@tablet";
+
 import SliderUi from "slider_ui/Slider.ui";
 import SliderUi__defaultSlide from "slider_ui/__default-slide/Slider.ui__defaultSlide";
 import { SLIDER_DEFAULT_SLIDE } from "slider_ui/_slider_presets_option/Slider_presets";
@@ -9,6 +11,9 @@ import { SLIDER_DEFAULT_SLIDE } from "slider_ui/_slider_presets_option/Slider_pr
 import CITG_API from "src/API/CITG_API.controller";
 
 import './Awards.scss'
+import './_back_gradient/Awards_back_gradient_red.scss'
+import './_rounded_cornenr/Awards_rounded_conrner.scss'
+import './_back_blackout/Awards_back_blackout.scss'
 
 const Awards = () => {
 
@@ -22,7 +27,7 @@ const Awards = () => {
     }, [])
 
     return (
-        <div className={'awards'}>
+        <div className={'awards awards_back_gradient_red'}>
             <div className={'awards__container app-container'}>
                 <div className={'awards__title'}>
                     <h3> Награды </h3>
@@ -42,7 +47,11 @@ const Awards = () => {
                             }
                         </SliderUi>
                     }
+
                 </div>
+                <AwardsTablet
+                    awards={awards}
+                />
             </div>
         </div>
     );

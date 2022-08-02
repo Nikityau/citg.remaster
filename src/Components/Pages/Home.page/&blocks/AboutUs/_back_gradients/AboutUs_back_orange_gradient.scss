@@ -20,3 +20,30 @@
     z-index: -1;
   }
 }
+
+@media screen and (max-width: 1300px){
+  .about-us_back_orange_gradient {
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: unset;
+      left: 0;
+
+      transform: translate(0, -200px);
+
+      width: 100%;
+      height: 400px;
+
+      background: #71192A;
+
+      filter: blur(200px);
+
+      mix-blend-mode: revert;
+
+      z-index: -1;
+    }
+  }
+
+}

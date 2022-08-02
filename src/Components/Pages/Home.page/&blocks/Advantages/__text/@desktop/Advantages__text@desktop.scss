@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 20px;
 
+  .advantages__text_tablet {
+    display: none;
+  }
+
   .advantages__text-title {
     h3 {
       font-family: 'Open Sans', sans-serif;
@@ -48,3 +52,4 @@
     }
   }
 }
+
