@@ -45,6 +45,10 @@
       gap: 20px;
 
       .member-preview__member-hard-skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         padding: 12px 30px;
 
         background: #17171B;

@@ -1,0 +1,26 @@
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .member-preview {
+
+
+    .member-preview__container {
+
+      .member-preview__info-card {
+
+      }
+      .member-preview__skills-n-awards {
+
+        width: auto;
+
+        .member-preview__certificates {
+          display: none;
+        }
+      }
+    }
+    
+    .member-preview__container_tablet {
+      display: block;
+
+      margin-top: 50px;
+    }
+  }
+}

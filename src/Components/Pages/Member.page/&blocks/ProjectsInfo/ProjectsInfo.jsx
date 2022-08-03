@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectsInfo__participationInProjects
     from "./__participationInProjects/ProjectsInfo__participationInProjects";
 import ProjectsInfo__myWorks from "components/Pages/Member.page/&blocks/ProjectsInfo/__myWorks/ProjectsInfo__myWorks";
+import Summary from "components/Pages/Member.page/&blocks/Summary/Summary";
 
 import './ProjectsInfo.scss'
 import './_back/ProjectsInfo_back_gradient_purple.scss'
@@ -17,6 +18,7 @@ const ProjectsInfo = ({member}) => {
                     'projects-info_back_gradient_purple',
                     'projects-info_back_gradient_red'
                 ].join(' ')}>
+                <Summary link={member?.summary_link}/>
                 <ProjectsInfo__participationInProjects
                     projects={member?.participated_in_projects}
                 />

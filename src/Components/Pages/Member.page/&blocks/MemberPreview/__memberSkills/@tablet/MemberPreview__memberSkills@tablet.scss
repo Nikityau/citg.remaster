@@ -1,0 +1,38 @@
+@media screen and (max-width: 1300px) and (orientation: portrait){
+  .member-preview__member-skills {
+
+
+    .member-preview__member-skills-title {
+      h3 {
+
+      }
+    }
+    .member-preview__member-skills-container {
+
+      flex-wrap: wrap;
+
+      .member-preview__member-software-list {
+
+
+        .member-preview__member-software {
+
+
+          img {
+
+          }
+        }
+      }
+
+      .member-preview__member-hard-skills-list {
+
+
+        .member-preview__member-hard-skill {
+
+          span {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

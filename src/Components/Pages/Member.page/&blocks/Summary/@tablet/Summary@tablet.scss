@@ -1,0 +1,44 @@
+@media screen and (max-width: 1300px){
+  .summary {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    transform: translate(-15px, 5px);
+
+    border: 1px solid #6C2AF8;
+
+    background: #6C2AF8;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      padding: 7px 16px;
+    }
+
+    .summary-text {
+      span {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 14px;
+
+        color: #FFFFFF;
+      }
+    }
+    .summary-img {
+      img {
+        width: 25px;
+      }
+    }
+  }
+}

@@ -32,6 +32,11 @@ const MemberPreview = ({ member }) => {
                     />
                 </div>
             </div>
+            <div className={'member-preview__container_tablet app-container'}>
+                <MemberPreview__MemberCertificates
+                    certificates={member?.certificates}
+                />
+            </div>
         </div>
     );
 };

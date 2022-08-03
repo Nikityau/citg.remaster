@@ -9,6 +9,8 @@
   align-items: end;
   gap: 40px;
 
+  overflow: hidden;
+
   .member-work-page__description-title {
     h3 {
       font-family: 'Inter', sans-serif;
@@ -28,6 +30,7 @@
       width: 20px;
     }
   }
+
   .member-work-page__about-container {
     display: flex;
     flex-direction: column;
@@ -40,6 +43,7 @@
     .member-work-page__title {
 
     }
+
     .member-work-page__about {
 
       text-align: left;
@@ -128,8 +132,6 @@
     gap: 10px;
 
     text-align: right;
-
-
 
     .member-work-page__software-used-list {
       display: inline-flex;
