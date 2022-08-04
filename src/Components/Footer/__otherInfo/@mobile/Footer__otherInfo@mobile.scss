@@ -1,0 +1,23 @@
+@media screen and (max-width: 500px){
+  .footer__additional-info {
+
+    justify-content: center;
+    align-items: center;
+
+    .footer__city {
+      h4 {
+        font-size: .9rem;
+      }
+    }
+    .footer__street {
+      max-width: unset;
+
+      span {
+        font-size: .7rem;
+      }
+    }
+    .footer__soc-networks {
+     display: none;
+    }
+  }
+}

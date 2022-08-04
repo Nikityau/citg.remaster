@@ -16,6 +16,10 @@
     justify-content: space-between;
     align-items: center;
 
+    .header__plug_mobile {
+      display: none;
+    }
+
     .header__logo, .header__navigation, .header__email {
       height: 100%;
     }
@@ -25,6 +29,9 @@
 
     .header__email {
 
+    }
+    .header__burger_mobile {
+      display: none;
     }
   }
 }

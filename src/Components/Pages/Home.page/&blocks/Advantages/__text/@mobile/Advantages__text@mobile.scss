@@ -1,0 +1,46 @@
+@media screen and (max-width: 500px) {
+  .advantages__text {
+
+    padding: 0 15px;
+
+    gap: 40px;
+
+    .advantages__text_tablet {
+
+
+      .advantages__text-title_tablet {
+
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+      .advantages__text-number_tablet {
+
+      }
+    }
+
+    .advantages__text-title {
+
+      h3 {
+
+      }
+    }
+
+    .advantages__text-subtitle {
+      h5 {
+        font-size: 1rem;
+      }
+    }
+
+    .advantages__text-other {
+
+      p {
+        font-size: .9rem;
+      }
+
+      p:last-child {
+        display: none;
+      }
+    }
+  }
+}

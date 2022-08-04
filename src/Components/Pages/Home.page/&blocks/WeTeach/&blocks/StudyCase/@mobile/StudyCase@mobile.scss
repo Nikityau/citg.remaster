@@ -1,0 +1,19 @@
+@media screen and (max-width: 500px) {
+  .study-case {
+    .study-case__number {
+      span {
+       font-size: 1rem;
+      }
+    }
+    .study-case__case, .study-case__areas {
+      h4, span {
+        font-size: 1.2rem;
+      }
+    }
+    .study-case__areas {
+      span {
+        font-size: .8rem;
+      }
+    }
+  }
+}

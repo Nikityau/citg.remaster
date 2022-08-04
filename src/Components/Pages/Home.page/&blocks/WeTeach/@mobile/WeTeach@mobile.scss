@@ -1,0 +1,25 @@
+@media screen and (max-width: 500px) {
+  .we-teach {
+
+
+    .we-teach__container {
+
+
+      .we-teach__examples-box {
+
+        padding: 40px 15px;
+
+        .we-teach__title {
+          h3 {
+
+          }
+        }
+        .we-teach__examples {
+          max-height: 450px;
+;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

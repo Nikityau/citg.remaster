@@ -1,0 +1,20 @@
+@media screen and (max-width: 500px){
+  .enter__title {
+
+    gap: 5px;
+
+    .enter__main-title {
+
+
+      h2 {
+        font-size: 3rem;
+        line-height: normal;
+      }
+    }
+    .enter__subtitle {
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -7,3 +7,9 @@
     transform: translateY(120px);
   }
 }
+
+@media screen and (max-width: 500px){
+  .enter_el_offset_top {
+    transform: translateY(80px);
+  }
+}

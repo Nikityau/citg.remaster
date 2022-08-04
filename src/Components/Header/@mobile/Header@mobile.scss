@@ -1,0 +1,32 @@
+@media screen and (max-width: 500px){
+  .header {
+
+
+    .header__container {
+
+
+      .header__plug_mobile {
+        display: block;
+
+        width: 10%;
+        height: 100%;
+      }
+
+      .header__logo, .header__navigation, .header__email {
+
+      }
+
+      .header__navigation {
+        display: none;
+      }
+
+      .header__email {
+        display: none;
+      }
+      
+      .header__burger_mobile {
+        display: block;
+      }
+    }
+  }
+}

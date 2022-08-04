@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px){
+  .projects__title {
+
+
+    .projects__title-main {
+      transform: translate(0, 30px);
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    .projects__subtitle {
+      display: none;
+
+      h5 {
+        font-size: .7rem;
+      }
+    }
+  }
+}

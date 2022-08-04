@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px){
+  .mini-logo-ui {
+    a {
+
+      gap: 5px;
+    }
+    .mini-logo-ui__img-container {
+
+      .mini-logo-ui__img {
+        width: 35px;
+      }
+    }
+    .mini-logo-ui__logo-title-container {
+      .mini-logo-ui__title {
+        font-size: 1.5rem;
+
+        color: #F2682E;
+      }
+    }
+  }
+}

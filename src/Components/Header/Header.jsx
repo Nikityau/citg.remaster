@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Header__Burger from "components/Header/__burger/Header__burger";
+
 import Navigation from "./&blocks/Navigation/Navigation";
 
 import MiniLogoUi from "ui/MiniLogo.ui/MiniLogo.ui";
@@ -14,6 +16,9 @@ const Header = ({ classNames }) => {
     return (
         <header className={['header header_back_black header_border_bottom_gradient', classNames && classNames?.join(' ')].join(' ')}>
             <div className={'header__container app-container'}>
+                <div className={'header__plug_mobile'}>
+
+                </div>
                 <div className={'header__logo'}>
                     <MiniLogoUi/>
                 </div>
@@ -22,6 +27,9 @@ const Header = ({ classNames }) => {
                 </div>
                 <div className={'header__email'}>
                     <EmailUi/>
+                </div>
+                <div className={'header__burger_mobile'}>
+                    <Header__Burger/>
                 </div>
             </div>
         </header>

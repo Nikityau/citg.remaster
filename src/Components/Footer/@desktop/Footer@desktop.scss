@@ -20,6 +20,10 @@
       display: flex;
 
       gap: 30px;
+
+      .footer__soc-networks_mobile {
+        display: none;
+      }
     }
   }
 }

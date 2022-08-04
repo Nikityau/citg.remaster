@@ -1,0 +1,37 @@
+@media screen and (max-width: 500px){
+  .footer__contacts {
+
+
+    .footer__contacts-title {
+      display: none;
+
+      h4 {
+
+      }
+    }
+
+    .footer__wrapper {
+      .footer__contacts-antique-phone {
+        span {
+
+        }
+      }
+
+      .footer__contacts-modern-phone {
+        display: none;
+
+        span {
+
+
+        }
+        span[data-soc-nets="telegram&whatsapp"] {
+
+        }
+      }
+    }
+
+    .footer__contacts-email {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@media screen and (max-width: 500px){
+  .advantages {
+
+
+    .advantages__container {
+
+      padding: 80px 0 50px;
+
+      .advantages__text-side {
+
+      }
+
+      .advantages__slider-side {
+        display: none;
+      }
+      
+      .advantages__slider-side_mobile {
+        display: block;
+
+        height: 320px;
+
+        padding: 0 15px;
+      }
+    }
+  }
+}

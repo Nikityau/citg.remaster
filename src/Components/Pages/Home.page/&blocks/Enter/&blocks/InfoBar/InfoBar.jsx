@@ -3,6 +3,8 @@ import React from 'react';
 import './InfoBar.scss'
 import './_border_gradient/InfoBar_border_gradient.scss'
 
+import futuristic_arrow from 'assets/icons/futuristic-arrow.svg'
+
 const InfoBar = ({classNames}) => {
     return (
         <div className={['info-bar', 'info-bar_border_gradient', classNames && classNames?.join(' ')].join(' ')}>
@@ -18,6 +20,9 @@ const InfoBar = ({classNames}) => {
                             Это площадка, где школьники и студенты могут пройти весь путь становления “айтишника” от нуля до
                             Pro.
                         </p>
+                    </div>
+                    <div className={'info-bar__arrow-down_mobile'}>
+                        <img src={futuristic_arrow} alt={'icon'}/>
                     </div>
                 </div>
             </a>

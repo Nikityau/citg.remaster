@@ -1,11 +1,14 @@
 .study-case {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   .study-case__number {
     span {
       font-family: 'Karla', sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 1.5rem;
-      line-height: 16px;
 
       color: #DC6041;
     }
@@ -16,7 +19,6 @@
         font-style: normal;
         font-weight: 700;
         font-size: 2rem;
-        line-height: 47px;
 
         color: #FFFFFF;
       }
@@ -25,7 +27,6 @@
     span {
       font-weight: 600;
       font-size: .9rem;
-      line-height: 25px;
     }
   }
 }

@@ -1,0 +1,26 @@
+@media screen and (max-width: 500px){
+  .awards {
+
+
+    .awards__container {
+      .awards__title {
+
+
+        h3 {
+         font-size: 1.4rem;
+        }
+      }
+
+      .awards__awards-box {
+
+      }
+      .awards__awards-box_tablet {
+        margin-top: 30px;
+
+        width: auto;
+
+        padding: 0;
+      }
+    }
+  }
+}

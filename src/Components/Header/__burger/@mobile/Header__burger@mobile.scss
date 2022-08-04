@@ -1,0 +1,18 @@
+@media screen and (max-width: 500px) {
+  .burger {
+    .burger__container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .burger__line {
+        width: 30px;
+        height: 4px;
+
+        border-radius: 5px;
+
+        background: #F2682E;
+      }
+    }
+  }
+}

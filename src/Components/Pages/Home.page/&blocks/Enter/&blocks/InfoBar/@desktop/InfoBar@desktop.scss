@@ -18,8 +18,13 @@
   .info-bar__container {
     max-width: 500px;
 
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
     .info-bar__upper-info, .info-bar__below-info {
-      padding: 20px 10px;
 
       p {
         font-family: 'Inter', sans-serif;
@@ -37,6 +42,10 @@
       p {
         font-weight: 400;
       }
+    }
+
+    .info-bar__arrow-down_mobile {
+      display: none;
     }
   }
 }
