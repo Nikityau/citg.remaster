@@ -1,0 +1,32 @@
+@media screen and (max-width: 500px){
+  .projects-page__projectInDev {
+
+    a {
+
+    }
+
+    .projects-page__projectInDev-info {
+
+
+      .projects-page__projectInDev-title, .projects-page__projectInDev-description {
+        h3, p {
+          font-size: 1.4rem;
+          line-height: normal;
+        }
+      }
+      .projects-page__projectInDev-description {
+
+        p {
+        font-size: .8rem;
+        }
+      }
+    }
+    .projects-page__projectInDev-img {
+      transform: translate(50%, -50%);
+
+      img {
+
+      }
+    }
+  }
+}

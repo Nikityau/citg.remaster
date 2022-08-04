@@ -1,0 +1,23 @@
+@media screen and (max-width: 500px){
+  .ready-made-projects {
+
+
+    .ready-made-projects__title {
+
+    }
+
+    .ready-made-projects__projects-container {
+      .ready-made-projects_desktop {
+        display: none;
+      }
+
+      .ready-made-projects_mobile {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+  }
+}

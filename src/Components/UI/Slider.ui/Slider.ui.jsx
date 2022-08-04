@@ -4,7 +4,7 @@ import { Grid } from '@splidejs/splide-extension-grid';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 import {
-    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE, SLIDER_GRID_1_2,
+    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE, SLIDER_GRID_1_2, SLIDER_GRID_2_2,
     SLIDER_GRID_3_2,
     SLIDER_SLIDE_LINK, SLIDER_SLIDE_SOLO,
     SLIDER_SLIDE_WITH_TEXT
@@ -24,6 +24,7 @@ import './_slider_style/Slider.ui_style_center_focus.scss'
 
 import slider__arrowIng from 'assets/images/Slider/arrow.svg'
 import {SLIDER_PRESET_SLIDE_SOLO} from "slider_ui/_slider_presets_option/Slider_preset-slide-solo";
+import {SLIDER_PRESET_GRID_2_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-2-2";
 
 
 const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
@@ -39,6 +40,8 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return SLIDER_PRESET_GRID_3_2
             case SLIDER_GRID_1_2:
                 return SLIDER_PRESET_GRID_1_2
+            case SLIDER_GRID_2_2:
+                return SLIDER_PRESET_GRID_2_2
             case SLIDER_SLIDE_WITH_TEXT:
                 return PRESET_SLIDER_WITH_TEXT
             case SLIDER_SLIDE_SOLO:
@@ -64,6 +67,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 ]
             case SLIDER_GRID_3_2:
             case SLIDER_GRID_1_2:
+            case SLIDER_GRID_2_2:
             case SLIDER_SLIDE_SOLO:
                 return [
                     'slider-ui_slider_style-default',
@@ -80,6 +84,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                 return { Grid, AutoScroll }
             case SLIDER_GRID_3_2:
             case SLIDER_GRID_1_2:
+            case SLIDER_GRID_2_2:
                 return { Grid }
             default:
                 return { }
