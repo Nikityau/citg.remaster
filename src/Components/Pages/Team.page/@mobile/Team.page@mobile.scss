@@ -1,0 +1,33 @@
+@media screen and (max-width: 500px){
+  .team-page {
+
+
+    padding: 110px 0 100px;
+
+    .team-page__container {
+
+      .team-page__page-title {
+
+
+        .team-page__title {
+          h2 {
+            font-size: 2rem;
+          }
+        }
+
+        .team-page__subtitle {
+          max-width: 100%;
+
+          p {
+          font-size: .9rem;
+            line-height: normal;
+          }
+        }
+      }
+
+      .team-page__team-members {
+
+      }
+    }
+  }
+}
