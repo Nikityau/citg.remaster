@@ -9,9 +9,17 @@
 
   z-index: 1;
 
+  transition: all 1s ease-in-out;
+
   .project-page__other-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    .project-page__spec-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 }

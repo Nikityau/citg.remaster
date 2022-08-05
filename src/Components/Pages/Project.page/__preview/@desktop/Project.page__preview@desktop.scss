@@ -8,5 +8,9 @@
   background-size: cover;
   background-position: center;
 
-  z-index: 1;
+  z-index: 2;
+
+  .project-page__preview_mobile {
+    display: none;
+  }
 }

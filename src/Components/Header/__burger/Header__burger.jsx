@@ -2,6 +2,8 @@ import React, {useCallback} from 'react';
 
 import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
 
+import {prevEv} from "utils/prevEv";
+
 import BurgerMenu from "components/Header/&blocks/BurgerMenu/BurgerMenu";
 
 import './Header__burger.scss'
@@ -10,10 +12,6 @@ import './_open/Header__burger_open.scss'
 const Header__Burger = () => {
 
     const [is, setIs] = useToggler(false)
-
-    const prevEvent = useCallback((e) => {
-        e.preventDefault()
-    }, [])
 
     const open = () => {
         if(is) {
@@ -24,13 +22,13 @@ const Header__Burger = () => {
 
         setIs.on()
 
-        window.addEventListener('touchmove', prevEvent, { passive: false })
+        window.addEventListener('touchmove', prevEv, { passive: false })
     }
 
     const close = () => {
         setIs.off()
 
-        window.removeEventListener('touchmove', prevEvent)
+        window.removeEventListener('touchmove', prevEv)
     }
 
     return (

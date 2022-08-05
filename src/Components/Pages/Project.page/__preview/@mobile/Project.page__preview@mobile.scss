@@ -1,0 +1,54 @@
+@media screen and (max-width: 500px){
+  .project-page__preview {
+
+    overflow: hidden;
+
+    transition: all .3s ease-in-out;
+
+    .project-page__preview_mobile {
+      display: block;
+
+      z-index: 2;
+      
+      .project-page__preview-container {
+        transform: translate(0, 80px);
+
+        .project-page__preview-title {
+          text-align: right;
+
+          padding: 0 15px;
+
+          z-index: 2;
+
+          h2 {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 2.7rem;
+
+            color: #FFFFFF;
+
+            transition: all .3s ease-in-out;
+
+            z-index: 2;
+          }
+        }
+        .project-page__preview-description {
+          transform: translate(0, 50px);
+
+          padding: 0 15px;
+
+          p {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: .8rem;
+
+            color: #FFFFFF;
+
+          }
+        }
+      }
+    }
+  }
+}

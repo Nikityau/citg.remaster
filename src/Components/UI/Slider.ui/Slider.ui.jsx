@@ -4,13 +4,21 @@ import { Grid } from '@splidejs/splide-extension-grid';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 import {
-    SLIDER_DEFAULT_SLIDE, SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE, SLIDER_GRID_1_2, SLIDER_GRID_2_2,
+    SLIDER_DEFAULT_SLIDE,
+    SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE,
+    SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE,
+    SLIDER_GRID_1_2,
+    SLIDER_GRID_2_2,
     SLIDER_GRID_3_2,
-    SLIDER_SLIDE_LINK, SLIDER_SLIDE_SOLO,
+    SLIDER_SLIDE_LINK,
+    SLIDER_SLIDE_SOLO,
     SLIDER_SLIDE_WITH_TEXT
 } from './_slider_presets_option/Slider_presets'
 import { PRESET_SLIDER_WITH_TEXT } from './_slider_presets_option/Slider_preset-slide-with-text'
-import {PRESET_SLIDER_DEFAULT} from "slider_ui/_slider_presets_option/Slider_preset-default-slide";
+import {
+    PRESET_SLIDER_DEFAULT,
+    PRESET_SLIDER_DEFAULT_1_5
+} from "slider_ui/_slider_presets_option/Slider_preset-default-slide";
 import {SLIDER_PRESET_GRID_3_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-3-2";
 import {SLIDER_PRESET_GRID_1_2} from "slider_ui/_slider_presets_option/Slider_preset-slide-grid-1-2";
 
@@ -34,6 +42,8 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
             case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE:
             case SLIDER_DEFAULT_SLIDE:
                 return PRESET_SLIDER_DEFAULT
+            case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE:
+                return PRESET_SLIDER_DEFAULT_1_5
             case SLIDER_SLIDE_LINK:
                 return ''
             case SLIDER_GRID_3_2:
@@ -60,6 +70,7 @@ const SliderUi = ({ sliderOptionsPreset ,classNames, children }) => {
                     'slider-ui_style_center_focus'
                 ]
             case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE:
+            case SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE:
                 return [
                     'slider-ui_slider_style-default',
                     'slider-ui_style_pagination_default',

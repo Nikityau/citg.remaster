@@ -1,5 +1,6 @@
 export const SLIDER_DEFAULT_SLIDE = 'default'
 export const SLIDER_DEFAULT_WITHOUT_GRAYSCALE_SLIDE = 'default_without_grayscale'
+export const SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE = 'SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE'
 export const SLIDER_SLIDE_LINK = 'link'
 export const SLIDER_SLIDE_SOLO = 'SLIDER_SLIDE_SOLO'
 export const SLIDER_SLIDE_WITH_TEXT = 'text'

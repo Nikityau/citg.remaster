@@ -1,0 +1,18 @@
+@media screen and (max-width: 500px){
+  .project-page__other-description-part {
+
+
+    .project-page__other-description-title {
+      h3 {
+          font-size: 1.3rem;
+      }
+    }
+    .project-page__other-description {
+      max-width: 100%;
+
+      p {
+        font-size: .8rem;
+      }
+    }
+  }
+}

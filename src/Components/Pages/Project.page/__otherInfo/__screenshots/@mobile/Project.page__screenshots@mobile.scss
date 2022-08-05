@@ -1,0 +1,34 @@
+@media screen and (max-width: 500px){
+  .project-page__other-screenshots {
+
+    .project-page__other-screenshots-title {
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+    .project-page__other-screenshots-slider {
+      display: none;
+
+      .project-page__other-img {
+
+      }
+    }
+    
+    .project-page__other-screenshots-slider_mobile {
+      display: block;
+
+      height: 330px;
+
+      .project-page__other-img {
+        width: 100%;
+        height: 100%;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        border-radius: 10px;
+      }
+    }
+  }
+}
