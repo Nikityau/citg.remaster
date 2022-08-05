@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import {Routes, Route, Navigate} from 'react-router-dom'
 
 import LoaderPage from "components/Pages/Loader.page/Loader.page";
 
@@ -23,6 +23,8 @@ const AppRouter = () => {
                 <Route exact path={TEAM_LINK} element={<Team/>}/>
                 <Route exact path={TEAM_MEMBER_LINK} element={<Member/>}/>
                 <Route exact path={TEAM_MEMBER_WORK_LINK} element={<MemberWork/>}/>
+
+                <Route path={'/'} element={<Navigate to={HOME_LINK}/>}/>
             </Routes>
         </Suspense>
     );

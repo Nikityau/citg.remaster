@@ -1,4 +1,4 @@
-export const HOME_LINK = '/'
+export const HOME_LINK = '/home'
 export const PROJECTS_LINK = '/projects'
 export const TEAM_LINK = '/team'
 

@@ -1,0 +1,16 @@
+.header__burger_open {
+  .burger__container {
+
+    .burger__line-top {
+      transform: translate(0, 8px) rotate(-45deg);
+    }
+
+    .burger__line-middle {
+      opacity: 0;
+    }
+
+    .burger__line-bottom {
+      transform: translate(0, -10px) rotate(45deg);
+    }
+  }
+}

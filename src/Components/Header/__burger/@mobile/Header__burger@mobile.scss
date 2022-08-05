@@ -1,5 +1,10 @@
 @media screen and (max-width: 500px) {
   .burger {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
     .burger__container {
       display: flex;
       flex-direction: column;
@@ -12,6 +17,8 @@
         border-radius: 5px;
 
         background: #F2682E;
+
+        transition: all .3s ease-in-out;
       }
     }
   }
