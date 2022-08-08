@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
     TAB_ABOUT_ME,
+    TAB_CURRENT_IMAGE,
     TAB_GALLERY,
     TAB_SKILLS
 } from "components/Pages/Member.page/@mobile/Member.page@mobile";
@@ -32,7 +33,8 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
                 </div>
                 <div className={[
                     'membile__tab',
-                    currentTabCheck(TAB_GALLERY)
+                    currentTabCheck(TAB_GALLERY),
+                    currentTabCheck(TAB_CURRENT_IMAGE)
                 ].join(' ')}
                      onClick={changeTab(TAB_GALLERY)}
                 >

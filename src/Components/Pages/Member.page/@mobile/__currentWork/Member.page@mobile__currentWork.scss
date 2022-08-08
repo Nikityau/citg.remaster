@@ -1,0 +1,149 @@
+.membile__current-work {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .membile__refs-slider {
+    width: 100%;
+    height: 200px;
+
+    .membile__ref {
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-radius: 10px;
+    }
+  }
+
+  .membile__work-about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .membile__work-about-title {
+      text-align: right;
+
+      h3 {
+        font-family: 'Exo 2', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+
+        color: #FFFFFF;
+
+      }
+    }
+    .membile__work-about-description {
+      p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+
+        color: #BFBFBF;
+      }
+    }
+  }
+
+  .membile__work-software-used {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .membile__work-software {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 20px;
+
+      background: #0F1217;
+
+      border-radius: 10px;
+
+      .membile__work-software-img {
+        img {
+          width: 35px;
+        }
+      }
+      .membile__work-software-title {
+        span {
+          font-family: 'Exo 2', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+
+          color: #FFFFFF;
+        }
+      }
+      .membile__work-software-plug {
+        width: 10%;
+      }
+    }
+  }
+
+  .membile__next-work {
+    position: relative;
+
+    width: auto;
+    height: 150px;
+
+    border-radius: 13px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+
+    z-index: 1;
+
+    padding-left: 20px;
+
+    overflow: hidden;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.37);
+
+      z-index: -1;
+    }
+
+    .membile__next-work-img {
+      img {
+        width: 55px;
+      }
+    }
+    .membile__next-work-text {
+      span {
+        font-family: 'Exo 2', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+
+        color: #FFFFFF;
+      }
+    }
+  }
+}

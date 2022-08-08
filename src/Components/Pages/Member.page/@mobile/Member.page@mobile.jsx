@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 
 import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member.page__mountain";
@@ -10,15 +10,20 @@ import MemberPageMobile__aboutMe from "components/Pages/Member.page/@mobile/__ab
 
 export const TAB_ABOUT_ME = 'about me'
 export const TAB_GALLERY = 'gallery'
+export const TAB_CURRENT_IMAGE = 'current image'
 export const TAB_SKILLS = 'skills'
 
 import './_back_gradient/Member.page@mobile_back_gradient_purple.scss'
 import './_back_gradient/Member.page@mobile_back_gradient_red.scss'
+import MemberPageMobile__currentWork
+    from "components/Pages/Member.page/@mobile/__currentWork/Member.page@mobile__currentWork";
 
 const MemberPageMobile = ({member}) => {
+
     const location = useLocation()
 
     const [tabState, setTabState] = useState(TAB_ABOUT_ME)
+    const [currentWork, setWork] = useState({})
 
     const changeTab = (tab) => () => setTabState(tab)
 
@@ -29,6 +34,12 @@ const MemberPageMobile = ({member}) => {
 
         return ''
     }
+
+    useEffect(() => {
+        if(location?.search) {
+
+        }
+    }, [])
 
     return (
         <div className={'membile member-page_mobile'}>
@@ -63,10 +74,23 @@ const MemberPageMobile = ({member}) => {
                         <div className={[
                             'membile__gallery',
                             'membile__window',
-                            checkForWindow(TAB_GALLERY)
+                            checkForWindow(TAB_GALLERY),
                         ].join(' ')}>
                             <MemberPageMobile__Gallery
                                 myWorks={member?.member_works}
+                                changeTab={changeTab}
+                                setWork={setWork}
+                            />
+                        </div>
+                        <div className={[
+                            'membile__gallery',
+                            'membile__window',
+                            checkForWindow(TAB_CURRENT_IMAGE),
+                        ].join(' ')}>
+                            <MemberPageMobile__currentWork
+                                currentWork={currentWork}
+                                member={member}
+                                setWork={setWork}
                             />
                         </div>
                         <div className={[

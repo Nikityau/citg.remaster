@@ -1,8 +1,10 @@
 import React from 'react';
 
+import {TAB_CURRENT_IMAGE} from "components/Pages/Member.page/@mobile/Member.page@mobile";
+
 import './Member.page@mobile__gallery.scss'
 
-const MemberPageMobile__Gallery = ({myWorks}) => {
+const MemberPageMobile__Gallery = ({myWorks, setWork, changeTab}) => {
 
     const getGridBlockPreset = (index) => {
         if(index % 10 === 0) return 'membile__work-preset-1_type_4_4'
@@ -27,6 +29,10 @@ const MemberPageMobile__Gallery = ({myWorks}) => {
                         'membile__work',
                         getGridBlockPreset(index)
                     ].join(' ')}
+                         onClick={() => {
+                             setWork(work)
+                             changeTab(TAB_CURRENT_IMAGE)()
+                         }}
                          key={work?.id}
                          style={{
                              backgroundImage: `url(${work?.main_img})`
