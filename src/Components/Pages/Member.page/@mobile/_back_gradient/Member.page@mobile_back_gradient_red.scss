@@ -1,0 +1,22 @@
+.member-page_mobile_back_gradient_red {
+  &:after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 50%;
+    height: 70%;
+
+    background: #71192A;
+
+    mix-blend-mode: normal;
+
+    filter: blur(104px);
+
+    transform: translate(8%, 10%);
+
+    z-index: -1;
+  }
+}

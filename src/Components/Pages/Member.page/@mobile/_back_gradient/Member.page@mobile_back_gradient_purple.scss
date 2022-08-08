@@ -1,0 +1,22 @@
+.member-page_mobile_back_gradient_purple {
+  &:before {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(19.36deg, #33317D -8.78%, rgba(71, 0, 54, 0) 82.01%);
+
+    mix-blend-mode: normal;
+
+    filter: blur(104px);
+
+    transform: translate(-8%, 10%);
+
+    z-index: -1;
+  }
+}

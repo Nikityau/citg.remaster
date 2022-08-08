@@ -12,6 +12,9 @@ export const TAB_ABOUT_ME = 'about me'
 export const TAB_GALLERY = 'gallery'
 export const TAB_SKILLS = 'skills'
 
+import './_back_gradient/Member.page@mobile_back_gradient_purple.scss'
+import './_back_gradient/Member.page@mobile_back_gradient_red.scss'
+
 const MemberPageMobile = ({member}) => {
     const location = useLocation()
 
@@ -33,7 +36,11 @@ const MemberPageMobile = ({member}) => {
                 'membile__mountain'
             ]}/>
             <div className={'membile__container'}>
-                <div className={'membile__inner-container'}>
+                <div className={[
+                    'membile__inner-container',
+                    'member-page_mobile_back_gradient_purple',
+                    'member-page_mobile_back_gradient_red'
+                ].join(' ')}>
                     <MemberPageMobile__member
                         member={member}
                     />
