@@ -10,9 +10,9 @@ import SliderUi from "slider_ui/Slider.ui";
 import {SLIDER_DEFAULT_WITHOUT_GRAYSCALE_1_5_SLIDE} from "slider_ui/_slider_presets_option/Slider_presets";
 import SliderUi__defaultSlide from "slider_ui/__default-slide/Slider.ui__defaultSlide";
 
-import './Member.page@moible__aboutMe.scss'
+import './Member.page@mobile__aboutMe.scss'
 
-const MemberPageMoible__AboutMe = (
+const MemberPageMobile__aboutMe = (
     {
         participateInProjects,
         myWorks,
@@ -86,4 +86,4 @@ const MemberPageMoible__AboutMe = (
     );
 };
 
-export default MemberPageMoible__AboutMe;
+export default MemberPageMobile__aboutMe;

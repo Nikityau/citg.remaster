@@ -4,8 +4,9 @@ import {useLocation} from "react-router-dom";
 import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member.page__mountain";
 import MemberPageMobile__member from "components/Pages/Member.page/@mobile/__member/Member.page@mobile__member";
 import MemberPageMobile__tabs from "components/Pages/Member.page/@mobile/__tabs/Member.page@mobile__tabs";
-import MemberPageMoible__AboutMe from "components/Pages/Member.page/@mobile/__aboutMe/Member.page@moible__aboutMe";
 import MemberPageMobile__Gallery from "components/Pages/Member.page/@mobile/__gallery/Member.page@mobile__gallery";
+import MemberPageMobile__Skills from "components/Pages/Member.page/@mobile/__skills/Member.page@mobile__skills";
+import MemberPageMobile__aboutMe from "components/Pages/Member.page/@mobile/__aboutMe/Member.page@mobile__aboutMe";
 
 export const TAB_ABOUT_ME = 'about me'
 export const TAB_GALLERY = 'gallery'
@@ -46,7 +47,7 @@ const MemberPageMobile = ({member}) => {
                             'membile__window',
                             checkForWindow(TAB_ABOUT_ME),
                         ].join(' ')}>
-                            <MemberPageMoible__AboutMe
+                            <MemberPageMobile__aboutMe
                                 changeTab={changeTab}
                                 myWorks={member?.member_works}
                                 participateInProjects={member?.participated_in_projects}
@@ -66,7 +67,10 @@ const MemberPageMobile = ({member}) => {
                             'membile__window',
                             checkForWindow(TAB_SKILLS)
                         ].join(' ')}>
-
+                            <MemberPageMobile__Skills
+                                skills={member?.hard_skills}
+                                certificates={member?.certificates}
+                            />
                         </div>
                     </div>
                 </div>
