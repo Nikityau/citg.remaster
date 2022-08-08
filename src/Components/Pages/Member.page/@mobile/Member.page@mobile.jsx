@@ -5,6 +5,7 @@ import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member
 import MemberPageMobile__member from "components/Pages/Member.page/@mobile/__member/Member.page@mobile__member";
 import MemberPageMobile__tabs from "components/Pages/Member.page/@mobile/__tabs/Member.page@mobile__tabs";
 import MemberPageMoible__AboutMe from "components/Pages/Member.page/@mobile/__aboutMe/Member.page@moible__aboutMe";
+import MemberPageMobile__Gallery from "components/Pages/Member.page/@mobile/__gallery/Member.page@mobile__gallery";
 
 export const TAB_ABOUT_ME = 'about me'
 export const TAB_GALLERY = 'gallery'
@@ -56,7 +57,9 @@ const MemberPageMobile = ({member}) => {
                             'membile__window',
                             checkForWindow(TAB_GALLERY)
                         ].join(' ')}>
-
+                            <MemberPageMobile__Gallery
+                                myWorks={member?.member_works}
+                            />
                         </div>
                         <div className={[
                             'membile__skills',

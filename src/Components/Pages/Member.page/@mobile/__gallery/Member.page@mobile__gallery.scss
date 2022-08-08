@@ -1,0 +1,60 @@
+.membile__my-works {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-auto-rows: 50px;
+  gap: 20px;
+
+  .membile__work {
+    width: auto;
+    height: auto;
+
+    border-radius: 10px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .membile__work-preset-1_type_4_4 {
+    grid-column-end: span 4;
+    grid-row-end: span 4;
+  }
+  .membile__work-preset-2_type_4_5 {
+    grid-column-end: span 4;
+    grid-row-end: span 5;
+  }
+  .membile__work-preset-3_type_4_1 {
+    grid-column-end: span 4;
+    grid-row-end: span 1;
+  }
+  .membile__work-preset-4_type_8_3 {
+    grid-column-end: span 8;
+    grid-row-end: span 2;
+  }
+  .membile__work-preset-5_type_5_3 {
+    grid-column-end: span 5;
+    grid-row-end: span 3;
+  }
+  .membile__work-preset-6_type_3_3 {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+  }
+  .membile__work-preset-7_type_3_3 {
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+  }
+  .membile__work-preset-8_type_5_3 {
+    grid-column-end: span 5;
+    grid-row-end: span 3;
+  }
+  .membile__work-preset-9_type_8_2 {
+    grid-column-end: span 8;
+    grid-row-end: span 2;
+  }
+  .membile__work-preset-10_type_8_1 {
+    grid-column-end: span 8;
+    grid-row-end: span 1;
+  }
+}
