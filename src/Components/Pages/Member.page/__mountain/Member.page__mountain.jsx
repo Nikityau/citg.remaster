@@ -4,9 +4,12 @@ import './Member.page__mountain.scss'
 
 import mountain_img from 'assets/images/blue-moutain-back.png'
 
-const MemberPage__Mountain = () => {
+const MemberPage__Mountain = ({ classNames }) => {
     return (
-        <div className={'member-page__mountain'}
+        <div className={[
+            'member-page__mountain',
+            classNames && classNames?.join(' ')
+        ].join(' ')}
         >
             <div className={'member-page__mountain-img'}>
                 <img src={mountain_img} alt={'img'}/>

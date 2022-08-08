@@ -1,4 +1,85 @@
-.member-page {
-  width: 100%;
-  min-height: 100vh;
+@media screen and (max-width: 500px){
+  .member-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: none;
+  }
+
+  .member-page_mobile {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: block;
+  }
+
+  .membile {
+    position: relative;
+    
+    width: 100%;
+    min-height: auto;
+
+    z-index: 1;
+
+    .membile__mountain {
+      height: 40vh;
+
+      .member-page__mountain-img {
+        img {
+          height: 180px;
+        }
+      }
+    }
+
+    .membile__container {
+      width: 100%;
+
+      padding-top: 250px;
+
+      .membile__inner-container {
+        position: relative;
+
+        width: 100%;
+        min-height: 80vh;
+
+        padding-bottom: 100px;
+
+        background: linear-gradient(180deg, #0C1117 11.66%, rgba(12, 17, 23, 0.5) 100%);
+
+        border-radius: 40px 40px 0px 0px;
+
+        .membile__tabs-windows {
+          width: 100%;
+
+          padding-top: 30px;
+
+          .membile__window {
+            display: none;
+
+            width: auto;
+
+            padding: 0 15px;
+          }
+
+          .membile__current-window {
+            display: block;
+          }
+
+          .membile__about-me {
+
+          }
+
+          .membile__gallery {
+
+          }
+
+          .membile__skills {
+
+          }
+        }
+      }
+    }
+  }
 }

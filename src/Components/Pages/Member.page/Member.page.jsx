@@ -6,6 +6,8 @@ import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member
 import MemberPreview from "components/Pages/Member.page/&blocks/MemberPreview/MemberPreview";
 import ProjectsInfo from "components/Pages/Member.page/&blocks/ProjectsInfo/ProjectsInfo";
 
+import MemberPageMobile from "components/Pages/Member.page/@mobile/Member.page@mobile";
+
 import CITG_APIController from "src/API/CITG_API.controller";
 
 import './Member.page.scss'
@@ -23,11 +25,14 @@ const MemberPage = () => {
     }, [])
 
     return (
-        <div className={'member-page'}>
-            <MemberPage__Mountain/>
-            <MemberPreview member={memberAPI}/>
-            <ProjectsInfo member={memberAPI}/>
-        </div>
+        <>
+            <div className={'member-page'}>
+                <MemberPage__Mountain/>
+                <MemberPreview member={memberAPI}/>
+                <ProjectsInfo member={memberAPI}/>
+            </div>
+            <MemberPageMobile member={memberAPI}/>
+        </>
     );
 };
 
