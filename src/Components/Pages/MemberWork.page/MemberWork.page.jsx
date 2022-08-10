@@ -8,9 +8,11 @@ import MemberWorkPage__Description from "components/Pages/MemberWork.page/__desc
 
 import CITG_APIController from "src/API/CITG_API.controller";
 
-import './MemberWork.page.scss'
 import {TEAM_MEMBER_LINK} from "components/AppRouter/AppRouter.links";
-import {transformDryIdLink} from "utils/transformDryIdLink";
+import {whatRender} from "components/Utils.Compoents/whatRender";
+
+import './MemberWork.page.scss'
+
 
 
 const MemberWorkPage = () => {
@@ -46,29 +48,42 @@ const MemberWorkPage = () => {
         return nextIndex >= member?.member_works?.length ? member?.member_works[0] : member?.member_works[nextIndex];
     }
 
-    return (
-        <div className={'member-work-page'}>
-            <div className={'member-work-page__header-wrapper'}>
-              <MemberWorkPage__Header
+    const tablet = <div className={'member-work-page'}>
+        <div className={'member-work-page__header-wrapper'}>
+            <MemberWorkPage__Header
                 memberFullName={member?.full_name}
                 memberPhoto={member?.photo}
                 memberSkills={member?.hard_skills}
-              />
+            />
+        </div>
+        <div className={'member-work-page__my-work-container'}>
+            <div className={'member-work-page__my-work-wrapper'}>
+                <MemberWorkPage__Work
+                    currentWork={getCurrentWork()}
+                />
             </div>
-            <div className={'member-work-page__my-work-container'}>
-                <div className={'member-work-page__my-work-wrapper'}>
-                    <MemberWorkPage__Work
-                        currentWork={getCurrentWork()}
-                    />
-                </div>
-                <div className={'member-work-page__description-container'}>
-                    <MemberWorkPage__Description
-                        currentWork={getCurrentWork()}
-                        nextWork={getNextWork()}
-                    />
-                </div>
+            <div className={'member-work-page__description-container'}>
+                <MemberWorkPage__Description
+                    currentWork={getCurrentWork()}
+                    nextWork={getNextWork()}
+                />
             </div>
         </div>
+    </div>
+
+    const mobile = ''
+
+    const desktop = <>
+        { tablet }
+        { mobile }
+    </>
+
+    return (
+        <>
+            {
+                whatRender(desktop, tablet, mobile)
+            }
+        </>
     );
 };
 

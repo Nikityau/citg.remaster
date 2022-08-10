@@ -10,7 +10,10 @@ import MemberPageMobile from "components/Pages/Member.page/@mobile/Member.page@m
 
 import CITG_APIController from "src/API/CITG_API.controller";
 
+import {whatRender} from "components/Utils.Compoents/whatRender";
+
 import './Member.page.scss'
+
 
 const MemberPage = () => {
     const { memberId } = useParams()
@@ -24,14 +27,24 @@ const MemberPage = () => {
         })()
     }, [])
 
+    const tablet =  <div className={'member-page'}>
+        <MemberPage__Mountain/>
+        <MemberPreview member={memberAPI}/>
+        <ProjectsInfo member={memberAPI}/>
+    </div>
+
+    const mobile = <MemberPageMobile member={memberAPI}/>
+
+    const desktop = <>
+        { tablet }
+        { mobile }
+    </>
+
     return (
         <>
-            <div className={'member-page'}>
-                <MemberPage__Mountain/>
-                <MemberPreview member={memberAPI}/>
-                <ProjectsInfo member={memberAPI}/>
-            </div>
-            <MemberPageMobile member={memberAPI}/>
+            {
+                whatRender(desktop, tablet, mobile)
+            }
         </>
     );
 };

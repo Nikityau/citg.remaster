@@ -17,10 +17,33 @@ import './_back_gradient/Project.page_back_gradient.scss'
 import './_back_gradient/Project.page_back_gradient_blue.scss'
 import './_close/Project.page__preview_close.scss'
 import {isSafari} from "react-device-detect";
+import {whatRender} from "components/Utils.Compoents/whatRender";
 
 let startY = 0;
 
 const ProjectPage__Preview = ({project, isOpen, close, open}) => {
+
+    const tablet = <ProjectPage__MiniProjectInfo project={project}/>
+    const mobile =  <>
+        <ProjectPagePreviewBackBottomMobileGradient/>
+        <div className={'project-page__preview_mobile'}>
+            <div className={'project-page__preview-container'}>
+                <div className={'project-page__preview-title'}>
+                    <h2> {project?.name} </h2>
+                </div>
+                <div className={'project-page__preview-description'}>
+                    <p>
+                        {project?.description}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </>
+
+    const desktop = <>
+        { tablet }
+        {mobile }
+    </>
 
     useEffect(() => {
         if (window.screen.width <= 500) {
@@ -96,20 +119,9 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
             onTouchEnd={onTouchEnd}
         >
             <ProjectPage_Back_Blur/>
-            <ProjectPagePreviewBackBottomMobileGradient/>
-            <ProjectPage__MiniProjectInfo project={project}/>
-            <div className={'project-page__preview_mobile'}>
-                <div className={'project-page__preview-container'}>
-                    <div className={'project-page__preview-title'}>
-                        <h2> {project?.name} </h2>
-                    </div>
-                    <div className={'project-page__preview-description'}>
-                        <p>
-                            {project?.description}
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {
+                whatRender(desktop, tablet, mobile)
+            }
         </div>
     );
 };
