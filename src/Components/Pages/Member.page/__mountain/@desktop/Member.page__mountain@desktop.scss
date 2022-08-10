@@ -58,6 +58,10 @@
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+  .member-preview__mountain-gradient-gray_safari {
+
+  }
+
   .member-page__mountain-gradient-red {
     position: absolute;
     top: 0;
@@ -73,5 +77,8 @@
     transform: translate(50%, 10%);
 
     z-index: -3;
+  }
+  .member-page__mountain-gradient-red_safari {
+
   }
 }

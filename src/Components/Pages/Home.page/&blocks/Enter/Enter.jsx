@@ -1,4 +1,5 @@
 import React from 'react';
+import {isSafari} from "react-device-detect";
 
 import Enter__title from "components/Pages/Home.page/&blocks/Enter/__title/Enter__title";
 
@@ -17,7 +18,13 @@ import noise_img from 'assets/images/noise.png'
 
 const Enter = () => {
     return (
-        <div className={'enter enter_back_gradient'}>
+        <div
+            className={[
+                'enter',
+                isSafari
+                    ? 'enter_back_gradient_safari'
+                    : 'enter_back_gradient'
+            ].join(' ')}>
             <div className={'enter_back_noise'}>
                 <img src={noise_img} alt={'noise'}/>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { isSafari } from "react-device-detect";
 
 import Advantages__text from "components/Pages/Home.page/&blocks/Advantages/__text/Advantages__text";
 
@@ -15,7 +16,13 @@ import './_background_gradient_red/Advantages_background_gradient_red.scss'
 
 const Advantages = () => {
     return (
-        <div id={'advantages-anchor'} className={'advantages advantages_background_gradient_red'}>
+        <div id={'advantages-anchor'}
+             className={[
+                 'advantages',
+                 isSafari
+                     ? 'advantages_background_gradient_red_safari'
+                     : 'advantages_background_gradient_red'
+        ].join(' ')}>
             <div className={'advantages__container app-container'}>
                 <div className={'advantages__text-side'}>
                     <Advantages__text/>

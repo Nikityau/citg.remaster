@@ -7,14 +7,16 @@ import ProjectPage__MiniProjectInfo
 
 import ProjectPage_Back_Blur from "components/Pages/Project.page/__preview/_back_blur/Project.page_back_blur";
 
+import ProjectPagePreviewBackBottomMobileGradient
+    from "components/Pages/Project.page/__preview/_back_bottom_mobile_gradient/Project.page__preview_back_bottom_mobile_gradient";
+
 import {prevEv} from "utils/prevEv";
 
 import './Project.page__preview.scss'
 import './_back_gradient/Project.page_back_gradient.scss'
 import './_back_gradient/Project.page_back_gradient_blue.scss'
 import './_close/Project.page__preview_close.scss'
-import ProjectPagePreviewBackBottomMobileGradient
-    from "components/Pages/Project.page/__preview/_back_bottom_mobile_gradient/Project.page__preview_back_bottom_mobile_gradient";
+import {isSafari} from "react-device-detect";
 
 let startY = 0;
 
@@ -35,7 +37,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
         window.addEventListener('touchmove', prevEv, {passive: false})
     }
     const allowTouch = () => {
-        window.removeEventListener('touchmove', prevEv,)
+        window.removeEventListener('touchmove', prevEv)
     }
 
     const onTouchStart = (e) => {
@@ -52,7 +54,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
     }
     const checkDirection = (endY) => {
         if (startY > endY) {
-           close()
+            close()
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -61,7 +63,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
         }
 
         stopTouch()
-       open()
+        open()
     }
 
     const onTouchEnd = () => {
@@ -72,9 +74,17 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
         <div
             className={[
                 'project-page__preview',
-                'project-page_back_gradient_pink',
-                'project-page_back_gradient_blue',
-                isOpen ? 'project-page__preview_open'
+                isSafari
+                    ? [
+                        'project-page_back_gradient_pink_safari',
+                        'project-page_back_gradient_blue_safari',
+                    ].join(' ')
+                    :  [
+                        'project-page_back_gradient_pink',
+                        'project-page_back_gradient_blue',
+                    ].join(' '),
+                isOpen
+                    ? 'project-page__preview_open'
                     : 'project-page__preview_close'
             ].join(' ')}
             style={{

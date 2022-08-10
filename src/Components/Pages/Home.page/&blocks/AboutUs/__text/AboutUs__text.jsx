@@ -1,7 +1,5 @@
 import React from 'react';
 
-import AboutUs__Button from "../__button/AboutUs__button";
-
 import './AboutUs__text.scss'
 
 const AboutUs__Text = ({ classNames }) => {

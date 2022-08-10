@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {isSafari} from "react-device-detect";
 
 import TeamMemberCard from "components/Pages/Team.page/&blocks/TeamMeberCard/TeamMemberCard";
 
@@ -7,7 +8,6 @@ import CITG_APIController from "src/API/CITG_API.controller";
 import './Team.page.scss'
 import './_back/Team.page_back_gradient_purple.scss'
 import './_back/Team.page_back_gradient_orange.scss'
-
 
 const TeamPage = () => {
 
@@ -21,7 +21,18 @@ const TeamPage = () => {
     }, [])
 
     return (
-        <div className={'team-page team-page_back_gradient_purple team-page_back_gradient_orange'}>
+        <div className={[
+            'team-page',
+            isSafari
+                ? [
+                    'team-page_back_gradient_purple_safari',
+                    'team-page_back_gradient_orange_safari'
+                ].join(' ')
+                : [
+                    'team-page_back_gradient_purple',
+                    'team-page_back_gradient_orange'
+                ].join(' ')
+        ].join(' ')}>
             <div className={'team-page__container app-container'}>
                 <div className={'team-page__page-title'}>
                     <div className={'team-page__title'}>
@@ -29,7 +40,8 @@ const TeamPage = () => {
                     </div>
                     <div className={'team-page__subtitle'}>
                         <p>
-                            Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных сфер,
+                            Центр IT-притяжения аккумулирует вокруг себя множество талантливых специалистов из разных
+                            сфер,
                             многие из них являются бывшими учениками
                         </p>
                     </div>

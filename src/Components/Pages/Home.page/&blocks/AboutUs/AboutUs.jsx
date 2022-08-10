@@ -1,4 +1,5 @@
 import React from 'react';
+import {isSafari} from "react-device-detect";
 
 import AboutUs__Img from "./__img/AboutUs__img";
 import AboutUs__text from "./__text/AboutUs__text";
@@ -18,18 +19,30 @@ import img from 'assets/images/Slider/_1.png'
 
 const AboutUs = () => {
     return (
-        <div className={'about-us about-us_back_purple_gradient about-us_back_orange_gradient'}>
+        <div
+            className={[
+                'about-us',
+                isSafari
+                    ? [
+                        'about-us_back_purple_gradient_safari',
+                        'about-us_back_orange_gradient_safari'
+                    ].join(' ')
+                    : [
+                        'about-us_back_purple_gradient',
+                        'about-us_back_orange_gradient'
+                    ].join(' ')
+            ].join(' ')}>
             <AboutUsTablet backImg={img}/>
             <div className={'about-us__container app-container'}>
                 <PageLineUi pageNum={'03'}
                             classNames={['about-us_pos_top_left']}/>
                 <div className={'about-us__description-side'}>
-                  <div className={'about-us__description-container'}>
-                      <AboutUs__text/>
-                      <div className={'about-us__button-container'}>
-                          <AboutUs__Button/>
-                      </div>
-                  </div>
+                    <div className={'about-us__description-container'}>
+                        <AboutUs__text/>
+                        <div className={'about-us__button-container'}>
+                            <AboutUs__Button/>
+                        </div>
+                    </div>
                 </div>
                 <div className={'about-us__photo-side'}>
                     <AboutUs__Img

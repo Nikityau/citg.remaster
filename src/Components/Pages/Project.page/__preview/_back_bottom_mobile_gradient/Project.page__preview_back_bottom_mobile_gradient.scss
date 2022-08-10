@@ -2,6 +2,10 @@
   display: none;
 }
 
+.project-page__preview_back_bottom_mobile_gradient_safari {
+  display: none;
+}
+
 @media screen and (max-width: 500px){
   .project-page__preview_back_bottom_mobile_gradient {
     position: absolute;
@@ -16,5 +20,8 @@
     background: linear-gradient(0deg, #181C21 33.07%, rgba(0, 0, 0, 0) 95.19%);
 
     z-index: 1;
+  }
+  .project-page__preview_back_bottom_mobile_gradient_safari {
+
   }
 }

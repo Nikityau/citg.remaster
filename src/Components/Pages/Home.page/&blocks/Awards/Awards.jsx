@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {isSafari} from "react-device-detect";
 
 import Award from "components/Pages/Home.page/&blocks/Awards/&blocks/Award/Award";
 
@@ -6,7 +7,7 @@ import AwardsTablet from "components/Pages/Home.page/&blocks/Awards/@tablet/Awar
 
 import SliderUi from "slider_ui/Slider.ui";
 import SliderUi__defaultSlide from "slider_ui/__default-slide/Slider.ui__defaultSlide";
-import { SLIDER_DEFAULT_SLIDE } from "slider_ui/_slider_presets_option/Slider_presets";
+import {SLIDER_DEFAULT_SLIDE} from "slider_ui/_slider_presets_option/Slider_presets";
 
 import CITG_API from "src/API/CITG_API.controller";
 
@@ -27,7 +28,13 @@ const Awards = () => {
     }, [])
 
     return (
-        <div className={'awards awards_back_gradient_red'}>
+        <div
+            className={[
+                'awards',
+                isSafari
+                    ? 'awards_back_gradient_red_safari'
+                    : 'awards_back_gradient_red'
+            ].join(' ')}>
             <div className={'awards__container app-container'}>
                 <div className={'awards__title'}>
                     <h3> Награды </h3>

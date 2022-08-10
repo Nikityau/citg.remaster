@@ -13,10 +13,13 @@ export const TAB_GALLERY = 'gallery'
 export const TAB_CURRENT_IMAGE = 'current image'
 export const TAB_SKILLS = 'skills'
 
-import './_back_gradient/Member.page@mobile_back_gradient_purple.scss'
-import './_back_gradient/Member.page@mobile_back_gradient_red.scss'
 import MemberPageMobile__currentWork
     from "components/Pages/Member.page/@mobile/__currentWork/Member.page@mobile__currentWork";
+
+import './_back_gradient/Member.page@mobile_back_gradient_purple.scss'
+import './_back_gradient/Member.page@mobile_back_gradient_red.scss'
+import {isSafari} from "react-device-detect";
+
 
 const MemberPageMobile = ({member}) => {
 
@@ -25,10 +28,31 @@ const MemberPageMobile = ({member}) => {
     const [tabState, setTabState] = useState(TAB_ABOUT_ME)
     const [currentWork, setWork] = useState({})
 
+    useEffect(() => {
+        const [tab, work] = location.search.substring(1).split('&')
+
+        if (!tab || !work) return
+
+        const [tabStr, tabQuery] = tab.split('=')
+        const [workStr, workId] = work?.split('=')
+
+        if (tabQuery === 'gallery') {
+            const findWork = member?.member_works?.find(w => w?.id == workId)
+
+            if (!findWork) {
+                setTabState(TAB_GALLERY)
+            }
+
+            setWork(findWork)
+            setTabState(TAB_CURRENT_IMAGE)
+        }
+
+    }, [])
+
     const changeTab = (tab) => () => setTabState(tab)
 
     const checkForWindow = (tab) => {
-        if(tab === tabState) {
+        if (tab === tabState) {
             return 'membile__current-window'
         }
 
@@ -36,7 +60,7 @@ const MemberPageMobile = ({member}) => {
     }
 
     useEffect(() => {
-        if(location?.search) {
+        if (location?.search) {
 
         }
     }, [])
@@ -49,8 +73,15 @@ const MemberPageMobile = ({member}) => {
             <div className={'membile__container'}>
                 <div className={[
                     'membile__inner-container',
-                    'member-page_mobile_back_gradient_purple',
-                    'member-page_mobile_back_gradient_red'
+                    isSafari
+                        ? [
+                            'member-page_mobile_back_gradient_purple_safari',
+                            'member-page_mobile_back_gradient_red_safari'
+                        ].join(' ')
+                        : [
+                            'member-page_mobile_back_gradient_purple',
+                            'member-page_mobile_back_gradient_red'
+                        ].join(' ')
                 ].join(' ')}>
                     <MemberPageMobile__member
                         member={member}

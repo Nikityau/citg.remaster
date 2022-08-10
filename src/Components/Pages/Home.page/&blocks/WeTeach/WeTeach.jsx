@@ -6,7 +6,6 @@ import BackgroundPartyUi from "ui/BackgroundParty.ui/BackgroundParty.ui";
 
 import { weTeach_study_casesPreset } from "components/Pages/Home.page/&blocks/WeTeach/_study_cases.preset/WeTeach_study_cases.preset";
 
-
 import './WeTeach.scss'
 
 const WeTeach = () => {

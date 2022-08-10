@@ -11,14 +11,22 @@ import './Project.page__otherInfo.scss'
 import './_back_gradient/Project.page_back_gradient_purple.scss'
 import './_back_gradient/Projec.page_back_gradient_orange.scss'
 import './_preview_close/Project.page__otherInfo_preview_close.scss'
+import {isSafari} from "react-device-detect";
 
-const ProjectPage__OtherInfo = ({ project, isPreviewOpen }) => {
+const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
     return (
         <div className={
             [
                 'project-page__other-info',
-                'project-page_back_gradient_purple',
-                'project-page_back_gradient_orange',
+                isSafari
+                    ? [
+                        'project-page_back_gradient_purple_safari',
+                        'project-page_back_gradient_orange_safari'
+                    ].join(' ')
+                    :  [
+                        'project-page_back_gradient_purple',
+                        'project-page_back_gradient_orange'
+                    ].join(' '),
                 isPreviewOpen
                     ? 'project-page__other-info_preview_open'
                     : 'project-page__other-info_preview_close'

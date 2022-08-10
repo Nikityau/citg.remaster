@@ -1,10 +1,17 @@
 import React from 'react';
+import {isSafari} from "react-device-detect";
 
-const AboutUsTablet = ({ backImg }) => {
+const AboutUsTablet = ({backImg}) => {
     return (
-        <div className={'about-us_tablet about-us_back_blue_gradient'}
+        <div
+            className={[
+                'about-us_tablet',
+                isSafari
+                    ?  'about-us_back_blue_gradient_safari'
+                    :  'about-us_back_blue_gradient',
+            ].join(' ')}
             style={{
-                backgroundImage: `url(${ backImg })`
+                backgroundImage: `url(${backImg})`
             }}
         >
         </div>

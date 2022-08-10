@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, {Suspense} from 'react';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 import LoaderPage from "components/Pages/Loader.page/Loader.page";
@@ -14,6 +14,7 @@ const Member = React.lazy(() => import('../Pages/Member.page/Member.page'))
 const MemberWork = React.lazy(() => import('../Pages/MemberWork.page/MemberWork.page'))
 
 const AppRouter = () => {
+
     return (
         <Suspense fallback={<LoaderPage/>}>
             <Routes>

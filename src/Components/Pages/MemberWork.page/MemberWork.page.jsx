@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {isMobileOnly} from "react-device-detect";
+import {useNavigate, useParams, generatePath} from "react-router-dom";
 
 import MemberWorkPage__Header from "components/Pages/MemberWork.page/__header/MemberWork.page__header";
 import MemberWorkPage__Work from "components/Pages/MemberWork.page/__work/MemberWork.page__work";
@@ -8,14 +9,24 @@ import MemberWorkPage__Description from "components/Pages/MemberWork.page/__desc
 import CITG_APIController from "src/API/CITG_API.controller";
 
 import './MemberWork.page.scss'
+import {TEAM_MEMBER_LINK} from "components/AppRouter/AppRouter.links";
+import {transformDryIdLink} from "utils/transformDryIdLink";
+
 
 const MemberWorkPage = () => {
+
+    const navigate = useNavigate()
 
     const { memberId, workId } = useParams()
 
     const [member, setMember] = useState({})
 
     useEffect(() => {
+
+        if(isMobileOnly) {
+            navigate(`${generatePath(TEAM_MEMBER_LINK, { memberId })}?tab=gallery&workId=${workId}`, { replace: true })
+        }
+
         (async () => {
             const response = await CITG_APIController.getTeamMemberById(memberId)
             setMember(response)

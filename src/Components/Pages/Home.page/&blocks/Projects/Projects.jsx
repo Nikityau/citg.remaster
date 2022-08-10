@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {isSafari} from "react-device-detect";
 
 import Projects__title from "components/Pages/Home.page/&blocks/Projects/__title/Projects__title";
 
@@ -31,10 +32,22 @@ const Projects = () => {
     }, [])
 
     return (
-        <div className={'projects ' +
-            'projects_back_red_gradient ' +
-            'projects_back_purple_gradient ' +
-            'projects_pos_center_block'}>
+        <div
+            className={[
+                'projects',
+                isSafari
+                    ? [
+                        'projects_back_red_gradient_safari',
+                        'projects_back_purple_gradient_safari',
+                        ''
+                    ].join(' ')
+                    : [
+                        'projects_back_red_gradient',
+                        'projects_back_purple_gradient',
+                        ''
+                    ].join(' '),
+                'projects_pos_center_block'
+            ].join(' ')}>
             <div className={'projects__container app-container'}>
                 <div className={'projects__title-container'}>
                     <PageLineUi pageNum={'02'}

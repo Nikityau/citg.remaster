@@ -1,4 +1,5 @@
 import React from 'react';
+import {isSafari} from "react-device-detect";
 
 import ProjectsInfo__participationInProjects
     from "./__participationInProjects/ProjectsInfo__participationInProjects";
@@ -15,8 +16,15 @@ const ProjectsInfo = ({member}) => {
             <div className={
                 [
                     'projects-info__container app-container',
-                    'projects-info_back_gradient_purple',
-                    'projects-info_back_gradient_red'
+                    isSafari
+                        ? [
+                            'projects-info_back_gradient_purple_safari',
+                            'projects-info_back_gradient_red_safari'
+                        ].join(' ')
+                        : [
+                            'projects-info_back_gradient_purple',
+                            'projects-info_back_gradient_red'
+                        ].join(' ')
                 ].join(' ')}>
                 <Summary link={member?.summary_link}/>
                 <ProjectsInfo__participationInProjects
