@@ -19,6 +19,7 @@ import './_pos/Projects_pos_center_block.scss'
 
 import './_back_purple_gradient/Projects_back_purple_gradient.scss'
 import './_back_red_gradient/Projects_back_red_gradient.scss'
+import {goUp} from "utils/goUp";
 
 const Projects = () => {
 
@@ -67,6 +68,7 @@ const Projects = () => {
                         }
                     </div>
                     <ButtonLinkUi
+                        onClick={goUp}
                         link={PROJECTS_LINK}
                         text={'load more'}
                         classNames={['projects_pos_top_small_offset']}

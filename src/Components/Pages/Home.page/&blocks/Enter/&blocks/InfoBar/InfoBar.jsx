@@ -7,6 +7,11 @@ import './_border_gradient/InfoBar_border_gradient.scss'
 import futuristic_arrow from 'assets/icons/futuristic-arrow.svg'
 
 const InfoBar = ({classNames}) => {
+
+    const onAnimation = () => {
+        document.documentElement.style.scrollBehavior = 'smooth'
+    }
+
     return (
         <div
             className={[
@@ -16,7 +21,9 @@ const InfoBar = ({classNames}) => {
                     : 'info-bar_border_gradient',
                 classNames && classNames?.join(' ')
             ].join(' ')}>
-            <a href={'#advantages-anchor'}>
+            <a href={'#advantages-anchor'}
+                onClick={onAnimation}
+            >
                 <div className={'info-bar__container'}>
                     <div className={'info-bar__upper-info'}>
                         <p>

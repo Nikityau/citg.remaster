@@ -9,7 +9,6 @@ const AboutUs__Img = ({ image,classNames }) => {
                 backgroundImage: `url(${image})`
             }}
         >
-
         </div>
     );
 };

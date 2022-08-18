@@ -3,8 +3,10 @@ import {Link} from "react-router-dom";
 
 import TeamMemberCard__Button from "./__button/TeamMemberCard__button";
 
-import {transformDryIdLink} from "utils/transformDryIdLink";
 import {TEAM_MEMBER_LINK} from "components/AppRouter/AppRouter.links";
+
+import {goUp} from "utils/goUp";
+import {transformDryIdLink} from "utils/transformDryIdLink";
 
 import './TeamMemberCard.scss'
 import './_hover/TeamMermberCard_opacity_hover.scss'
@@ -14,7 +16,9 @@ import './_hover/TeamMemberCard_text_color_black_hover.scss'
 
 const TeamMemberCard = ({ photo,fullName,skills, id }) => {
     return (
-        <div className={'team-member-card team-member-card_back_white_hover'}>
+        <div className={'team-member-card team-member-card_back_white_hover'}
+            onClick={goUp}
+        >
             <Link to={transformDryIdLink(TEAM_MEMBER_LINK, id)}>
                 <div className={'team-member-card__photo'}>
                     <img src={photo} alt={'member-img'}/>
