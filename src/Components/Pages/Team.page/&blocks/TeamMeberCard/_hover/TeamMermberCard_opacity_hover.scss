@@ -1,5 +1,7 @@
 .team-member-card_opacity_hover {
   opacity: 0;
+
+  will-change: opacity;
 }
 
 .team-member-card {

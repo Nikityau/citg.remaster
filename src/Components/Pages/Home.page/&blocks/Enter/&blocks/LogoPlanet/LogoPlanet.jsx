@@ -15,8 +15,9 @@ import './_circle_size/LogoPlanet_cirlce_size_m.scss'
 import './_circle_size/LogoPlanet_circle_size_s.scss'
 import './_circle_size/LogoPlanet_circle_size_m_plus.scss'
 import './_planet_glow/LogoPlanet_planet_glow.scss'
+import './_animation_levitation/LogoPlanet_animation_levitation.scss'
 
-const LogoPlanet = ({ classNames }) => {
+const LogoPlanet = ({classNames}) => {
     const mainCircleAttr = 'mainCircle'
     const smallCircleAttr = 'smallCircle'
     const mediumCircleAttr = 'mediumAttr'
@@ -27,18 +28,37 @@ const LogoPlanet = ({ classNames }) => {
         smallCircleAttr, mediumCircleAttr, rotatingCircleAttr, trailAttr))
 
     useEffect(() => {
-        if(!planetController) return
+        if (!planetController) return
 
         planetController.init()
         planetController.setPosition()
+        planetController.animationStart()
+
+        return () => {
+            planetController.destroy();
+        }
     }, [])
 
     return (
         <div className={['logo-planet', classNames && classNames?.join(' ')].join(' ')}>
-            <LogoPlanet__MainCircle dataAttr={mainCircleAttr} classNames={['logo-planet_planet_glow']}/>
-            <LogoPlanet__Circle dataAttr={smallCircleAttr} classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_s']}/>
-            <LogoPlanet__Circle dataAttr={mediumCircleAttr} classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m_plus']}/>
-            <LogoPlanet__Circle dataAttr={rotatingCircleAttr} classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m']}/>
+            <LogoPlanet__MainCircle dataAttr={mainCircleAttr}
+                                    classNames={['logo-planet_planet_glow']}/>
+            <LogoPlanet__Circle dataAttr={smallCircleAttr}
+                                classNames={[
+                                    'logo-planet_planet_glow',
+                                    'logo-planet_circle_size_s',
+                                    'logo-planet_animation_levitation',
+                                    'logo-planet_animation_levitation_far'
+                                ]}/>
+            <LogoPlanet__Circle dataAttr={mediumCircleAttr}
+                                classNames={[
+                                    'logo-planet_planet_glow',
+                                    'logo-planet_circle_size_m_plus',
+                                    'logo-planet_animation_levitation',
+                                    'logo-planet_animation_levitation_near'
+                                ]}/>
+            <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
+                                classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m']}/>
             <LogoPlanet__Trail dataAttr={trailAttr}/>
         </div>
     );

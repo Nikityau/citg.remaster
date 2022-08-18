@@ -13,7 +13,6 @@ import './_hover/TeamMermberCard_opacity_hover.scss'
 import './_hover/TeamMemberCard_back_white_hover.scss'
 import './_hover/TeamMemberCard_text_color_black_hover.scss'
 
-
 const TeamMemberCard = ({ photo,fullName,skills, id }) => {
     return (
         <div className={'team-member-card team-member-card_back_white_hover'}

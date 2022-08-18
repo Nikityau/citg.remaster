@@ -1,0 +1,39 @@
+.logo-planet_animation_levitation {
+  will-change: transform;
+}
+
+.logo-planet_animation_levitation_near {
+  animation: levitation_near;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.logo-planet_animation_levitation_far {
+  animation: levitation_far;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes levitation_far {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes levitation_near {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
