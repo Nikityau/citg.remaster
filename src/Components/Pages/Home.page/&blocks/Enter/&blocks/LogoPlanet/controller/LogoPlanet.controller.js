@@ -37,8 +37,9 @@ class LogoPlanetController {
 
         this._mainC && this._setMainCircleData()
 
-        this._rotateController = new LogoPlanetRotateAnimController(this._rotatingC,
-            this._mainCircleData['width'] / 2)
+        if (!this._rotateController)
+            this._rotateController = new LogoPlanetRotateAnimController(this._rotatingC,
+                this._mainCircleData['width'] / 2)
 
         window.addEventListener('resize', this._resize)
     }
