@@ -1,5 +1,4 @@
 .project-page__preview_close {
-  height: 30vh;
 
   .project-page__preview_mobile {
 
@@ -11,7 +10,7 @@
 
 
         h2 {
-          font-size: 2.3rem;
+          transform: scale(.8) translateX(14%);
         }
       }
       .project-page__preview-description {

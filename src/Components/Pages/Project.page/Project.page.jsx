@@ -15,7 +15,7 @@ const ProjectPage = () => {
 
     const [projectAPI, setProjectAPI] = useState([])
 
-    const previewRef = useRef(undefined)
+    const [toggler, setToggler] = useToggler(true)
 
     useEffect(() => {
         (async () => {
@@ -28,11 +28,13 @@ const ProjectPage = () => {
         <div className={'project-page'}>
             <ProjectPage__Preview
                 project={projectAPI}
-                ref={previewRef}
+                isOpen={toggler}
+                setClose={setToggler.off}
+                setOpen={setToggler.on}
             />
             <ProjectPage__OtherInfo
                 project={projectAPI}
-                isPreviewOpen={previewRef.current}
+                isPreviewOpen={toggler}
             />
         </div>
     );

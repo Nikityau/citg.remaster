@@ -1,8 +1,32 @@
 @media screen and (max-width: 500px){
   .project-page__other-info {
+    position: relative;
+
+    overflow: visible;
+
+    transform: translateY(100vh);
+
+    background: #181C21;
 
     .project-page__other-container {
 
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        pointer-events: none;
+
+        transform: translateY(-170px);
+
+        width: 100%;
+        height: 200px;
+
+        background: linear-gradient(0deg, #181C21 33.07%, rgba(0, 0, 0, 0) 95.19%);
+
+        z-index: -1;
+      }
 
       .project-page__spec-container {
         flex-direction: column-reverse;

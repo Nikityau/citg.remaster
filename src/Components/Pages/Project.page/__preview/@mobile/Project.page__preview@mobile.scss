@@ -1,9 +1,14 @@
 @media screen and (max-width: 500px){
   .project-page__preview {
+    position: absolute;
+    top: 0;
+    left: 0;
 
     overflow: hidden;
 
     transition: all .3s ease-in-out;
+
+    z-index: 0;
 
     .project-page__preview_mobile {
       display: block;

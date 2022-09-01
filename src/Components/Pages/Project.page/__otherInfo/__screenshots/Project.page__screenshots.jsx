@@ -7,8 +7,9 @@ import {
 } from "slider_ui/_slider_presets_option/Slider_presets";
 import SliderUi__defaultSlide from "slider_ui/__default-slide/Slider.ui__defaultSlide";
 
-import './Project.page__screenshots.scss'
 import {whatRender} from "components/Utils.Compoents/whatRender";
+
+import './Project.page__screenshots.scss'
 
 const ProjectPage__Screenshots = ({ project }) => {
 

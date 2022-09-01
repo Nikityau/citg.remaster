@@ -16,22 +16,18 @@ import ProjectPagePreviewBackBottomMobileGradient
 
 import {prevEv} from "utils/prevEv";
 
-import './Project.page__preview.scss'
+//import './Project.page__preview.scss'
+
+import './@desktop/Project.page__preview@desktop.scss'
+import './@tablet/Project.page__preview@tablet.scss'
+import './@mobile/Project.page__preview@mobile.scss'
 import './_back_gradient/Project.page_back_gradient.scss'
 import './_back_gradient/Project.page_back_gradient_blue.scss'
 import './_close/Project.page__preview_close.scss'
 
 let startY = 0;
 
-const ProjectPage__Preview = forwardRef(({project}, ref) => {
-
-    const [is, setIs] = useState(true)
-
-    useImperativeHandle(ref,() => ({
-        is,
-        off: () => setIs(false),
-        on: () => setIs(true)
-    }))
+const ProjectPage__Preview = forwardRef(({project, isOpen, setOpen, setClose}, ref) => {
 
     const tablet = <ProjectPage__MiniProjectInfo project={project}/>
     const mobile =  <>
@@ -87,7 +83,7 @@ const ProjectPage__Preview = forwardRef(({project}, ref) => {
     }
     const checkDirection = (endY) => {
         if (startY > endY) {
-            setIs(false)
+            setClose?.()
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -96,7 +92,7 @@ const ProjectPage__Preview = forwardRef(({project}, ref) => {
         }
 
         stopTouch()
-        setIs(true)
+        setOpen?.()
     }
 
     const onTouchEnd = () => {
@@ -116,7 +112,7 @@ const ProjectPage__Preview = forwardRef(({project}, ref) => {
                         'project-page_back_gradient_pink',
                         'project-page_back_gradient_blue',
                     ].join(' '),
-                is
+                isOpen
                     ? 'project-page__preview_open'
                     : 'project-page__preview_close'
             ].join(' ')}
