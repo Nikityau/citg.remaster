@@ -64,7 +64,7 @@ const ProjectPage__Screenshots = ({ project }) => {
                 <h3> Снимки экрана </h3>
             </div>
             {
-                //whatRender(desktop, tablet, mobile)
+                whatRender(desktop, tablet, mobile)
             }
         </div>
     );

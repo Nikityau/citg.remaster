@@ -34,7 +34,7 @@ const ProjectPage = () => {
 
         if(state === PRJ_PAGE_UI_STATE_OPEN) {
             otherRef.current.style.transform = 'translateY(100vh)'
-            otherRef.current.style.padding = '50px 0 100px'
+            //otherRef.current.style.padding = '50px 0 100px'
             h2.style.transform = 'unset';
 
             return
@@ -42,7 +42,7 @@ const ProjectPage = () => {
 
 
         otherRef.current.style.transform = 'translateY(250px)'
-        otherRef.current.style.padding = '0 0 100px'
+        //otherRef.current.style.padding = '0 0 100px'
         h2.style.transform = 'scale(.8) translate(14%)'
     }
 

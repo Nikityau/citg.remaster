@@ -17,10 +17,6 @@ import './_preview_close/Project.page__otherInfo_preview_close.scss'
 
 const ProjectPage__OtherInfo = forwardRef(({project}, ref) => {
 
-    useEffect(() => {
-        console.log('rerender')
-    })
-
     return (
         <div className={
             [
