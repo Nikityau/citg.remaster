@@ -40,7 +40,7 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
         <div className={'project-page__preview_mobile'}>
             <div className={'project-page__preview-container'}>
                 <div className={'project-page__preview-title'}>
-                    <h2> {project?.name} </h2>
+                    <h2 className={'project-page__preview-title-mobile-h2'}> {project?.name} </h2>
                 </div>
                 <div className={'project-page__preview-description'}>
                     <p>

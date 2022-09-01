@@ -30,20 +30,20 @@ const ProjectPage = () => {
 
 
     const changeUI = (state) => {
-        if(state === PRJ_PAGE_UI_STATE_OPEN) {
-            /*otherRef.current?.classList.add('project-page__other-info_preview_open')
-            otherRef.current?.classList.remove('project-page__other-info_preview_close')*/
+        const h2 = previewRef.current?.querySelector('.project-page__preview-title-mobile-h2')
 
+        if(state === PRJ_PAGE_UI_STATE_OPEN) {
             otherRef.current.style.transform = 'translateY(100vh)'
+            otherRef.current.style.padding = '50px 0 100px'
+            h2.style.transform = 'unset';
 
             return
         }
 
 
-        otherRef.current.style.transform = 'translateY(200px)'
-
-       /* otherRef.current?.classList.remove('project-page__other-info_preview_open')
-        otherRef.current?.classList.add('project-page__other-info_preview_close')*/
+        otherRef.current.style.transform = 'translateY(250px)'
+        otherRef.current.style.padding = '0 0 100px'
+        h2.style.transform = 'scale(.8) translate(14%)'
     }
 
     return (
