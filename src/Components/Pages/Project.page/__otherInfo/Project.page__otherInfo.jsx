@@ -13,14 +13,13 @@ import './_back_gradient/Project.page_back_gradient_purple.scss'
 import './_back_gradient/Projec.page_back_gradient_orange.scss'
 import './_preview_close/Project.page__otherInfo_preview_close.scss'
 
+// : 'project-page__other-info_preview_close'
+
 const ProjectPage__OtherInfo = forwardRef(({project}, ref) => {
 
-    const [is, setIs] = useState(true)
-
-    useImperativeHandle(ref, () => ({
-        open: () => setIs(true),
-        close: () => setIs(false)
-    }))
+    useEffect(() => {
+        console.log('rerender')
+    })
 
     return (
         <div className={
@@ -35,11 +34,11 @@ const ProjectPage__OtherInfo = forwardRef(({project}, ref) => {
                         'project-page_back_gradient_purple',
                         'project-page_back_gradient_orange'
                     ].join(' '),
-                is
-                    ? 'project-page__other-info_preview_open'
-                    : 'project-page__other-info_preview_close'
+                    'project-page__other-info_preview_open'
             ].join(' ')}
-             id={'project-more-info'}>
+             id={'project-more-info'}
+            ref={ref}
+        >
             <div className={'project-page__other-container app-container'}>
                 <div className={'project-page__spec-container'}>
                     <ProjectPage__Description project={project}/>

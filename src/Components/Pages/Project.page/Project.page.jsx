@@ -10,6 +10,9 @@ import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
 
 import './Project.page.scss'
 
+export const PRJ_PAGE_UI_STATE_OPEN = 'open'
+export const PRJ_PAGE_UI_STATE_CLOSE = 'close'
+
 const ProjectPage = () => {
     const { projectId } = useParams()
 
@@ -18,14 +21,6 @@ const ProjectPage = () => {
     const previewRef = useRef()
     const otherRef = useRef()
 
-
-    const openCb = () => {
-        otherRef.current?.open()
-    }
-    const closeCb = () => {
-        otherRef.current?.close()
-    }
-
     useEffect(() => {
         (async () => {
             const response = await CITG_APIController.getProjectById(projectId)
@@ -33,12 +28,29 @@ const ProjectPage = () => {
         })()
     }, [])
 
+
+    const changeUI = (state) => {
+        if(state === PRJ_PAGE_UI_STATE_OPEN) {
+            /*otherRef.current?.classList.add('project-page__other-info_preview_open')
+            otherRef.current?.classList.remove('project-page__other-info_preview_close')*/
+
+            otherRef.current.style.transform = 'translateY(100vh)'
+
+            return
+        }
+
+
+        otherRef.current.style.transform = 'translateY(200px)'
+
+       /* otherRef.current?.classList.remove('project-page__other-info_preview_open')
+        otherRef.current?.classList.add('project-page__other-info_preview_close')*/
+    }
+
     return (
         <div className={'project-page'}>
             <ProjectPage__Preview
                 project={projectAPI}
-                openCb={openCb}
-                closeCb={closeCb}
+                callback={changeUI}
                 ref={previewRef}
             />
             <ProjectPage__OtherInfo

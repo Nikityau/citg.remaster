@@ -6,6 +6,8 @@
 
     transform: translateY(100vh);
 
+    will-change: transform;
+
     background: #181C21;
 
     .project-page__other-container {

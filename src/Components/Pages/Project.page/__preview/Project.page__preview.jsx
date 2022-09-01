@@ -14,6 +14,8 @@ import ProjectPage_Back_Blur from "components/Pages/Project.page/__preview/_back
 import ProjectPagePreviewBackBottomMobileGradient
     from "components/Pages/Project.page/__preview/_back_bottom_mobile_gradient/Project.page__preview_back_bottom_mobile_gradient";
 
+import {PRJ_PAGE_UI_STATE_CLOSE, PRJ_PAGE_UI_STATE_OPEN} from "components/Pages/Project.page/Project.page";
+
 import {prevEv} from "utils/prevEv";
 
 //import './Project.page__preview.scss'
@@ -25,17 +27,12 @@ import './_back_gradient/Project.page_back_gradient.scss'
 import './_back_gradient/Project.page_back_gradient_blue.scss'
 import './_close/Project.page__preview_close.scss'
 
+
 let startY = 0;
 
-const ProjectPage__Preview = forwardRef(({project, openCb, closeCb}, ref) => {
+// : 'project-page__preview_close'
 
-    const [is, setIs] = useState(true)
-
-    useImperativeHandle(ref, () => ({
-        state: is,
-        on: () => { setIs(true); openCb() },
-        off: () => { setIs(false); closeCb() }
-    }))
+const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
 
     const tablet = <ProjectPage__MiniProjectInfo project={project}/>
     const mobile =  <>
@@ -91,8 +88,7 @@ const ProjectPage__Preview = forwardRef(({project, openCb, closeCb}, ref) => {
     }
     const checkDirection = (endY) => {
         if (startY > endY) {
-            setIs(false)
-            closeCb()
+            callback(PRJ_PAGE_UI_STATE_CLOSE)
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -101,8 +97,7 @@ const ProjectPage__Preview = forwardRef(({project, openCb, closeCb}, ref) => {
         }
 
         stopTouch()
-        openCb()
-        setIs(true)
+        callback(PRJ_PAGE_UI_STATE_OPEN)
     }
 
     const onTouchEnd = () => {
@@ -122,14 +117,15 @@ const ProjectPage__Preview = forwardRef(({project, openCb, closeCb}, ref) => {
                         'project-page_back_gradient_pink',
                         'project-page_back_gradient_blue',
                     ].join(' '),
-                is
-                    ? 'project-page__preview_open'
-                    : 'project-page__preview_close'
+                    'project-page__preview_open'
+
             ].join(' ')}
             style={{
                 backgroundImage: `url(${project?.project_addition_preview_img})`,
                 color: '#fff',
             }}
+            ref={ref}
+
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
