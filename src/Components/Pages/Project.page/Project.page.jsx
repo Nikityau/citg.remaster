@@ -28,6 +28,12 @@ const ProjectPage = () => {
         })()
     }, [])
 
+    useEffect(() => {
+        window.addEventListener('beforeunload', () => {
+            alert('???')
+        })
+    }, [])
+
 
     const changeUI = (state) => {
         const h2 = previewRef.current?.querySelector('.project-page__preview-title-mobile-h2')
