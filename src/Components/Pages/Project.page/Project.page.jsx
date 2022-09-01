@@ -30,7 +30,7 @@ const ProjectPage = () => {
 
     useEffect(() => {
         window.addEventListener('beforeunload', () => {
-            alert('???')
+            return;
         })
     }, [])
 
