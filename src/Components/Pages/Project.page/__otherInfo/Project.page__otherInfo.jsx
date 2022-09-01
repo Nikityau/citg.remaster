@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {isSafari} from "react-device-detect";
 
 import ProjectPage__Description
     from "components/Pages/Project.page/__otherInfo/__description/Project.page__description";
@@ -11,9 +12,13 @@ import './Project.page__otherInfo.scss'
 import './_back_gradient/Project.page_back_gradient_purple.scss'
 import './_back_gradient/Projec.page_back_gradient_orange.scss'
 import './_preview_close/Project.page__otherInfo_preview_close.scss'
-import {isSafari} from "react-device-detect";
 
 const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
+
+    useEffect(() => {
+        console.log(isPreviewOpen)
+    }, [])
+
     return (
         <div className={
             [

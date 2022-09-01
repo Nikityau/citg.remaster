@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { useParams } from 'react-router-dom'
 
 import ProjectPage__Preview from "components/Pages/Project.page/__preview/Project.page__preview";
@@ -14,7 +14,8 @@ const ProjectPage = () => {
     const { projectId } = useParams()
 
     const [projectAPI, setProjectAPI] = useState([])
-    const [is, setIs] = useToggler(true)
+
+    const previewRef = useRef(undefined)
 
     useEffect(() => {
         (async () => {
@@ -27,13 +28,11 @@ const ProjectPage = () => {
         <div className={'project-page'}>
             <ProjectPage__Preview
                 project={projectAPI}
-                open={setIs.on}
-                close={setIs.off}
-                isOpen={is}
+                ref={previewRef}
             />
             <ProjectPage__OtherInfo
                 project={projectAPI}
-                isPreviewOpen={is}
+                isPreviewOpen={previewRef.current}
             />
         </div>
     );

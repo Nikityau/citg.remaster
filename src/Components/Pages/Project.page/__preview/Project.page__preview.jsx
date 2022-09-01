@@ -1,6 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useImperativeHandle, useState, forwardRef} from 'react';
 
 import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
+
+import {isSafari} from "react-device-detect";
+
+import {whatRender} from "components/Utils.Compoents/whatRender";
 
 import ProjectPage__MiniProjectInfo
     from "components/Pages/Project.page/__miniProjectInfo/Project.page__miniProjectInfo";
@@ -16,12 +20,18 @@ import './Project.page__preview.scss'
 import './_back_gradient/Project.page_back_gradient.scss'
 import './_back_gradient/Project.page_back_gradient_blue.scss'
 import './_close/Project.page__preview_close.scss'
-import {isSafari} from "react-device-detect";
-import {whatRender} from "components/Utils.Compoents/whatRender";
 
 let startY = 0;
 
-const ProjectPage__Preview = ({project, isOpen, close, open}) => {
+const ProjectPage__Preview = forwardRef(({project}, ref) => {
+
+    const [is, setIs] = useState(true)
+
+    useImperativeHandle(ref,() => ({
+        is,
+        off: () => setIs(false),
+        on: () => setIs(true)
+    }))
 
     const tablet = <ProjectPage__MiniProjectInfo project={project}/>
     const mobile =  <>
@@ -42,7 +52,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
 
     const desktop = <>
         { tablet }
-        {mobile }
+        { mobile }
     </>
 
     useEffect(() => {
@@ -77,7 +87,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
     }
     const checkDirection = (endY) => {
         if (startY > endY) {
-            close()
+            setIs(false)
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -86,7 +96,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
         }
 
         stopTouch()
-        open()
+        setIs(true)
     }
 
     const onTouchEnd = () => {
@@ -106,7 +116,7 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
                         'project-page_back_gradient_pink',
                         'project-page_back_gradient_blue',
                     ].join(' '),
-                isOpen
+                is
                     ? 'project-page__preview_open'
                     : 'project-page__preview_close'
             ].join(' ')}
@@ -124,6 +134,6 @@ const ProjectPage__Preview = ({project, isOpen, close, open}) => {
             }
         </div>
     );
-};
+});
 
 export default ProjectPage__Preview;
