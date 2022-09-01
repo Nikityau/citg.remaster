@@ -27,7 +27,15 @@ import './_close/Project.page__preview_close.scss'
 
 let startY = 0;
 
-const ProjectPage__Preview = forwardRef(({project, isOpen, setOpen, setClose}, ref) => {
+const ProjectPage__Preview = forwardRef(({project}, ref) => {
+
+    const [is, setIs] = useState(true)
+
+    useImperativeHandle(ref, () => ({
+        state: is,
+        on: () => setIs(true),
+        off: () => setIs(false)
+    }))
 
     const tablet = <ProjectPage__MiniProjectInfo project={project}/>
     const mobile =  <>
@@ -83,7 +91,7 @@ const ProjectPage__Preview = forwardRef(({project, isOpen, setOpen, setClose}, r
     }
     const checkDirection = (endY) => {
         if (startY > endY) {
-            setClose?.()
+            setIs(false)
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -92,7 +100,7 @@ const ProjectPage__Preview = forwardRef(({project, isOpen, setOpen, setClose}, r
         }
 
         stopTouch()
-        setOpen?.()
+        setIs(true)
     }
 
     const onTouchEnd = () => {
@@ -112,7 +120,7 @@ const ProjectPage__Preview = forwardRef(({project, isOpen, setOpen, setClose}, r
                         'project-page_back_gradient_pink',
                         'project-page_back_gradient_blue',
                     ].join(' '),
-                isOpen
+                is
                     ? 'project-page__preview_open'
                     : 'project-page__preview_close'
             ].join(' ')}

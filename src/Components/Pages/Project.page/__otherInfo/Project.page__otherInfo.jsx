@@ -15,6 +15,11 @@ import './_preview_close/Project.page__otherInfo_preview_close.scss'
 
 const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
 
+
+    useEffect(() => {
+        console.log(isPreviewOpen)
+    }, [isPreviewOpen])
+
     return (
         <div className={
             [
