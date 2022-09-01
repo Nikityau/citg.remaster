@@ -28,10 +28,18 @@ const ProjectPage = () => {
         })()
     }, [])
 
+
     useEffect(() => {
-        window.addEventListener('beforeunload', () => {
-            return;
-        })
+        const body = document.body;
+
+        body.style.overscrollBehavior = 'contain'
+        body.style.overscrollBehaviorY = 'contain'
+
+
+        return () => {
+            body.style.overscrollBehavior = 'unset'
+            body.style.overscrollBehaviorY = 'unset'
+        }
     }, [])
 
 
