@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {forwardRef, useEffect, useImperativeHandle, useState} from 'react';
 import {isSafari} from "react-device-detect";
 
 import ProjectPage__Description
@@ -13,12 +13,14 @@ import './_back_gradient/Project.page_back_gradient_purple.scss'
 import './_back_gradient/Projec.page_back_gradient_orange.scss'
 import './_preview_close/Project.page__otherInfo_preview_close.scss'
 
-const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
+const ProjectPage__OtherInfo = forwardRef(({project}, ref) => {
 
+    const [is, setIs] = useState(true)
 
-    useEffect(() => {
-        console.log(isPreviewOpen)
-    }, [isPreviewOpen])
+    useImperativeHandle(ref, () => ({
+        open: () => setIs(true),
+        close: () => setIs(false)
+    }))
 
     return (
         <div className={
@@ -33,7 +35,7 @@ const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
                         'project-page_back_gradient_purple',
                         'project-page_back_gradient_orange'
                     ].join(' '),
-                isPreviewOpen
+                is
                     ? 'project-page__other-info_preview_open'
                     : 'project-page__other-info_preview_close'
             ].join(' ')}
@@ -47,6 +49,6 @@ const ProjectPage__OtherInfo = ({project, isPreviewOpen}) => {
             </div>
         </div>
     );
-};
+});
 
 export default ProjectPage__OtherInfo;

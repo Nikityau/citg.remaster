@@ -16,6 +16,15 @@ const ProjectPage = () => {
     const [projectAPI, setProjectAPI] = useState([])
 
     const previewRef = useRef()
+    const otherRef = useRef()
+
+
+    const openCb = () => {
+        otherRef.current?.open()
+    }
+    const closeCb = () => {
+        otherRef.current?.close()
+    }
 
     useEffect(() => {
         (async () => {
@@ -28,11 +37,13 @@ const ProjectPage = () => {
         <div className={'project-page'}>
             <ProjectPage__Preview
                 project={projectAPI}
+                openCb={openCb}
+                closeCb={closeCb}
                 ref={previewRef}
             />
             <ProjectPage__OtherInfo
                 project={projectAPI}
-                isPreviewOpen={previewRef.current?.state}
+                ref={otherRef}
             />
         </div>
     );

@@ -27,14 +27,14 @@ import './_close/Project.page__preview_close.scss'
 
 let startY = 0;
 
-const ProjectPage__Preview = forwardRef(({project}, ref) => {
+const ProjectPage__Preview = forwardRef(({project, openCb, closeCb}, ref) => {
 
     const [is, setIs] = useState(true)
 
     useImperativeHandle(ref, () => ({
         state: is,
-        on: () => setIs(true),
-        off: () => setIs(false)
+        on: () => { setIs(true); openCb() },
+        off: () => { setIs(false); closeCb() }
     }))
 
     const tablet = <ProjectPage__MiniProjectInfo project={project}/>
@@ -92,6 +92,7 @@ const ProjectPage__Preview = forwardRef(({project}, ref) => {
     const checkDirection = (endY) => {
         if (startY > endY) {
             setIs(false)
+            closeCb()
             setTimeout(() => {
                 allowTouch()
             }, 200)
@@ -100,6 +101,7 @@ const ProjectPage__Preview = forwardRef(({project}, ref) => {
         }
 
         stopTouch()
+        openCb()
         setIs(true)
     }
 
