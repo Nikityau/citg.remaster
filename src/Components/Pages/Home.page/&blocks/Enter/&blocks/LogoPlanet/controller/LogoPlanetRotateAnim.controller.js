@@ -34,7 +34,7 @@ class LogoPlanetRotateAnimController {
             if (this._angle >= 360) this._angle = 0;
 
             this.animationStart()
-        }, 20)
+        }, 35)
     }
 
     animationStop() {
