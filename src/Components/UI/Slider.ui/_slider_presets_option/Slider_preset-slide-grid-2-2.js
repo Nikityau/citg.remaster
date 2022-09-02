@@ -1,6 +1,6 @@
 export const SLIDER_PRESET_GRID_2_2 = {
     type: 'loop',
-    autoplay: true,
+    autoplay: false,
     pagination: true,
     drag: true,
     arrows: false,

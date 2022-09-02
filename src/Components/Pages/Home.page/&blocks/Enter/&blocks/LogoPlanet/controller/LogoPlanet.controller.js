@@ -110,14 +110,14 @@ class LogoPlanetController {
     _setTrailPos() {
         if (!this._trailC) return
 
-        const cx = this._mainCircleData['x'] + this._mainCircleData['width'] * .4;
-        const cy = this._mainCircleData['y'] + this._mainCircleData['height'] * .1;
+        const cx = this._mainCircleData['x'] + this._mainCircleData['width'];
+        const cy = this._mainCircleData['y'] + this._mainCircleData['height'];
 
         this._trailC.style.width = this._mainCircleData['width'] + 'px'
         this._trailC.style.height = this._mainCircleData['width'] + 'px'
 
-        this._trailC.style.left = cx - 130 + 'px'
-        this._trailC.style.top = cy - 40 + 'px'
+        this._trailC.style.left = cx - this._trailC.clientWidth + 30 + 'px'
+        this._trailC.style.top = cy - this._trailC.clientHeight + 5 + 'px'
     }
 
 

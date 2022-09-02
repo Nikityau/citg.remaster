@@ -1,6 +1,6 @@
 export const PRESET_SLIDER_WITH_TEXT = {
     type: 'loop',
-    autoplay: true,
+    autoplay: false,
     pagination: false,
     drag: false,
     arrows: false,

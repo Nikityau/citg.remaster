@@ -1,6 +1,6 @@
 export const PRESET_SLIDER_DEFAULT = {
     type: 'loop',
-    autoplay: true,
+    autoplay: false,
     pagination: true,
     drag: true,
     arrows: true,
@@ -12,6 +12,7 @@ export const PRESET_SLIDER_DEFAULT = {
 
 export const PRESET_SLIDER_DEFAULT_1_5 = {
     type: 'loop',
+    autoplay: false,
     pagination: true,
     drag: true,
     arrows: false,
