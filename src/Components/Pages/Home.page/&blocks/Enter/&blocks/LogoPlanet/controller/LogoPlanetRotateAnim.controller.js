@@ -24,15 +24,16 @@ class LogoPlanetRotateAnimController {
                 this._angle
             )
 
-            this._rotObj.style.transform = `translate(
+            await (() => {
+                this._rotObj.style.transform = `translate(
             ${coords.x}px,
             ${coords.y}px
             )`
+            })()
 
             if (this._angle >= 360) this._angle = 0;
 
             this.animationStart()
-
         }, 20)
     }
 
