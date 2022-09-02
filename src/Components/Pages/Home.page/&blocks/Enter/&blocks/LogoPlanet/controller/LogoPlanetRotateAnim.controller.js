@@ -20,7 +20,7 @@ class LogoPlanetRotateAnimController {
             const coords = await this._pointsCoordsOnCircle(
                 this._cx,
                 this._cy,
-                this._r * .7,
+                this._r * .6,
                 this._angle
             )
 
