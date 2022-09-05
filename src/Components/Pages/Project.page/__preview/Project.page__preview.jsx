@@ -30,6 +30,8 @@ import './_close/Project.page__preview_close.scss'
 
 let startY = 0;
 
+let canChangeUI = true;
+
 // : 'project-page__preview_close'
 
 const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
@@ -78,6 +80,13 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
         startY = e.touches[0].clientY;
     }
     const onTouchMove = (e) => {
+        if(!canChangeUI) {
+
+            window.scrollTo(0,0)
+
+            return
+        }
+
         const touchList = e.touches;
 
         const endY = touchList[touchList.length - 1].clientY;
@@ -91,17 +100,18 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
             callback(PRJ_PAGE_UI_STATE_CLOSE)
             setTimeout(() => {
                 allowTouch()
-            }, 200)
+            }, 300)
 
             return
         }
 
+        canChangeUI = false;
         stopTouch()
         callback(PRJ_PAGE_UI_STATE_OPEN)
     }
 
     const onTouchEnd = () => {
-
+        canChangeUI = true;
     }
 
     return (

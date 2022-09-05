@@ -9,6 +9,7 @@ import CITG_APIController from "src/API/CITG_API.controller";
 import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
 
 import './Project.page.scss'
+import {prevEv} from "utils/prevEv";
 
 export const PRJ_PAGE_UI_STATE_OPEN = 'open'
 export const PRJ_PAGE_UI_STATE_CLOSE = 'close'
