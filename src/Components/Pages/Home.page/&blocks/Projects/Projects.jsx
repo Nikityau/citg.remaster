@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {isSafari} from "react-device-detect";
 
 import Projects__title from "components/Pages/Home.page/&blocks/Projects/__title/Projects__title";
@@ -11,6 +11,10 @@ import {PROJECTS_LINK} from "components/AppRouter/AppRouter.links";
 
 import CITG_API from "src/API/CITG_API.controller";
 
+import {AppContext} from "components/App/App";
+
+import {goUp} from "utils/goUp";
+
 import './Projects.scss'
 
 import './_pos/Projects_pos_top_small_offset.scss'
@@ -19,9 +23,10 @@ import './_pos/Projects_pos_center_block.scss'
 
 import './_back_purple_gradient/Projects_back_purple_gradient.scss'
 import './_back_red_gradient/Projects_back_red_gradient.scss'
-import {goUp} from "utils/goUp";
 
 const Projects = () => {
+
+    const appContext = useContext(AppContext)
 
     const [projects, setProjects] = useState([])
 
@@ -36,7 +41,8 @@ const Projects = () => {
         <div
             className={[
                 'projects',
-                isSafari
+                appContext?.gradientSwitch &&
+                (isSafari
                     ? [
                         'projects_back_red_gradient_safari',
                         'projects_back_purple_gradient_safari',
@@ -46,7 +52,7 @@ const Projects = () => {
                         'projects_back_red_gradient',
                         'projects_back_purple_gradient',
                         ''
-                    ].join(' '),
+                    ].join(' ')),
                 'projects_pos_center_block'
             ].join(' ')}>
             <div className={'projects__container app-container'}>

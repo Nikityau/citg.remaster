@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {isSafari} from "react-device-detect";
 
 import AboutUs__Img from "./__img/AboutUs__img";
@@ -9,6 +9,8 @@ import AboutUsTablet from "components/Pages/Home.page/&blocks/AboutUs/@tablet/Ab
 
 import PageLineUi from "ui/PageLine.ui/PageLine.ui";
 
+import {AppContext} from "components/App/App";
+
 import './AboutUs.scss'
 import './_pos_top_left/AboutUs_pos_top_left.scss'
 import './_back_gradients/AboutUs_back_purple_gradient.scss'
@@ -18,11 +20,15 @@ import './_back_gradients/AboutUs_back_blue_gradient.scss'
 import img from 'assets/images/Slider/_1.png'
 
 const AboutUs = () => {
+
+    const appContext = useContext(AppContext)
+
     return (
         <div
             className={[
                 'about-us',
-                isSafari
+                appContext?.gradientSwitch &&
+                (isSafari
                     ? [
                         'about-us_back_purple_gradient_safari',
                         'about-us_back_orange_gradient_safari'
@@ -30,7 +36,7 @@ const AboutUs = () => {
                     : [
                         'about-us_back_purple_gradient',
                         'about-us_back_orange_gradient'
-                    ].join(' ')
+                    ].join(' '))
             ].join(' ')}>
             <AboutUsTablet backImg={img}/>
             <div className={'about-us__container app-container'}>

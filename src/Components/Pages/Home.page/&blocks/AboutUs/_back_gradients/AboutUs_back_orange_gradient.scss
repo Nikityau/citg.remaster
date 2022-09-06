@@ -49,6 +49,26 @@
 
       mix-blend-mode: inherit;
     }
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      transform: translate(0, -10px);
+
+      width: 50%;
+      height: 400px;
+
+      background: linear-gradient(180deg, #ffffff,  transparent 80%);
+
+      filter: blur(0);
+
+      z-index: 1;
+
+      mix-blend-mode: inherit;
+    }
   }
 
 }

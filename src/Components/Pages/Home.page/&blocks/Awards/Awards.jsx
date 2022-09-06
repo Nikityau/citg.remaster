@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {isSafari} from "react-device-detect";
 
 import Award from "components/Pages/Home.page/&blocks/Awards/&blocks/Award/Award";
@@ -13,13 +13,16 @@ import CITG_API from "src/API/CITG_API.controller";
 
 import {whatRender} from "components/Utils.Compoents/whatRender";
 
+import {AppContext} from "components/App/App";
+
 import './Awards.scss'
 import './_back_gradient/Awards_back_gradient_red.scss'
 import './_rounded_cornenr/Awards_rounded_conrner.scss'
 import './_back_blackout/Awards_back_blackout.scss'
 
-
 const Awards = () => {
+
+    const appContext = useContext(AppContext)
 
     const [awards, setAwards] = useState([])
 
@@ -70,9 +73,10 @@ const Awards = () => {
         <div
             className={[
                 'awards',
-                isSafari
+                appContext?.gradientSwitch &&
+                (isSafari
                     ? 'awards_back_gradient_red_safari'
-                    : 'awards_back_gradient_red'
+                    : 'awards_back_gradient_red')
             ].join(' ')}>
             {
                 whatRender(desktop, tablet, tablet)

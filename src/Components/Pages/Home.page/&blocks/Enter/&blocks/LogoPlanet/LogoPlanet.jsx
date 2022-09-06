@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import LogoPlanet__MainCircle
     from "./__main-circle/LogoPlanet__mainCircle";
@@ -9,6 +9,8 @@ import LogoPlanet__Trail
 
 import LogoPlanetController
     from "components/Pages/Home.page/&blocks/Enter/&blocks/LogoPlanet/controller/LogoPlanet.controller";
+
+import {AppContext} from "components/App/App";
 
 import './LogoPlanet.scss'
 import './_circle_size/LogoPlanet_cirlce_size_m.scss'
@@ -23,6 +25,8 @@ const LogoPlanet = ({classNames}) => {
     const mediumCircleAttr = 'mediumAttr'
     const rotatingCircleAttr = 'rotatingAttr'
     const trailAttr = 'trailAttr'
+
+    const appContext = useContext(AppContext)
 
     const [planetController] = useState(new LogoPlanetController(mainCircleAttr,
         smallCircleAttr, mediumCircleAttr, rotatingCircleAttr, trailAttr))
@@ -47,15 +51,19 @@ const LogoPlanet = ({classNames}) => {
                                 classNames={[
                                     'logo-planet_planet_glow',
                                     'logo-planet_circle_size_s',
-                                    'logo-planet_animation_levitation',
-                                    'logo-planet_animation_levitation_far'
+
+                                    appContext?.animationSwitch &&
+                                    ('logo-planet_animation_levitation',
+                                        'logo-planet_animation_levitation_far')
                                 ]}/>
             <LogoPlanet__Circle dataAttr={mediumCircleAttr}
                                 classNames={[
                                     'logo-planet_planet_glow',
                                     'logo-planet_circle_size_m_plus',
-                                    'logo-planet_animation_levitation',
-                                    'logo-planet_animation_levitation_near'
+
+                                    appContext?.animationSwitch &&
+                                    ('logo-planet_animation_levitation',
+                                        'logo-planet_animation_levitation_near')
                                 ]}/>
             <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
                                 classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m']}/>

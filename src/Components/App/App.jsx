@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import axios from 'axios'
 import {BrowserRouter} from "react-router-dom";
 
 import mirage from "src/Mirage/mirage";
@@ -13,13 +12,22 @@ import 'normalize.css'
 import '../../assets/fonts/fonts.scss'
 import './App.scss'
 
+const context = {
+    gradientSwitch: true,
+    animationSwitch: true
+}
+
+export const AppContext = React.createContext(undefined)
+
 const App = () => {
     return (
-        <BrowserRouter>
-            <Header />
-            <AppRouter/>
-            <Footer/>
-        </BrowserRouter>
+       <AppContext.Provider value={context}>
+           <BrowserRouter>
+               <Header />
+               <AppRouter/>
+               <Footer/>
+           </BrowserRouter>
+       </AppContext.Provider>
     );
 };
 
