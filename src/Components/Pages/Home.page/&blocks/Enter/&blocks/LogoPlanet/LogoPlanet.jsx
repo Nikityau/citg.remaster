@@ -20,6 +20,7 @@ import './_planet_glow/LogoPlanet_planet_glow.scss'
 import './_animation_levitation/LogoPlanet_animation_levitation.scss'
 
 const LogoPlanet = ({classNames}) => {
+
     const mainCircleAttr = 'mainCircle'
     const smallCircleAttr = 'smallCircle'
     const mediumCircleAttr = 'mediumAttr'
@@ -36,7 +37,7 @@ const LogoPlanet = ({classNames}) => {
 
         planetController.init()
         planetController.setPosition()
-        planetController.animationStart()
+        appContext?.animationSwitch && planetController.animationStart()
 
         return () => {
             planetController.destroy();
