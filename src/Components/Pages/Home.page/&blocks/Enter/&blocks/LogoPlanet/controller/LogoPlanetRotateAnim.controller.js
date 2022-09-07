@@ -13,23 +13,52 @@ class LogoPlanetRotateAnimController {
 
     }
 
+    animate({duration, draw, timing}) {
+        let start = performance.now()
+
+        requestAnimationFrame(function animate(time) {
+            let timeFraction = (time - start) / duration
+            if (timeFraction > 1) timeFraction = 1
+
+            let progress = timing(timeFraction)
+
+            draw(progress)
+
+            if (timeFraction < 1) {
+                requestAnimationFrame(animate)
+            }
+        })
+    }
+
     animationStart() {
+        /*this.animate({
+            duration: 1000,
+            timing: timeFraction => timeFraction,
+            draw: progress => {
+                console.log(progress)
+            }
+        })*/
+
+
         this._interval = setTimeout(async () => {
             this._angle += 1;
 
             const coords = await this._pointsCoordsOnCircle(
                 this._cx,
                 this._cy,
-                this._r ,
+                this._r,
                 this._angle
             )
 
-            await (() => {
+            requestAnimationFrame(() => {
                 this._rotObj.style.transform = `translate(
             ${coords.x}px,
             ${coords.y}px
             )`
-            })()
+            })
+
+
+            //console.log(coords)
 
             if (this._angle >= 360) this._angle = 0;
 

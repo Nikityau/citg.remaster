@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 
-//import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
+import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
 
 import {prevEv} from "utils/prevEv";
 
@@ -11,28 +11,27 @@ import './_open/Header__burger_open.scss'
 
 const Header__Burger = () => {
 
-    //const [is, setIs] = useToggler(false)
+    const [is, setIs] = useToggler(false)
 
 
     const cbUI = () => {
-        const burgerMenu = document.querySelector('.burger-menu')
-        const { height } = getComputedStyle(burgerMenu, null)
-        
-        if(Number.parseInt(height) === window.innerHeight) {
-            close(burgerMenu)
-        } else {
-            open(burgerMenu)
+        if(!is) {
+            open()
+
+            return
         }
+
+        close()
     }
 
     const open = (el) => {
-        el.style.height = '100vh'
+        setIs.on()
 
         window.addEventListener('touchmove', prevEv, { passive: false })
     }
 
     const close = (el) => {
-        el.style.height = '0'
+        setIs.off()
 
         window.removeEventListener('touchmove', prevEv)
     }
@@ -42,8 +41,7 @@ const Header__Burger = () => {
             <div className={[
                 'header__burger',
                 'burger',
-                false &&
-                 (null ? 'header__burger_open'
+                 (is ? 'header__burger_open'
                     : 'header__burger_close')
             ].join(' ')}
                 onClick={cbUI}
@@ -57,8 +55,8 @@ const Header__Burger = () => {
                 </div>
             </div>
             <BurgerMenu
-                isOpen={false}
-                close={cbUI}
+                isOpen={is}
+                close={close}
             />
         </>
     );
