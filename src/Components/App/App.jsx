@@ -14,7 +14,7 @@ import './App.scss'
 
 const context = {
     gradientSwitch: true,
-    animationSwitch: false
+    animationSwitch: true
 }
 
 export const AppContext = React.createContext(undefined)

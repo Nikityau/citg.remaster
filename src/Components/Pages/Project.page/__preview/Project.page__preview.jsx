@@ -1,6 +1,4 @@
-import React, {useEffect, useImperativeHandle, useState, forwardRef} from 'react';
-
-import {useToggler} from "components/Utils.Compoents/CustomHooks/useToggler";
+import React, {useEffect, forwardRef} from 'react';
 
 import {isSafari} from "react-device-detect";
 
@@ -29,8 +27,6 @@ import './_close/Project.page__preview_close.scss'
 
 
 let startY = 0;
-
-let canChangeUI = true;
 
 // : 'project-page__preview_close'
 
@@ -71,8 +67,16 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
 
     const stopTouch = () => {
         window.addEventListener('touchmove', prevEv, {passive: false})
+
+        const { body } = document;
+        body.style.height = '100vh'
+        body.style.overflow = 'hidden'
     }
     const allowTouch = () => {
+        const { body } = document
+        body.style.height = 'auto'
+        body.style.overflow = 'unset'
+
         window.removeEventListener('touchmove', prevEv)
     }
 
@@ -80,13 +84,6 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
         startY = e.touches[0].clientY;
     }
     const onTouchMove = (e) => {
-        if(!canChangeUI) {
-
-            window.scrollTo(0,0)
-
-            return
-        }
-
         const touchList = e.touches;
 
         const endY = touchList[touchList.length - 1].clientY;
@@ -105,13 +102,11 @@ const ProjectPage__Preview = forwardRef(({project, callback}, ref) => {
             return
         }
 
-        canChangeUI = false;
         stopTouch()
         callback(PRJ_PAGE_UI_STATE_OPEN)
     }
 
     const onTouchEnd = () => {
-        canChangeUI = true;
     }
 
     return (
