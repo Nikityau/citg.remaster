@@ -67,7 +67,7 @@ class LogoPlanetRotateAnimController {
             }
         })*/
 
-        this._interval = requestAnimationFrame(async () => {
+        this._interval = setTimeout(async () => {
 
             const coords = await this._changeCoords()
 
@@ -81,10 +81,12 @@ class LogoPlanetRotateAnimController {
 
             if (this._angle >= 360) this._angle = 0;
 
-            setTimeout(() => {
+            this.animationStart()
+
+            /*setTimeout(() => {
                 this.animationStart()
-            }, 20)
-        })
+            }, 20)*/
+        }, 20)
     }
 
     animationStop() {
