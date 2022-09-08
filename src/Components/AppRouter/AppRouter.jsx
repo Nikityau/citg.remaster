@@ -1,9 +1,16 @@
-import React, {Suspense} from 'react';
+import React, { Suspense } from 'react';
 import {Routes, Route, Navigate} from 'react-router-dom'
 
 import LoaderPage from "components/Pages/Loader.page/Loader.page";
 
-import {HOME_LINK, TEAM_MEMBER_LINK, TEAM_LINK, PROJECTS_LINK, CURRENT_PROJECT_LINK, TEAM_MEMBER_WORK_LINK}
+import {
+    HOME_LINK,
+    TEAM_MEMBER_LINK,
+    TEAM_LINK,
+    PROJECTS_LINK,
+    CURRENT_PROJECT_LINK,
+    TEAM_MEMBER_WORK_LINK
+}
     from './AppRouter.links'
 
 const Home = React.lazy(() => import('../Pages/Home.page/Home.page'))

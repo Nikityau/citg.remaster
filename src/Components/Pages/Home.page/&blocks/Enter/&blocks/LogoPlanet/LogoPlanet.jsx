@@ -67,7 +67,7 @@ const LogoPlanet = ({classNames}) => {
                                         'logo-planet_animation_levitation_near')
                                 ]}/>
             <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
-                                classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m']}/>
+                                classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m', 'logo-planet__round-circle']}/>
             <LogoPlanet__Trail dataAttr={trailAttr}/>
         </div>
     );

@@ -1,0 +1,20 @@
+.loader-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 30px;
+    color: #fff;
+
+    text-transform: uppercase;
+  }
+
+
+}

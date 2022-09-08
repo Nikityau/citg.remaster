@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './@desktop/Loader.page@desktop.scss'
+
 const LoaderPage = () => {
     return (
-        <div>
-            loading
+        <div className={'loader-page'}>
+            <p>loading...</p>
         </div>
     );
 };

@@ -1,3 +1,5 @@
+import anime from "animejs";
+
 class LogoPlanetRotateAnimController {
     _rotObj
 
@@ -9,28 +11,54 @@ class LogoPlanetRotateAnimController {
 
     _interval
 
+    _coordsCache = {}
+
     constructor() {
 
     }
 
-    animate({duration, draw, timing}) {
-        let start = performance.now()
+    _changeCoords() {
+        this._angle += 1;
 
-        requestAnimationFrame(function animate(time) {
-            let timeFraction = (time - start) / duration
-            if (timeFraction > 1) timeFraction = 1
+        if (this._coordsCache[`angle_${this._angle}`] !== undefined) {
+            return this._coordsCache[`angle_${this._angle}`]
+        }
 
-            let progress = timing(timeFraction)
+        const coords = this._pointsCoordsOnCircle(
+            this._cx,
+            this._cy,
+            this._r,
+            this._angle
+        )
 
-            draw(progress)
+        this._coordsCache[`angle_${this._angle}`] = {...coords}
 
-            if (timeFraction < 1) {
-                requestAnimationFrame(animate)
-            }
-        })
+        return this._coordsCache[`angle_${this._angle}`]
     }
 
+
     animationStart() {
+       /* const self = this
+
+        anime({
+            targets: '.logo-planet__round-circle',
+            loop: true,
+            delay: 500,
+            duration: 3000,
+            easing: 'linear',
+            translateX: function (el, i) {
+                const coords = self._changeCoords(true)
+                console.log(coords)
+               return -2000
+            }
+        })*/
+
+        /*
+        * translateX: () => this._changeCoords(true).x,
+            translateY: () => this._changeCoords(false).y,
+        *
+        * */
+
         /*this.animate({
             duration: 1000,
             timing: timeFraction => timeFraction,
@@ -39,26 +67,17 @@ class LogoPlanetRotateAnimController {
             }
         })*/
 
-
         this._interval = requestAnimationFrame(async () => {
-            this._angle += 1;
 
-            const coords = await this._pointsCoordsOnCircle(
-                this._cx,
-                this._cy,
-                this._r,
-                this._angle
-            )
+            const coords = await this._changeCoords()
 
             requestAnimationFrame(() => {
                 this._rotObj.style.transform = `translate(
-            ${coords.x}px,
-            ${coords.y}px
-            )`
+                    ${coords.x}px,
+                    ${coords.y}px
+                )`
             })
 
-
-            //console.log(coords)
 
             if (this._angle >= 360) this._angle = 0;
 
@@ -76,7 +95,7 @@ class LogoPlanetRotateAnimController {
         return (2 * Math.PI * angle) / 360
     }
 
-    async _pointsCoordsOnCircle(cx, cy, r, angle) {
+     _pointsCoordsOnCircle(cx, cy, r, angle) {
         const x = -Math.cos(this._toRadian(angle)) * r + cx;
         const y = -Math.sin(this._toRadian(angle)) * r + cy;
 
