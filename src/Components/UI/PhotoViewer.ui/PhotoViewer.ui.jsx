@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import LightGallery from "lightgallery/react";
 
 import PhotoViewerUiController from "ui/PhotoViewer.ui/controller/PhotoViewer.ui.controller";
@@ -21,7 +21,7 @@ const PhotoViewerUi = ({ images, evController, imgPropSrcName}) => {
     const lgRef = useRef(undefined)
     const [imgController] = useState(new PhotoViewerUiController(lgRef))
 
-    const onInit = (lg) => {
+    const onInitViewer = (lg) => {
         imgController?.onInit(lg)
         evController?.addCb(imgController?.onOpenByIndex)
     }
@@ -34,13 +34,13 @@ const PhotoViewerUi = ({ images, evController, imgPropSrcName}) => {
             {
                 images &&
                 <LightGallery
-                    onInit={onInit}
+                    onInit={onInitViewer}
                     plugins={[lgZoom]}
                 >
                     {
                         images?.map(img => {
-                            return <a href={img[imgPropSrcName]} key={img.id}>
-                                <img src={img[imgPropSrcName]}/>
+                            return <a href={img[imgPropSrcName]} key={img?.id}>
+                                <img src={img[imgPropSrcName]} alt={'photo-viewer-img'}/>
                             </a>
                         })
                     }
