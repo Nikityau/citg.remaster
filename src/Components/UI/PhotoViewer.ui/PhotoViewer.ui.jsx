@@ -40,7 +40,7 @@ const PhotoViewerUi = ({ images, evController, imgPropSrcName}) => {
                     {
                         images?.map(img => {
                             return <a href={img[imgPropSrcName]} key={img?.id}>
-                                <img src={img[imgPropSrcName]} alt={'photo-viewer-img'}/>
+                                <img src={img[imgPropSrcName]} alt={''}/>
                             </a>
                         })
                     }

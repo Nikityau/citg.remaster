@@ -4,6 +4,8 @@ import './MemberWork.page__work.scss'
 
 import open_up_img from 'assets/images/memberWorkPage/open-up.svg'
 import white_arrow_img from 'assets/images/memberWorkPage/white-arrow.svg'
+import PhotoViewerUi from "ui/PhotoViewer.ui/PhotoViewer.ui";
+import EventObserver from "src/Controllers/eventObserver/eventObserver";
 
 const MOVE_DIRECTION_LEFT = 'MOVE_DIRECTION_LEFT'
 const MOVE_DIRECTION_RIGHT = 'MOVE_DIRECTION_RIGHT'
@@ -11,6 +13,7 @@ const MOVE_DIRECTION_RIGHT = 'MOVE_DIRECTION_RIGHT'
 const MemberWorkPage__Work = ({currentWork}) => {
 
     const [currentImg, setCurrentImg] = useState(currentWork?.main_img || '')
+    const [evController] = useState(new EventObserver())
 
     useEffect(() => {
         setCurrentImg(currentWork?.main_img)
@@ -25,9 +28,8 @@ const MemberWorkPage__Work = ({currentWork}) => {
         setCurrentImg(img)
     }
 
-
     const openUp = () => {
-
+        evController?.cbInvokes(0)
     }
 
     const nextImgRef = (direction) => {
@@ -86,63 +88,83 @@ const MemberWorkPage__Work = ({currentWork}) => {
         }
     }
 
+    const getArrPhoto = () => {
+        if(!currentImg) return
+
+        const arr = [
+            {
+                id: currentWork?.id || '1',
+                imgSrc: currentImg || ''
+            }
+        ]
+
+        return arr
+    }
+
 
     return (
-        <div className={'member-work-page__work'}>
-            <div className={'member-work-page__current-image'}
-                 style={{
-                     backgroundImage: `url(${currentImg})`
-                 }}
-            >
+        <>
+            <div className={'member-work-page__work'}>
+                <div className={'member-work-page__current-image'}
+                     style={{
+                         backgroundImage: `url(${currentImg})`
+                     }}
+                >
 
-                <div className={'member-work-page__control-panel'}>
-                    <div className={'member-work-page__left-arrow'}
-                         onClick={() => {
-                             nextImgRef(MOVE_DIRECTION_LEFT)
-                         }}
-                    >
-                        <img src={white_arrow_img} alt={'arrow'}/>
-                    </div>
-                    <div className={'member-work-page__open-up'}
-                         onClick={() => {
-                             openUp()
-                         }}
-                    >
-                        <img src={open_up_img} alt={'open-up'}/>
-                    </div>
-                    <div className={'member-work-page__right-arrow'}
-                         onClick={() => {
-                             nextImgRef(MOVE_DIRECTION_RIGHT)
-                         }}
-                    >
-                        <img src={white_arrow_img} alt={'arrow'}/>
+                    <div className={'member-work-page__control-panel'}>
+                        <div className={'member-work-page__left-arrow'}
+                             onClick={() => {
+                                 nextImgRef(MOVE_DIRECTION_LEFT)
+                             }}
+                        >
+                            <img src={white_arrow_img} alt={'arrow'}/>
+                        </div>
+                        <div className={'member-work-page__open-up'}
+                             onClick={() => {
+                                 openUp()
+                             }}
+                        >
+                            <img src={open_up_img} alt={'open-up'}/>
+                        </div>
+                        <div className={'member-work-page__right-arrow'}
+                             onClick={() => {
+                                 nextImgRef(MOVE_DIRECTION_RIGHT)
+                             }}
+                        >
+                            <img src={white_arrow_img} alt={'arrow'}/>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className={'member-work-page__images-list'}>
-                {
-                    currentWork?.project_refs?.map((ref, index) =>
-                        <div
-                            key={ref?.id}
-                            className={[
-                                'member-work-page__work-ref',
-                                getWorkRefModifier(index + 1)
-                            ].join(' ')}
-                            style={{
-                                backgroundImage: `url(${currentImg === ref?.imgSrc
-                                    ? currentWork?.main_img : ref?.imgSrc})`
-                            }}
-                            onClick={() => {
-                                changeCurrentImg(currentImg === ref?.imgSrc
-                                    ? currentWork?.main_img : ref?.imgSrc)
-                            }}
-                        >
+                <div className={'member-work-page__images-list'}>
+                    {
+                        currentWork?.project_refs?.map((ref, index) =>
+                            <div
+                                key={ref?.id}
+                                className={[
+                                    'member-work-page__work-ref',
+                                    getWorkRefModifier(index + 1)
+                                ].join(' ')}
+                                style={{
+                                    backgroundImage: `url(${currentImg === ref?.imgSrc
+                                        ? currentWork?.main_img : ref?.imgSrc})`
+                                }}
+                                onClick={() => {
+                                    changeCurrentImg(currentImg === ref?.imgSrc
+                                        ? currentWork?.main_img : ref?.imgSrc)
+                                }}
+                            >
 
-                        </div>
-                    )
-                }
+                            </div>
+                        )
+                    }
+                </div>
             </div>
-        </div>
+            <PhotoViewerUi
+                images={getArrPhoto()}
+                imgPropSrcName={'imgSrc'}
+                evController={evController}
+            />
+        </>
     );
 };
 

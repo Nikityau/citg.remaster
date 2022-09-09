@@ -13,8 +13,6 @@ import {whatRender} from "components/Utils.Compoents/whatRender";
 
 import './MemberWork.page.scss'
 
-
-
 const MemberWorkPage = () => {
 
     const navigate = useNavigate()
