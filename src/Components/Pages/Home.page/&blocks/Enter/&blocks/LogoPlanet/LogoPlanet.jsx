@@ -18,6 +18,7 @@ import './_circle_size/LogoPlanet_circle_size_s.scss'
 import './_circle_size/LogoPlanet_circle_size_m_plus.scss'
 import './_planet_glow/LogoPlanet_planet_glow.scss'
 import './_animation_levitation/LogoPlanet_animation_levitation.scss'
+import './_anim_circle/LogoPlanet_anim_cirlce.scss'
 
 const LogoPlanet = ({classNames}) => {
 
@@ -40,7 +41,7 @@ const LogoPlanet = ({classNames}) => {
         //appContext?.animationSwitch && planetController.animationStart()
 
         return () => {
-            planetController.destroy();
+            //planetController.destroy();
         }
     }, [])
 
@@ -68,7 +69,12 @@ const LogoPlanet = ({classNames}) => {
                                 ]}/>
             <LogoPlanet__Trail dataAttr={trailAttr}>
                 <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
-                                    classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m', 'logo-planet__round-circle']}/>
+                                    classNames={[
+                                        'logo-planet_planet_glow',
+                                        'logo-planet_circle_size_m',
+                                        'logo-planet__round-circle',
+                                        'logo-planet_anim_circle'
+                                    ]}/>
             </LogoPlanet__Trail>
         </div>
     );
