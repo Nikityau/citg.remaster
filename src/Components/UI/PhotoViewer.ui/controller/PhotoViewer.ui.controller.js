@@ -10,10 +10,8 @@ class PhotoViewerUiController {
     }
 
     onInit = (lg) => {
-
         const { instance } = lg
         this._lgRef.current = instance;
-
     }
 
     onOpenByIndex = (index) => {

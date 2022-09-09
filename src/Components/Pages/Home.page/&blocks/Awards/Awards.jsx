@@ -13,18 +13,17 @@ import PhotoViewerUi from "ui/PhotoViewer.ui/PhotoViewer.ui";
 
 import CITG_API from "src/API/CITG_API.controller";
 
+import EventObserver from "src/Controllers/eventObserver/eventObserver";
+
 import {whatRender} from "components/Utils.Compoents/whatRender";
 
 import {AppContext} from "components/App/App";
 
-import EventObserver from "src/Controllers/eventObserver/eventObserver";
 
 import './Awards.scss'
 import './_back_gradient/Awards_back_gradient_red.scss'
 import './_rounded_cornenr/Awards_rounded_conrner.scss'
 import './_back_blackout/Awards_back_blackout.scss'
-
-const cbCollection = []
 
 const Awards = () => {
 
@@ -95,10 +94,7 @@ const Awards = () => {
             </div>
             <PhotoViewerUi
                 images={awards}
-                classNames={[
-                    'awards-photo']}
-                galleryId={'awards-photo-viewer'}
-                innerImgClassName={'awards-img-inner-viewer'}
+                imgPropSrcName={'certificate'}
                 evController={evObserver}
             />
         </>
