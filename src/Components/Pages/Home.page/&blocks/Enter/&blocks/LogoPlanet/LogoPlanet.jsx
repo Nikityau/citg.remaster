@@ -37,7 +37,7 @@ const LogoPlanet = ({classNames}) => {
 
         planetController.init()
         planetController.setPosition()
-        appContext?.animationSwitch && planetController.animationStart()
+        //appContext?.animationSwitch && planetController.animationStart()
 
         return () => {
             planetController.destroy();
@@ -66,9 +66,10 @@ const LogoPlanet = ({classNames}) => {
                                     ('logo-planet_animation_levitation',
                                         'logo-planet_animation_levitation_near')
                                 ]}/>
-            <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
-                                classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m', 'logo-planet__round-circle']}/>
-            <LogoPlanet__Trail dataAttr={trailAttr}/>
+            <LogoPlanet__Trail dataAttr={trailAttr}>
+                <LogoPlanet__Circle dataAttr={rotatingCircleAttr}
+                                    classNames={['logo-planet_planet_glow', 'logo-planet_circle_size_m', 'logo-planet__round-circle']}/>
+            </LogoPlanet__Trail>
         </div>
     );
 };

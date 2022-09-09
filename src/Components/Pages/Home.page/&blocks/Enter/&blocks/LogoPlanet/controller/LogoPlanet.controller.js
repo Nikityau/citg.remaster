@@ -96,8 +96,8 @@ class LogoPlanetController {
         const cx = this._mainCircleData['x'] + this._mainCircleData['width'] * .4;
         const cy = this._mainCircleData['y'] + this._mainCircleData['height'] * .1;
 
-        this._rotatingC.style.left = cx + 'px'
-        this._rotatingC.style.top = cy + 'px'
+       /* this._rotatingC.style.left = cx + 'px'
+        this._rotatingC.style.top = cy + 'px'*/
 
         this._rotateController?.setSettings(
             this._rotatingC,
@@ -116,8 +116,11 @@ class LogoPlanetController {
         this._trailC.style.width = this._mainCircleData['width'] + 'px'
         this._trailC.style.height = this._mainCircleData['width'] + 'px'
 
-        this._trailC.style.left = cx - this._trailC.clientWidth + 30 + 'px'
-        this._trailC.style.top = cy - this._trailC.clientHeight + 5 + 'px'
+        //this._trailC.style.left = cx - this._trailC.clientWidth + 30 + 'px'
+        //this._trailC.style.top = cy - this._trailC.clientHeight + 5 + 'px'
+
+        /*this._rotatingC.style.left = cx - this._trailC.clientWidth + 30 + 'px'
+        this._rotatingC.style.top = cy - this._trailC.clientHeight + 5 + 'px'*/
     }
 
 

@@ -1,0 +1,21 @@
+.logo-planet__round-circle {
+  opacity: 1;
+
+  margin: auto;
+  animation: circle 6s linear infinite;
+}
+
+@keyframes circle {
+  0% {
+    transform:
+            rotate(0deg)
+            translate(-205px)
+            rotate(0deg);
+  }
+  100% {
+    transform:
+            rotate(360deg)
+            translate(-205px)
+            rotate(-360deg);
+  }
+}
