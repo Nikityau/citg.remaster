@@ -1,6 +1,6 @@
 export const SLIDER_PRESET_SLIDE_SOLO = {
     type: 'loop',
-    autoplay: false,
+    autoplay: true,
     pagination: true,
     drag: false,
     arrows: false,

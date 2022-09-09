@@ -6,7 +6,7 @@ import {SLIDER_GRID_1_2} from "slider_ui/_slider_presets_option/Slider_presets";
 
 import Award from "components/Pages/Home.page/&blocks/Awards/&blocks/Award/Award";
 
-const AwardsTablet = ({awards}) => {
+const AwardsTablet = ({awards, onClick}) => {
 
     return (
         <div className={'awards__awards-box_tablet'}>
@@ -19,13 +19,15 @@ const AwardsTablet = ({awards}) => {
                     ]}
                     sliderOptionsPreset={SLIDER_GRID_1_2}>
                     {
-                        awards?.map(award =>
+                        awards?.map((award, index) =>
                             <SliderUi__defaultSlide key={award?.id}>
                                 <Award
                                     classNames={[
                                         'awards_rounded_corner'
                                     ]}
-                                imgSrc={award?.certificate}
+                                    imgSrc={award?.certificate}
+                                    onClick={onClick}
+                                    index={index}
                                 />
                             </SliderUi__defaultSlide>
                         )
