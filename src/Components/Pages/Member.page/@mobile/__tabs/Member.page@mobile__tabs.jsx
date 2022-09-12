@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 import {
     TAB_ABOUT_ME,
@@ -9,7 +10,7 @@ import {
 
 import './Member.page@mobile__tabs.scss'
 import '../_current_tab/Member.page@moible_current_tab.scss'
-import {useNavigate} from "react-router-dom";
+
 
 const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
 
@@ -25,25 +26,21 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
 
 
     const changeTabLink = (tab) => {
-        console.log(tab)
         switch (tab) {
             case TAB_ABOUT_ME:
-                navigate('?tab=aboutMe')
-                console.log('about')
+                navigate(`?tab=${TAB_ABOUT_ME}`)
                 changeTab(TAB_ABOUT_ME)()
                 break;
             case TAB_GALLERY:
-                console.log('here')
-                navigate('?tab=gallery')
+                navigate(`?tab=${TAB_GALLERY}`)
                 changeTab(TAB_GALLERY)()
                 break;
             case TAB_SKILLS:
-                navigate('?tab=skills')
+                navigate(`?tab=${TAB_SKILLS}`)
                 changeTab(TAB_SKILLS)()
                 break;
             default:
-                navigate('?tab=aboutMe')
-                changeTab(TAB_ABOUT_ME)()
+               changeTabLink(TAB_ABOUT_ME)
         }
     }
 

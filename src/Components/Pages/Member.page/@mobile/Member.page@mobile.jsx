@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {isMobile, isSafari} from "react-device-detect";
+import { isSafari} from "react-device-detect";
 import { useLocation} from "react-router-dom";
 
 import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member.page__mountain";
@@ -9,9 +9,9 @@ import MemberPageMobile__Gallery from "components/Pages/Member.page/@mobile/__ga
 import MemberPageMobile__Skills from "components/Pages/Member.page/@mobile/__skills/Member.page@mobile__skills";
 import MemberPageMobile__aboutMe from "components/Pages/Member.page/@mobile/__aboutMe/Member.page@mobile__aboutMe";
 
-export const TAB_ABOUT_ME = 'about me'
+export const TAB_ABOUT_ME = 'about_me'
 export const TAB_GALLERY = 'gallery'
-export const TAB_CURRENT_IMAGE = 'current image'
+export const TAB_CURRENT_IMAGE = 'current_image'
 export const TAB_SKILLS = 'skills'
 
 import MemberPageMobile__currentWork
@@ -36,7 +36,7 @@ const MemberPageMobile = ({member}) => {
 
         const [tabStr, tabQuery] = tab.split('=')
 
-        if (tabQuery === 'gallery') {
+        if (tabQuery === TAB_GALLERY) {
             if(!work) {
                 setTabState(TAB_GALLERY)
                 return;
@@ -54,13 +54,12 @@ const MemberPageMobile = ({member}) => {
 
             return;
         }
-        if(tabQuery === 'aboutMe') {
+        if(tabQuery === TAB_ABOUT_ME) {
             setTabState(TAB_ABOUT_ME)
 
             return;
         }
-        if(tabQuery === 'skills') {
-            console.log('skills')
+        if(tabQuery === TAB_SKILLS) {
             setTabState(TAB_SKILLS)
         }
 
