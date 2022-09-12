@@ -9,8 +9,11 @@ import {
 
 import './Member.page@mobile__tabs.scss'
 import '../_current_tab/Member.page@moible_current_tab.scss'
+import {useNavigate} from "react-router-dom";
 
 const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
+
+    const navigate = useNavigate()
 
     const currentTabCheck = (tab) => {
         if (tab === currentTab) {
@@ -20,6 +23,30 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
         return ''
     }
 
+
+    const changeTabLink = (tab) => {
+        console.log(tab)
+        switch (tab) {
+            case TAB_ABOUT_ME:
+                navigate('?tab=aboutMe')
+                console.log('about')
+                changeTab(TAB_ABOUT_ME)()
+                break;
+            case TAB_GALLERY:
+                console.log('here')
+                navigate('?tab=gallery')
+                changeTab(TAB_GALLERY)()
+                break;
+            case TAB_SKILLS:
+                navigate('?tab=skills')
+                changeTab(TAB_SKILLS)()
+                break;
+            default:
+                navigate('?tab=aboutMe')
+                changeTab(TAB_ABOUT_ME)()
+        }
+    }
+
     return (
         <div className={'membile__tabs-container'}>
             <div className={'membile__tabs-links'}>
@@ -27,7 +54,9 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
                     'membile__tab',
                     currentTabCheck(TAB_ABOUT_ME)
                 ].join(' ')}
-                     onClick={changeTab(TAB_ABOUT_ME)}
+                     onClick={() => {
+                         changeTabLink(TAB_ABOUT_ME)
+                     }}
                 >
                     <span> About me </span>
                 </div>
@@ -36,7 +65,9 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
                     currentTabCheck(TAB_GALLERY),
                     currentTabCheck(TAB_CURRENT_IMAGE)
                 ].join(' ')}
-                     onClick={changeTab(TAB_GALLERY)}
+                     onClick={() => {
+                         changeTabLink(TAB_GALLERY)
+                     }}
                 >
                     <span> Gallery </span>
                 </div>
@@ -44,7 +75,9 @@ const MemberPageMobile__Tabs = ({currentTab, changeTab}) => {
                     'membile__tab',
                     currentTabCheck(TAB_SKILLS)
                 ].join(' ')}
-                     onClick={changeTab(TAB_SKILLS)}
+                     onClick={() => {
+                         changeTabLink(TAB_SKILLS)
+                     }}
                 >
                     <span> Skills </span>
                 </div>

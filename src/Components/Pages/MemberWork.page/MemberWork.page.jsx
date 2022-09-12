@@ -24,7 +24,7 @@ const MemberWorkPage = () => {
     useEffect(() => {
 
         if(isMobileOnly) {
-            navigate(`${generatePath(TEAM_MEMBER_LINK, { memberId })}?tab=gallery&workId=${workId}`, { replace: true })
+            navigate(`${generatePath(TEAM_MEMBER_LINK, { memberId })}?tab=gallery&workId=${workId}&isMobile=${true}`, { replace: true })
         }
 
         (async () => {

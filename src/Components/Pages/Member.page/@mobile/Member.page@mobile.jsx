@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation} from "react-router-dom";
+import {isMobile, isSafari} from "react-device-detect";
+import { useLocation} from "react-router-dom";
 
 import MemberPage__Mountain from "components/Pages/Member.page/__mountain/Member.page__mountain";
 import MemberPageMobile__member from "components/Pages/Member.page/@mobile/__member/Member.page@mobile__member";
@@ -18,7 +19,6 @@ import MemberPageMobile__currentWork
 
 import './_back_gradient/Member.page@mobile_back_gradient_purple.scss'
 import './_back_gradient/Member.page@mobile_back_gradient_red.scss'
-import {isSafari} from "react-device-detect";
 
 
 const MemberPageMobile = ({member}) => {
@@ -28,15 +28,21 @@ const MemberPageMobile = ({member}) => {
     const [tabState, setTabState] = useState(TAB_ABOUT_ME)
     const [currentWork, setWork] = useState({})
 
+
     useEffect(() => {
         const [tab, work] = location.search.substring(1).split('&')
 
-        if (!tab || !work) return
+        if (!tab) return
 
         const [tabStr, tabQuery] = tab.split('=')
-        const [workStr, workId] = work?.split('=')
 
         if (tabQuery === 'gallery') {
+            if(!work) {
+                setTabState(TAB_GALLERY)
+                return;
+            }
+            const [workStr, workId] = work?.split('=')
+
             const findWork = member?.member_works?.find(w => w?.id == workId)
 
             if (!findWork) {
@@ -45,6 +51,17 @@ const MemberPageMobile = ({member}) => {
 
             setWork(findWork)
             setTabState(TAB_CURRENT_IMAGE)
+
+            return;
+        }
+        if(tabQuery === 'aboutMe') {
+            setTabState(TAB_ABOUT_ME)
+
+            return;
+        }
+        if(tabQuery === 'skills') {
+            console.log('skills')
+            setTabState(TAB_SKILLS)
         }
 
     }, [])

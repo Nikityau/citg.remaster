@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { useNavigate } from "react-router-dom";
 
 import SliderUi from "slider_ui/Slider.ui";
 import SliderUi__defaultSlide from "slider_ui/__default-slide/Slider.ui__defaultSlide";
@@ -13,6 +14,10 @@ import './Member.page@mobile__currentWork.scss'
 import arrow_img from 'assets/icons/futuristic-arrow.svg'
 
 const MemberPageMobile__currentWork = ({member, currentWork, setWork}) => {
+
+    //const location = useLocation()
+
+    const navigate = useNavigate()
 
     const [nextWork, setNextWork] = useState({})
     const [evController] = useState(new EventObserver())
@@ -50,8 +55,16 @@ const MemberPageMobile__currentWork = ({member, currentWork, setWork}) => {
         return arr;
     }
 
+    const goNextWork = () => {
+        navigate(`?tab=gallery&workId=${nextWork?.id}&isMobile=true`)
+
+        setWork(nextWork)
+    }
 
     useEffect(() => {
+
+        currentWork && 'id' in currentWork && navigate(`?tab=gallery&workId=${currentWork.id}&isMobile=true`)
+
         setNextWork(getNextWork())
     }, [member, currentWork])
 
@@ -127,7 +140,7 @@ const MemberPageMobile__currentWork = ({member, currentWork, setWork}) => {
                      style={{
                          backgroundImage: `url(${nextWork?.main_img})`
                      }}
-                     onClick={() => setWork(nextWork)}
+                     onClick={goNextWork}
                 >
                     <div className={'membile__next-work-img'}>
                         <img src={arrow_img} alt={'img'}/>
